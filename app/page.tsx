@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import FloatingLines from "@/components/FloatingLines";
+import Galaxy from "@/components/Galaxy";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -22,26 +22,20 @@ export default function Home() {
 			{/* Hero Section */}
 			<section className="hero">
 				<div className="absolute inset-0 z-0">
-					<FloatingLines
-						linesGradient={[
-							"#db2777", // Vibrant pink/magenta
-							"#a855f7", // Purple
-							"#6366f1", // Blue-purple
-							"#3b82f6", // Bright blue
-						]}
-						enabledWaves={["top", "middle", "bottom"]}
-						lineCount={[12, 12, 12]}
-						lineDistance={[43.5, 43.5, 43.5]}
-						topWavePosition={{ x: 10.0, y: 0.5, rotate: -0.4 }}
-						middleWavePosition={{ x: 5.0, y: 0.0, rotate: 0.2 }}
-						bottomWavePosition={{ x: 2.0, y: -0.7, rotate: 0.4 }}
-						animationSpeed={0.8}
-						interactive={true}
-						bendRadius={4.5}
-						bendStrength={-0.5}
-						mouseDamping={0.05}
-						parallax={false}
-						mixBlendMode="screen"
+					<Galaxy
+						hueShift={220}
+						density={0.6}
+						glowIntensity={0.3}
+						saturation={0.8}
+						speed={0.8}
+						starSpeed={0.4}
+						twinkleIntensity={0.9}
+						rotationSpeed={0.15}
+						mouseRepulsion={true}
+						repulsionStrength={0.3}
+						mouseInteraction={true}
+						autoCenterRepulsion={0}
+						transparent={true}
 					/>
 				</div>
 
@@ -50,9 +44,10 @@ export default function Home() {
 						We build simple consumer products that make humans more sovereign.
 					</h1>
 					<p className="sub-headline">
-						Bonuz Technology DMCC is a Dubai-based software development house.
+						Bonuz Technology is a Dubai-based software development firm
+						specializing in blockchain and consumer technology.
 						<br />A small team of legendary full-stack builders shipping
-						products for the Bonuz ecosystem and a few selected partners.
+						products for the bonuz ecosystem and our selected partners.
 					</p>
 					<p className="rule-line">
 						Our rule: if your grandmother can&apos;t use it in 30 seconds, then
@@ -74,12 +69,13 @@ export default function Home() {
 				<div className="container">
 					<h2>What we do</h2>
 					<p className="intro-text">
-						We design, build, and operate digital products end-to-end.
+						We invent, design, build, and operate digital products end-to-end.
 						<br />
 						From architecture to deployment, we turn complex infrastructure and
 						protocols into interfaces anyone can use in seconds.
 					</p>
 					<ul className="features-list">
+						<li>Research & development</li>
 						<li>Full-stack product development</li>
 						<li>Infrastructure & protocol integrations</li>
 						<li>Product and infrastructure consulting (selective)</li>
@@ -89,56 +85,93 @@ export default function Home() {
 			</section>
 
 			{/* Our Work Section */}
-			<section id="our-work" className="section-black">
-				<div className="container">
+			<section id="our-work" className="section-black relative">
+				<div className="absolute inset-0 z-0">
+					<Galaxy
+						hueShift={220}
+						density={0.6}
+						glowIntensity={0.3}
+						saturation={0.8}
+						speed={0.8}
+						starSpeed={0.4}
+						twinkleIntensity={0.9}
+						rotationSpeed={0.15}
+						mouseRepulsion={true}
+						repulsionStrength={0.3}
+						mouseInteraction={true}
+						autoCenterRepulsion={0}
+						transparent={true}
+					/>
+				</div>
+				<div className="container relative">
 					<h2>Our work</h2>
-					<p className="intro-text">A few examples of what we build and run:</p>
+					<p className="intro-text">Examples of what we build:</p>
 
 					<div className="work-grid">
-						<div className="work-card">
-							<h3>Bonuz Social Wallet</h3>
+						<a
+							className="work-card"
+							href="https://bonuz.xyz"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<h3>bonuz Social Wallet</h3>
 							<p>
-								A consumer wallet with social features, quests, and real-world
-								rewards. Built to feel like a normal app, even when everything
-								under the hood is advanced.
+								A award-winning consumer-grade self-custodial wallet with social
+								features, quests, loyalty programs for the real-world. Built to
+								feel like a normal app, even when everything under the hood is
+								advanced. Self-sovereignty starts here. Available for IOS and
+								Android.
 							</p>
-						</div>
+						</a>
 
-						<div className="work-card">
-							<h3>Bonuz ID</h3>
+						<a
+							className="work-card"
+							href="https://bonuz.id"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<h3>bonuz ID</h3>
 							<p>
-								A unified profile layer where people connect their links,
-								socials, and presence into one simple public page.
+								A unified profile layer where people connect their favorite
+								links, socials, and presence into one simple public page. Its
+								like link-tree, but more advanced and free.
 							</p>
-						</div>
+						</a>
 
-						<div className="work-card">
-							<h3>Bonuz Partner Dashboard</h3>
+						<a
+							className="work-card"
+							href="https://app.bonuz.xyz"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<h3>bonuz Partner Dashboard</h3>
 							<p>
-								A comprehensive backend for our partners that could be brands,
-								enterprises, events, restaurants, communities, creators or
-								others can create their real world quests, loyalty or membership
-								programs and more with our super easy and intuitive tools.
+								A comprehensive dashboard to empower our brand partners such as
+								events, restaurants, communities, enterprises, creators and
+								others to create their real-world quests, loyalty or membership
+								programs and more with our easy-to-use tools.
 							</p>
-						</div>
+						</a>
 
-						<div className="work-card">
+						<a className="work-card" href="#request-intro">
 							<h3>White-label platforms</h3>
 							<p>
-								We reuse our core modules – identity, wallets, quests, rewards,
-								dashboards – to launch fully branded apps for selected partners.
-								Same engine, different skins, customized journeys.
+								For selected enterprises we use our core modules and
+								infrastructure such as the identity, wallet structure, quest,
+								loyalty and membership systems in order to launch fully branded
+								apps without the need build anything from scratch. Same engine,
+								different skins, customized journeys.
 							</p>
-						</div>
+						</a>
 
-						<div className="work-card">
+						<a className="work-card" href="#request-intro">
 							<h3>Consulting</h3>
 							<p>
 								We occasionally consult on product architecture, user
 								experience, and infrastructure choices for teams building in or
-								around the Bonuz ecosystem.
+								around the bonuz ecosystem.
 							</p>
-						</div>
+						</a>
 					</div>
 
 					<p className="work-footer">
@@ -155,7 +188,8 @@ export default function Home() {
 						<p className="intro-text">
 							Bonuz Technology DMCC is owned and led by Matthias Mende, an
 							entrepreneur and builder based in Dubai, active in blockchain and
-							consumer technology since early days.
+							consumer technology since early days. He also co-founded the Dubai
+							Blockchain Center in 2018.
 						</p>
 						<div className="founder-links">
 							<a
@@ -163,7 +197,7 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								X (Twitter)
+								X
 							</a>
 							<a
 								href="https://linkedin.com/in/matthiasmende"
@@ -172,13 +206,20 @@ export default function Home() {
 							>
 								LinkedIn
 							</a>
+							<a
+								href="https://bonuz.id/mende"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								bonuz ID
+							</a>
 						</div>
 					</div>
 				</div>
 			</section>
 
 			{/* Request Intro Section */}
-			<section id="request-intro" className="section-black">
+			<section id="request-intro" className="section-black pb-50!">
 				<div className="container">
 					<h2>Request intro</h2>
 					<div className="request-content">
@@ -186,7 +227,7 @@ export default function Home() {
 							If you don&apos;t already have a direct line to us, you can
 							request an intro via the form below.
 						</p>
-						<a href="https://forms.gle/your-form-link" className="btn-form">
+						<a href="https://tally.so/r/7RR9r0" className="btn-form">
 							Open request form
 						</a>
 					</div>
