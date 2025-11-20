@@ -40,14 +40,10 @@ export default function Home() {
 				</div>
 
 				<div className="hero-content">
-					<h1>
-						We build simple consumer products that make humans more sovereign.
-					</h1>
+					<h1>We forge invisible technology that makes humans sovereign.</h1>
 					<p className="sub-headline">
-						Bonuz Technology is a Dubai-based software development firm
-						specializing in blockchain and consumer technology.
-						<br />A small team of legendary full-stack builders shipping
-						products for the bonuz ecosystem and our selected partners.
+						Dubai. Present day. We don&apos;t follow trends. We architect the
+						next layer of reality.
 					</p>
 					<p className="rule-line">
 						Our rule: if your grandmother can&apos;t use it in 30 seconds, then
@@ -69,10 +65,11 @@ export default function Home() {
 				<div className="container">
 					<h2>What we do</h2>
 					<p className="intro-text">
-						We invent, design, build, and operate digital products end-to-end.
-						<br />
-						From architecture to deployment, we turn complex infrastructure and
-						protocols into interfaces anyone can use in seconds.
+						We invent, design, and operate the hidden infrastructure of
+						tomorrow. From self-custodial souls to living digital passes, from
+						onchain identities to white-label empires. Blockchain · AI · AR ·
+						Spatial computing · Whatever it takes. The tech is invisible. The
+						sovereignty is permanent.
 					</p>
 					<ul className="features-list">
 						<li>Research & development</li>
@@ -80,6 +77,10 @@ export default function Home() {
 						<li>Infrastructure & protocol integrations</li>
 						<li>Product and infrastructure consulting (selective)</li>
 						<li>Long-term operation and iteration</li>
+						<li>
+							Future systems (AR lenses, AI companions, smart-glass-native
+							experiences – shipping when ready)
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -172,6 +173,13 @@ export default function Home() {
 								around the bonuz ecosystem.
 							</p>
 						</a>
+						<a className="work-card" href="#request-intro">
+							<h3>Next Layer</h3>
+							<p>
+								Coming soon. The same magic, but in your glasses. Onchain
+								presence meets spatial reality.
+							</p>
+						</a>
 					</div>
 
 					<p className="work-footer">
@@ -190,6 +198,8 @@ export default function Home() {
 							entrepreneur and builder based in Dubai, active in blockchain and
 							consumer technology since early days. He also co-founded the Dubai
 							Blockchain Center in 2018.
+							<br /> We are not here to build another app.
+							<br /> We are here to make technology disappear.
 						</p>
 						<div className="founder-links">
 							<a
@@ -237,7 +247,11 @@ export default function Home() {
 			{/* Footer */}
 			<footer>
 				<div className="container">
-					<p>
+					<p className="text-lg!">
+						&quot;The future is self-custodial. The future is spatial. The
+						future is bonuz.&quot;
+					</p>
+					<p className="text-sm! text-gray-500!">
 						&copy; {currentYear} Bonuz Technology DMCC · Dubai, United Arab
 						Emirates
 					</p>
