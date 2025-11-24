@@ -334,6 +334,7 @@ section h2 {
 	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 	gap: 32px;
 	margin-bottom: 48px;
+	align-items: stretch;
 }
 
 .work-card {
@@ -342,12 +343,18 @@ section h2 {
 	border-radius: 12px;
 	transition: all 0.3s ease;
 	border: 1px solid #333;
+	display: block;
+	text-decoration: none;
+	height: 100%;
 }
 
-.work-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
-	border-color: #667eea;
+.work-card-wrapper {
+	background: transparent !important;
+	border: none !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	height: 100%;
+	display: flex;
 }
 
 .work-card h3 {

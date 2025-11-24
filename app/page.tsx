@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Galaxy from "@/components/Galaxy";
+import SpotlightCard from "@/components/SpotlightCard";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -109,77 +110,108 @@ export default function Home() {
 					<p className="intro-text">Examples of what we build:</p>
 
 					<div className="work-grid">
-						<a
-							className="work-card"
-							href="https://bonuz.xyz"
-							target="_blank"
-							rel="noopener noreferrer"
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
-							<h3>bonuz Social Wallet</h3>
-							<p>
-								A award-winning consumer-grade self-custodial wallet with social
-								features, quests, loyalty programs for the real-world. Built to
-								feel like a normal app, even when everything under the hood is
-								advanced. Self-sovereignty starts here. Available for IOS and
-								Android.
-							</p>
-						</a>
+							<a
+								className="work-card"
+								href="https://bonuz.xyz"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>bonuz Social Wallet</h3>
+								<p>
+									A award-winning consumer-grade self-custodial wallet with
+									social features, quests, loyalty programs for the real-world.
+									Built to feel like a normal app, even when everything under
+									the hood is advanced. Self-sovereignty starts here. Available
+									for IOS and Android.
+								</p>
+							</a>
+						</SpotlightCard>
 
-						<a
-							className="work-card"
-							href="https://bonuz.id"
-							target="_blank"
-							rel="noopener noreferrer"
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
-							<h3>bonuz ID</h3>
-							<p>
-								A unified profile layer where people connect their favorite
-								links, socials, and presence into one simple public page. Its
-								like link-tree, but more advanced and free.
-							</p>
-						</a>
+							<a
+								className="work-card"
+								href="https://bonuz.id"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>bonuz ID</h3>
+								<p>
+									A unified profile layer where people connect their favorite
+									links, socials, and presence into one simple public page. Its
+									like link-tree, but more advanced and free.
+								</p>
+							</a>
+						</SpotlightCard>
 
-						<a
-							className="work-card"
-							href="https://app.bonuz.xyz"
-							target="_blank"
-							rel="noopener noreferrer"
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
-							<h3>bonuz Partner Dashboard</h3>
-							<p>
-								A comprehensive dashboard to empower our brand partners such as
-								events, restaurants, communities, enterprises, creators and
-								others to create their real-world quests, loyalty or membership
-								programs and more with our easy-to-use tools.
-							</p>
-						</a>
+							<a
+								className="work-card"
+								href="https://app.bonuz.xyz"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>bonuz Partner Dashboard</h3>
+								<p>
+									A comprehensive dashboard to empower our brand partners such
+									as events, restaurants, communities, enterprises, creators and
+									others to create their real-world quests, loyalty or
+									membership programs and more with our easy-to-use tools.
+								</p>
+							</a>
+						</SpotlightCard>
 
-						<a className="work-card" href="#request-intro">
-							<h3>White-label platforms</h3>
-							<p>
-								For selected enterprises we use our core modules and
-								infrastructure such as the identity, wallet structure, quest,
-								loyalty and membership systems in order to launch fully branded
-								apps without the need build anything from scratch. Same engine,
-								different skins, customized journeys.
-							</p>
-						</a>
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a className="work-card" href="#request-intro">
+								<h3>White-label platforms</h3>
+								<p>
+									For selected enterprises we use our core modules and
+									infrastructure such as the identity, wallet structure, quest,
+									loyalty and membership systems in order to launch fully
+									branded apps without the need build anything from scratch.
+									Same engine, different skins, customized journeys.
+								</p>
+							</a>
+						</SpotlightCard>
 
-						<a className="work-card" href="#request-intro">
-							<h3>Consulting</h3>
-							<p>
-								We occasionally consult on product architecture, user
-								experience, and infrastructure choices for teams building in or
-								around the bonuz ecosystem.
-							</p>
-						</a>
-						<a className="work-card" href="#request-intro">
-							<h3>Next Layer</h3>
-							<p>
-								Coming soon. The same magic, but in your glasses. Onchain
-								presence meets spatial reality.
-							</p>
-						</a>
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a className="work-card" href="#request-intro">
+								<h3>Consulting</h3>
+								<p>
+									We occasionally consult on product architecture, user
+									experience, and infrastructure choices for teams building in
+									or around the bonuz ecosystem.
+								</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a className="work-card" href="#request-intro">
+								<h3>Next Layer</h3>
+								<p>
+									Coming soon. The same magic, but in your glasses. Onchain
+									presence meets spatial reality.
+								</p>
+							</a>
+						</SpotlightCard>
 					</div>
 
 					<p className="work-footer">
