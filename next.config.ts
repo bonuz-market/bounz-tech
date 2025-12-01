@@ -36,8 +36,19 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; font-src 'self' data:; connect-src 'self';",
+            value: [
+              "default-src 'self'",
+              // Next.js requires unsafe-inline for styles and unsafe-eval for dev mode
+              // In production, Next.js injects styles inline, so unsafe-inline is needed
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              "style-src 'self' 'unsafe-inline'",
+              "img-src 'self' data: https://res.cloudinary.com https://*.cloudinary.com",
+              "font-src 'self' data:",
+              "connect-src 'self' https://res.cloudinary.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+            ].join("; "),
           },
         ],
       },
