@@ -1,0 +1,8 @@
+# Robots.txt for bonuz.tech
+# https://bonuz.tech
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bonuz.tech/sitemap.xml
