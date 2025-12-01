@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Script from "next/script";
 
 const spaceGrotesk = Space_Grotesk({
 	variable: "--font-space-grotesk",
@@ -252,16 +251,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="scroll-smooth">
-			<head>
-				<Script
-					id="structured-data"
+			<body className={`${spaceGrotesk.variable} antialiased`}>
+				<script
 					type="application/ld+json"
-					strategy="beforeInteractive"
-				>
-					{JSON.stringify(structuredData)}
-				</Script>
-			</head>
-			<body className={`${spaceGrotesk.variable} antialiased`}>{children}</body>
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(structuredData),
+					}}
+				/>
+				{children}
+			</body>
 		</html>
 	);
 }

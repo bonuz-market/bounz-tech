@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function Error({
   error,
@@ -10,7 +11,10 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error(error);
+    // Only log errors in development
+    if (process.env.NODE_ENV === "development") {
+      console.error(error);
+    }
   }, [error]);
 
   return (
@@ -31,12 +35,12 @@ export default function Error({
           >
             Try Again
           </button>
-          <a
+          <Link
             href="/"
             className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
           >
             Go Home
-          </a>
+          </Link>
         </div>
       </div>
       <p className="absolute bottom-8 text-gray-600 text-sm">
