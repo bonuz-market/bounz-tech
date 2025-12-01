@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Galaxy from "@/components/Galaxy";
 import SpotlightCard from "@/components/SpotlightCard";
+import Link from "next/link";
 
 export default function Home() {
 	const currentYear = new Date().getFullYear();
@@ -10,7 +11,7 @@ export default function Home() {
 	return (
 		<>
 			{/* Logo */}
-			<a href="#" className="logo">
+			<Link href="/" className="logo" aria-label="Bonuz Technology - Home">
 				<Image
 					src="https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png"
 					alt="Bonuz Logo"
@@ -18,7 +19,7 @@ export default function Home() {
 					height={50}
 					priority
 				/>
-			</a>
+			</Link>
 
 			{/* Hero Section */}
 			<section className="hero">
@@ -122,11 +123,11 @@ export default function Home() {
 							>
 								<h3>bonuz Social Wallet</h3>
 								<p>
-									A award-winning consumer-grade self-custodial wallet with
+									An award-winning consumer-grade self-custodial wallet with
 									social features, quests, loyalty programs for the real-world.
 									Built to feel like a normal app, even when everything under
 									the hood is advanced. Self-sovereignty starts here. Available
-									for IOS and Android.
+									for iOS and Android.
 								</p>
 							</a>
 						</SpotlightCard>
@@ -144,8 +145,8 @@ export default function Home() {
 								<h3>bonuz ID</h3>
 								<p>
 									A unified profile layer where people connect their favorite
-									links, socials, and presence into one simple public page. Its
-									like link-tree, but more advanced and free.
+									links, socials, and presence into one simple public page.
+									It&apos;s like Linktree, but more advanced and free.
 								</p>
 							</a>
 						</SpotlightCard>
