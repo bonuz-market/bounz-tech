@@ -156,7 +156,7 @@ export default function Home() {
 						>
 							<a
 								className="work-card"
-								href="https://app.bonuz.xyz"
+								href="https://app.bonuz.market"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
