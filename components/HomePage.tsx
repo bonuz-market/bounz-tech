@@ -4,14 +4,25 @@ import Image from "next/image";
 import Galaxy from "@/components/Galaxy";
 import SpotlightCard from "@/components/SpotlightCard";
 import Link from "next/link";
+import type { Dictionary } from "@/lib/i18n";
 
-export default function Home() {
+export default function HomePage({
+	dict,
+	locale,
+}: {
+	dict: Dictionary;
+	locale: string;
+}) {
 	const currentYear = new Date().getFullYear();
 
 	return (
 		<>
 			{/* Logo */}
-			<Link href="/" className="logo" aria-label="Bonuz Technology - Home">
+			<Link
+				href={`/${locale}`}
+				className="logo"
+				aria-label="Bonuz Technology - Home"
+			>
 				<Image
 					src="https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png"
 					alt="Bonuz Logo"
@@ -42,21 +53,15 @@ export default function Home() {
 				</div>
 
 				<div className="hero-content">
-					<h1>We forge invisible technology that makes humans sovereign.</h1>
-					<p className="sub-headline">
-						Dubai. Present day. We don&apos;t follow trends. We architect the
-						next layer of reality.
-					</p>
-					<p className="rule-line">
-						Our rule: if your grandmother can&apos;t use it in 30 seconds, then
-						it&apos;s not ready.
-					</p>
+					<h1>{dict.hero.title}</h1>
+					<p className="sub-headline">{dict.hero.subtitle}</p>
+					<p className="rule-line">{dict.hero.rule}</p>
 					<div className="hero-buttons">
 						<a href="#our-work" className="btn btn-primary">
-							See our work
+							{dict.hero.seeWork}
 						</a>
 						<a href="#request-intro" className="btn btn-secondary">
-							Project intake
+							{dict.hero.projectIntake}
 						</a>
 					</div>
 				</div>
@@ -65,24 +70,12 @@ export default function Home() {
 			{/* What We Do Section */}
 			<section id="what-we-do" className="section-black">
 				<div className="container">
-					<h2>What we do</h2>
-					<p className="intro-text">
-						We invent, design, and operate the hidden infrastructure of
-						tomorrow. From self-custodial souls to living digital passes, from
-						onchain identities to white-label empires. Blockchain · AI · AR ·
-						Spatial computing · Whatever it takes. The tech is invisible. The
-						sovereignty is permanent.
-					</p>
+					<h2>{dict.whatWeDo.title}</h2>
+					<p className="intro-text">{dict.whatWeDo.intro}</p>
 					<ul className="features-list">
-						<li>Research & development</li>
-						<li>Full-stack product development</li>
-						<li>Infrastructure & protocol integrations</li>
-						<li>Product and infrastructure consulting (selective)</li>
-						<li>Long-term operation and iteration</li>
-						<li>
-							Future systems (AR lenses, AI companions, smart-glass-native
-							experiences – shipping when ready)
-						</li>
+						{dict.whatWeDo.features.map((feature, i) => (
+							<li key={i}>{feature}</li>
+						))}
 					</ul>
 				</div>
 			</section>
@@ -107,8 +100,8 @@ export default function Home() {
 					/>
 				</div>
 				<div className="container relative">
-					<h2>Our work</h2>
-					<p className="intro-text">Examples of what we build:</p>
+					<h2>{dict.ourWork.title}</h2>
+					<p className="intro-text">{dict.ourWork.intro}</p>
 
 					<div className="work-grid">
 						<SpotlightCard
@@ -121,14 +114,8 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<h3>bonuz Lifestyle Wallet</h3>
-								<p>
-									An award-winning consumer-grade self-custodial wallet with
-									social features, quests, loyalty programs for the real-world.
-									Built to feel like a normal app, even when everything under
-									the hood is advanced. Self-sovereignty starts here. Available
-									for iOS and Android.
-								</p>
+								<h3>{dict.ourWork.wallet.title}</h3>
+								<p>{dict.ourWork.wallet.description}</p>
 							</a>
 						</SpotlightCard>
 
@@ -142,12 +129,8 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<h3>bonuz ID</h3>
-								<p>
-									A unified profile layer where people connect their favorite
-									links, socials, and presence into one simple public page.
-									It&apos;s like Linktree, but more advanced and free.
-								</p>
+								<h3>{dict.ourWork.id.title}</h3>
+								<p>{dict.ourWork.id.description}</p>
 							</a>
 						</SpotlightCard>
 
@@ -161,13 +144,8 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<h3>bonuz Partner Dashboard</h3>
-								<p>
-									A comprehensive dashboard to empower our brand partners such
-									as events, restaurants, communities, enterprises, creators and
-									others to create their real-world quests, loyalty or
-									membership programs and more with our easy-to-use tools.
-								</p>
+								<h3>{dict.ourWork.dashboard.title}</h3>
+								<p>{dict.ourWork.dashboard.description}</p>
 							</a>
 						</SpotlightCard>
 
@@ -176,14 +154,8 @@ export default function Home() {
 							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
 							<a className="work-card" href="#request-intro">
-								<h3>White-label platforms</h3>
-								<p>
-									For selected enterprises we use our core modules and
-									infrastructure such as the identity, wallet structure, quest,
-									loyalty and membership systems in order to launch fully
-									branded apps without the need build anything from scratch.
-									Same engine, different skins, customized journeys.
-								</p>
+								<h3>{dict.ourWork.whiteLabel.title}</h3>
+								<p>{dict.ourWork.whiteLabel.description}</p>
 							</a>
 						</SpotlightCard>
 
@@ -192,12 +164,8 @@ export default function Home() {
 							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
 							<a className="work-card" href="#request-intro">
-								<h3>Consulting</h3>
-								<p>
-									We occasionally consult on product architecture, user
-									experience, and infrastructure choices for teams building in
-									or around the bonuz ecosystem.
-								</p>
+								<h3>{dict.ourWork.consulting.title}</h3>
+								<p>{dict.ourWork.consulting.description}</p>
 							</a>
 						</SpotlightCard>
 
@@ -206,33 +174,25 @@ export default function Home() {
 							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
 							<a className="work-card" href="#request-intro">
-								<h3>Next Layer</h3>
-								<p>
-									Coming soon. The same magic, but in your glasses. Onchain
-									presence meets spatial reality.
-								</p>
+								<h3>{dict.ourWork.nextLayer.title}</h3>
+								<p>{dict.ourWork.nextLayer.description}</p>
 							</a>
 						</SpotlightCard>
 					</div>
 
-					<p className="work-footer">
-						Most of what we build is never loud. It just works.
-					</p>
+					<p className="work-footer">{dict.ourWork.footer}</p>
 				</div>
 			</section>
 
 			{/* Founder Section */}
 			<section id="founder" className="section-black">
 				<div className="container">
-					<h2>Founder</h2>
+					<h2>{dict.founder.title}</h2>
 					<div className="founder-content">
 						<p className="intro-text">
-							Bonuz Technology DMCC is owned and led by Matthias Mende, an
-							entrepreneur and builder based in Dubai, active in blockchain and
-							consumer technology since early days. He also co-founded the Dubai
-							Blockchain Center in 2018.
-							<br /> We are not here to build another app.
-							<br /> We are here to make technology disappear.
+							{dict.founder.bio}
+							<br /> {dict.founder.mission1}
+							<br /> {dict.founder.mission2}
 						</p>
 						<div className="founder-links">
 							<a
@@ -264,14 +224,11 @@ export default function Home() {
 			{/* Project Intake Request Section */}
 			<section id="request-intro" className="section-black pb-50!">
 				<div className="container">
-					<h2>Project Intake Request</h2>
+					<h2>{dict.intake.title}</h2>
 					<div className="request-content">
-						<p className="intro-text">
-							Want to build something? Or looking for a white-label wallet
-							app customized for your brand? Fill out the form below.
-						</p>
+						<p className="intro-text">{dict.intake.description}</p>
 						<a href="https://tally.so/r/7RR9r0" className="btn-form">
-							Open request form
+							{dict.intake.button}
 						</a>
 					</div>
 				</div>
@@ -280,13 +237,12 @@ export default function Home() {
 			{/* Footer */}
 			<footer>
 				<div className="container">
-					<p className="text-lg!">
-						&quot;The future is self-custodial. The future is spatial. The
-						future is bonuz.&quot;
-					</p>
+					<p className="text-lg!">{dict.footer.quote}</p>
 					<p className="text-sm! text-gray-500!">
-						&copy; {currentYear} Bonuz Technology DMCC · Dubai, United Arab
-						Emirates
+						{dict.footer.copyright.replace(
+							"{year}",
+							String(currentYear)
+						)}
 					</p>
 				</div>
 			</footer>
