@@ -208,7 +208,7 @@ const structuredData = {
 		},
 		{
 			"@type": "Product",
-			name: "bonuz Social Wallet",
+			name: "bonuz Lifestyle Wallet",
 			description:
 				"Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs. Available for iOS and Android.",
 			url: "https://bonuz.xyz",
@@ -299,7 +299,7 @@ const structuredData = {
 				{
 					"@type": "ListItem",
 					position: 5,
-					name: "Request Intro",
+					name: "Project Intake Request",
 					item: `${siteUrl}/#request-intro`,
 				},
 			],
@@ -313,7 +313,7 @@ const structuredData = {
 					name: "What does Bonuz Technology build?",
 					acceptedAnswer: {
 						"@type": "Answer",
-						text: "Bonuz Technology builds self-custodial wallets, digital identity solutions, and blockchain infrastructure. Our flagship products include the bonuz Social Wallet, bonuz ID, and the bonuz Partner Dashboard.",
+						text: "Bonuz Technology builds self-custodial wallets, digital identity solutions, and blockchain infrastructure. Our flagship products include the bonuz Lifestyle Wallet, bonuz ID, and the bonuz Partner Dashboard.",
 					},
 				},
 				{
@@ -337,7 +337,7 @@ const structuredData = {
 					name: "What is a self-custodial wallet?",
 					acceptedAnswer: {
 						"@type": "Answer",
-						text: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Social Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
+						text: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Lifestyle Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
 					},
 				},
 			],

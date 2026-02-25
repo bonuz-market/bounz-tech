@@ -56,7 +56,7 @@ export default function Home() {
 							See our work
 						</a>
 						<a href="#request-intro" className="btn btn-secondary">
-							Request intro
+							Project intake
 						</a>
 					</div>
 				</div>
@@ -121,7 +121,7 @@ export default function Home() {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<h3>bonuz Social Wallet</h3>
+								<h3>bonuz Lifestyle Wallet</h3>
 								<p>
 									An award-winning consumer-grade self-custodial wallet with
 									social features, quests, loyalty programs for the real-world.
@@ -261,14 +261,14 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* Request Intro Section */}
+			{/* Project Intake Request Section */}
 			<section id="request-intro" className="section-black pb-50!">
 				<div className="container">
-					<h2>Request intro</h2>
+					<h2>Project Intake Request</h2>
 					<div className="request-content">
 						<p className="intro-text">
-							If you don&apos;t already have a direct line to us, you can
-							request an intro via the form below.
+							Want to build something? Or looking for a white-label wallet
+							app customized for your brand? Fill out the form below.
 						</p>
 						<a href="https://tally.so/r/7RR9r0" className="btn-form">
 							Open request form
