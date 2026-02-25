@@ -231,10 +231,12 @@ export default function Galaxy({
 		}
 
 		let program: Program;
+		let cachedRect = ctn.getBoundingClientRect();
 
 		function resize() {
 			const scale = 1;
 			renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
+			cachedRect = ctn.getBoundingClientRect();
 			if (program) {
 				program.uniforms.uResolution.value = new Color(
 					gl.canvas.width,
@@ -285,8 +287,10 @@ export default function Galaxy({
 
 		const mesh = new Mesh(gl, { geometry, program });
 		let animateId: number;
+		let isVisible = false;
 
 		function update(t: number) {
+			if (!isVisible) return;
 			animateId = requestAnimationFrame(update);
 			if (!disableAnimation) {
 				program.uniforms.uTime.value = t * 0.001;
@@ -308,13 +312,29 @@ export default function Galaxy({
 
 			renderer.render({ scene: mesh });
 		}
-		animateId = requestAnimationFrame(update);
+
+		// Only render when visible in viewport
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !isVisible) {
+						isVisible = true;
+						animateId = requestAnimationFrame(update);
+					} else if (!entry.isIntersecting && isVisible) {
+						isVisible = false;
+						cancelAnimationFrame(animateId);
+					}
+				});
+			},
+			{ threshold: 0.01 }
+		);
+		observer.observe(ctn);
+
 		ctn.appendChild(gl.canvas);
 
 		function handleMouseMove(e: MouseEvent) {
-			const rect = ctn.getBoundingClientRect();
-			const x = (e.clientX - rect.left) / rect.width;
-			const y = 1.0 - (e.clientY - rect.top) / rect.height;
+			const x = (e.clientX - cachedRect.left) / cachedRect.width;
+			const y = 1.0 - (e.clientY - cachedRect.top) / cachedRect.height;
 			targetMousePos.current = { x, y };
 			targetMouseActive.current = 1.0;
 		}
@@ -323,14 +343,28 @@ export default function Galaxy({
 			targetMouseActive.current = 0.0;
 		}
 
+		// Recalculate cached rect on scroll (debounced)
+		let scrollTimeout: ReturnType<typeof setTimeout>;
+		function handleScroll() {
+			clearTimeout(scrollTimeout);
+			scrollTimeout = setTimeout(() => {
+				cachedRect = ctn.getBoundingClientRect();
+			}, 100);
+		}
+		window.addEventListener("scroll", handleScroll, { passive: true });
+
 		if (mouseInteraction) {
 			ctn.addEventListener("mousemove", handleMouseMove);
 			ctn.addEventListener("mouseleave", handleMouseLeave);
 		}
 
 		return () => {
+			isVisible = false;
 			cancelAnimationFrame(animateId);
+			observer.disconnect();
+			clearTimeout(scrollTimeout);
 			window.removeEventListener("resize", resize);
+			window.removeEventListener("scroll", handleScroll);
 			if (mouseInteraction) {
 				ctn.removeEventListener("mousemove", handleMouseMove);
 				ctn.removeEventListener("mouseleave", handleMouseLeave);

@@ -148,8 +148,10 @@ body {
 	color: white;
 }
 
-html {
-	scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
 }
 
 /* Logo */
@@ -233,7 +235,7 @@ html {
 	border-radius: 8px;
 	cursor: pointer;
 	text-decoration: none;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 	letter-spacing: -0.01em;
 	display: inline-block;
 }
@@ -341,7 +343,7 @@ section h2 {
 	background: #1a1a1a;
 	padding: 32px;
 	border-radius: 12px;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	border: 1px solid #333;
 	display: block;
 	text-decoration: none;
@@ -427,7 +429,7 @@ section h2 {
 	border-radius: 8px;
 	cursor: pointer;
 	text-decoration: none;
-	transition: all 0.3s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	letter-spacing: -0.01em;
 	margin-top: 32px;
 }
