@@ -16,7 +16,7 @@ const siteDescription =
 export const metadata: Metadata = {
 	metadataBase: new URL(siteUrl),
 	title: {
-		default: siteName,
+		default: `${siteName} | Blockchain & Web3 Development Dubai`,
 		template: `%s | ${siteName}`,
 	},
 	description: siteDescription,
@@ -35,6 +35,21 @@ export const metadata: Metadata = {
 		"AR spatial computing",
 		"bonuz wallet",
 		"bonuz ID",
+		"crypto wallet development",
+		"decentralized identity",
+		"DID solutions",
+		"blockchain consulting Dubai",
+		"Web3 infrastructure",
+		"onchain identity",
+		"loyalty rewards blockchain",
+		"enterprise blockchain solutions",
+		"white-label wallet platform",
+		"self-sovereign identity",
+		"blockchain app development UAE",
+		"Dubai tech company",
+		"Matthias Mende",
+		"Dubai Blockchain Center",
+		"bonuz technology",
 	],
 	authors: [{ name: "Matthias Mende", url: "https://bonuz.id/mende" }],
 	creator: "Bonuz Technology DMCC",
@@ -50,12 +65,20 @@ export const metadata: Metadata = {
 			"max-snippet": -1,
 		},
 	},
+	verification: {
+		// Replace placeholder values with actual verification codes from each search console
+		google: "GOOGLE_SITE_VERIFICATION_CODE",
+		yandex: "YANDEX_VERIFICATION_CODE",
+		other: {
+			"msvalidate.01": ["BING_VERIFICATION_CODE"],
+		},
+	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",
 		url: siteUrl,
 		siteName: siteName,
-		title: "Bonuz Technology DMCC | Invisible Technology for Human Sovereignty",
+		title: "Bonuz Technology DMCC | Blockchain & Web3 Development Dubai",
 		description: siteDescription,
 		images: [
 			{
@@ -68,13 +91,16 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Bonuz Technology DMCC | Invisible Technology for Human Sovereignty",
+		title: "Bonuz Technology DMCC | Blockchain & Web3 Development Dubai",
 		description: siteDescription,
 		creator: "@matthiasmende",
 		images: [`${siteUrl}/og-image.png`],
 	},
 	alternates: {
 		canonical: siteUrl,
+		languages: {
+			"en-US": siteUrl,
+		},
 	},
 	icons: {
 		icon: [
@@ -93,6 +119,12 @@ export const metadata: Metadata = {
 	manifest: "/site.webmanifest",
 	category: "technology",
 	classification: "Software Development",
+	other: {
+		"geo.region": "AE-DU",
+		"geo.placename": "Dubai",
+		"geo.position": "25.2048;55.2708",
+		ICBM: "25.2048, 55.2708",
+	},
 };
 
 // JSON-LD Structured Data - Static content, safe for inline script
@@ -240,6 +272,80 @@ const structuredData = {
 				"@id": `${siteUrl}/#organization`,
 			},
 			areaServed: "Worldwide",
+		},
+		{
+			"@type": "BreadcrumbList",
+			"@id": `${siteUrl}/#breadcrumb`,
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "Home",
+					item: siteUrl,
+				},
+				{
+					"@type": "ListItem",
+					position: 2,
+					name: "What We Do",
+					item: `${siteUrl}/#what-we-do`,
+				},
+				{
+					"@type": "ListItem",
+					position: 3,
+					name: "Our Work",
+					item: `${siteUrl}/#our-work`,
+				},
+				{
+					"@type": "ListItem",
+					position: 4,
+					name: "Founder",
+					item: `${siteUrl}/#founder`,
+				},
+				{
+					"@type": "ListItem",
+					position: 5,
+					name: "Request Intro",
+					item: `${siteUrl}/#request-intro`,
+				},
+			],
+		},
+		{
+			"@type": "FAQPage",
+			"@id": `${siteUrl}/#faq`,
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "What does Bonuz Technology build?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Bonuz Technology builds self-custodial wallets, digital identity solutions, and blockchain infrastructure. Our flagship products include the bonuz Social Wallet, bonuz ID, and the bonuz Partner Dashboard.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "Where is Bonuz Technology based?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Bonuz Technology DMCC is based in Dubai, United Arab Emirates. The company was founded by Matthias Mende, who also co-founded the Dubai Blockchain Center in 2018.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "Does Bonuz offer white-label blockchain solutions?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Yes, Bonuz offers white-label blockchain platforms for enterprises. We use our core modules including identity, wallet structure, quest, loyalty and membership systems to launch fully branded apps without building from scratch.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "What is a self-custodial wallet?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Social Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
+					},
+				},
+			],
 		},
 	],
 };
