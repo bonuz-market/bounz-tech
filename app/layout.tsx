@@ -66,12 +66,7 @@ export const metadata: Metadata = {
 		},
 	},
 	verification: {
-		// Replace placeholder values with actual verification codes from each search console
-		google: "GOOGLE_SITE_VERIFICATION_CODE",
 		yandex: "48d42867c455213b",
-		other: {
-			"msvalidate.01": ["BING_VERIFICATION_CODE"],
-		},
 	},
 	openGraph: {
 		type: "website",
