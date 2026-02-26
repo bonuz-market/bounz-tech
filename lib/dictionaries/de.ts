@@ -12,7 +12,7 @@ const de: Dictionary = {
 			"Dubai. Gegenwart. Wir folgen keinen Trends. Wir entwerfen die nächste Ebene der Realität.",
 		rule: "Unsere Regel: Wenn deine Großmutter es nicht in 30 Sekunden benutzen kann, ist es nicht bereit.",
 		seeWork: "Unsere Arbeit",
-		projectIntake: "Projektanfrage",
+		projectIntake: "Anfrage senden",
 	},
 	whatWeDo: {
 		title: "Was wir machen",

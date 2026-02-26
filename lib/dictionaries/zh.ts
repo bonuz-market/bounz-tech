@@ -11,7 +11,7 @@ const zh: Dictionary = {
 		subtitle: "迪拜。当下。我们不追随潮流。我们构建现实的下一层。",
 		rule: "我们的准则：如果你的祖母不能在30秒内使用它，那它还没准备好。",
 		seeWork: "查看我们的作品",
-		projectIntake: "项目咨询",
+		projectIntake: "发送请求",
 	},
 	whatWeDo: {
 		title: "我们做什么",

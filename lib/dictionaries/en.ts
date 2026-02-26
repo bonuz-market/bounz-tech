@@ -12,7 +12,7 @@ const en: Dictionary = {
 			"Dubai. Present day. We don't follow trends. We architect the next layer of reality.",
 		rule: "Our rule: if your grandmother can't use it in 30 seconds, then it's not ready.",
 		seeWork: "See our work",
-		projectIntake: "Project intake",
+		projectIntake: "Send Request",
 	},
 	whatWeDo: {
 		title: "What we do",
