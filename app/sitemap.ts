@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
-
-const locales = ["en", "ar", "de", "zh"] as const;
+import { locales } from "@/lib/i18n";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://bonuz.tech";
