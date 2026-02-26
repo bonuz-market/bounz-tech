@@ -24,7 +24,7 @@ export default function HomePage({
 				aria-label="Bonuz Technology - Home"
 			>
 				<Image
-					src="https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png"
+					src="/logo.svg"
 					alt="Bonuz Logo"
 					width={180}
 					height={50}
