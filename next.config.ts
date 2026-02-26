@@ -45,9 +45,9 @@ const nextConfig: NextConfig = {
               // Next.js requires unsafe-inline for styles and unsafe-eval for dev mode
               // In production, Next.js injects styles inline, so unsafe-inline is needed
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-              "style-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https://res.cloudinary.com https://*.cloudinary.com",
-              "font-src 'self' data:",
+              "font-src 'self' data: https://fonts.gstatic.com",
               "connect-src 'self' https://res.cloudinary.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
