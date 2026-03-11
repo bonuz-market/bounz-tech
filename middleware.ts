@@ -24,6 +24,15 @@ function getPreferredLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
+	// Redirect www to non-www (canonical domain)
+	const host = request.headers.get("host") || "";
+	if (host.startsWith("www.")) {
+		const url = request.nextUrl.clone();
+		url.host = host.replace(/^www\./, "");
+		url.port = "";
+		return NextResponse.redirect(url, 301);
+	}
+
 	// Check if the pathname already has a locale prefix
 	const pathnameHasLocale = locales.some(
 		(locale) =>
