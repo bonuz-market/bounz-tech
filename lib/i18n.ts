@@ -15,6 +15,24 @@ export type Dictionary = {
 	meta: {
 		title: string;
 		description: string;
+		keywords: string[];
+	};
+	faq: {
+		q1: string;
+		a1: string;
+		q2: string;
+		a2: string;
+		q3: string;
+		a3: string;
+		q4: string;
+		a4: string;
+	};
+	breadcrumbs: {
+		home: string;
+		whatWeDo: string;
+		ourWork: string;
+		founder: string;
+		projectIntake: string;
 	};
 	hero: {
 		title: string;

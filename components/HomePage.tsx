@@ -33,7 +33,7 @@ export default function HomePage({
 			</Link>
 
 			{/* Hero Section */}
-			<section className="hero">
+			<section id="hero" className="hero">
 				<div className="absolute inset-0 z-0">
 					<Galaxy
 						hueShift={220}
@@ -227,7 +227,7 @@ export default function HomePage({
 					<h2>{dict.intake.title}</h2>
 					<div className="request-content">
 						<p className="intro-text">{dict.intake.description}</p>
-						<a href="https://tally.so/r/7RR9r0" className="btn-form">
+						<a href="https://tally.so/r/7RR9r0" className="btn-form" target="_blank" rel="noopener noreferrer">
 							{dict.intake.button}
 						</a>
 					</div>

@@ -1,6 +1,11 @@
 {
-  "name": "bonuz Tech",
+  "name": "Bonuz Technology DMCC",
   "short_name": "bonuz",
+  "description": "Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure.",
+  "start_url": "/en",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["technology", "blockchain", "web3"],
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",

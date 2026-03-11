@@ -1,0 +1,55 @@
+# Bonuz Technology DMCC
+
+> Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure. We forge invisible technology that makes humans sovereign.
+
+## Company Overview
+
+Bonuz Technology DMCC is a Dubai-based software development company founded in 2018 by Matthias Mende, who also co-founded the Dubai Blockchain Center. The company specializes in blockchain, Web3, AI, AR, and spatial computing technologies.
+
+## Core Products
+
+### bonuz Lifestyle Wallet
+Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs for the real world. Available for iOS and Android.
+- URL: https://bonuz.xyz
+
+### bonuz ID
+A unified profile layer where people connect their favorite links, socials, and presence into one simple public page. Like Linktree, but more advanced and free.
+- URL: https://bonuz.id
+
+### bonuz Partner Dashboard
+Comprehensive dashboard for brand partners (events, restaurants, communities, enterprises, creators) to create real-world quests, loyalty or membership programs.
+- URL: https://app.bonuz.market
+
+## Services
+
+### White-label Blockchain Platforms
+Custom branded apps using Bonuz core modules including identity, wallet structure, quest, loyalty and membership systems. Same engine, different skins, customized journeys.
+
+### Blockchain Consulting
+Product architecture, user experience, and infrastructure consulting for teams building in the blockchain ecosystem.
+
+## Key Technologies
+- Self-custodial wallet infrastructure
+- Onchain digital identity (DID / SSI)
+- Smart contract development
+- Loyalty & membership systems on blockchain
+- AR spatial computing
+- AI integration
+- White-label platform architecture
+
+## Location
+Dubai, United Arab Emirates
+
+## Contact
+- Website: https://bonuz.tech
+- Project Intake: https://tally.so/r/7RR9r0
+- Founder: Matthias Mende
+  - X/Twitter: https://x.com/matthiasmende
+  - LinkedIn: https://linkedin.com/in/matthiasmende
+  - bonuz ID: https://bonuz.id/mende
+
+## Links
+- Main Website: https://bonuz.tech
+- Lifestyle Wallet: https://bonuz.xyz
+- Identity Platform: https://bonuz.id
+- Partner Dashboard: https://app.bonuz.market
