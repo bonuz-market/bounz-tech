@@ -130,7 +130,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					name: "Matthias Mende",
 					url: "https://bonuz.id/mende",
 					sameAs: [
-						"https://x.com/matthiasmende",
+						"https://x.com/mendematthias",
 						"https://linkedin.com/in/matthiasmende",
 					],
 				},
@@ -140,8 +140,9 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					addressCountry: "AE",
 				},
 				sameAs: [
-					"https://x.com/matthiasmende",
-					"https://linkedin.com/in/matthiasmende",
+					"https://x.com/bonuzmarket",
+					"https://linkedin.com/company/bonuzmarket",
+					"https://github.com/bonuz-market",
 					"https://bonuz.xyz",
 					"https://bonuz.id",
 				],

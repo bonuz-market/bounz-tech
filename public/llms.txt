@@ -44,9 +44,14 @@ Dubai, United Arab Emirates
 - Website: https://bonuz.tech
 - Project Intake: https://tally.so/r/7RR9r0
 - Founder: Matthias Mende
-  - X/Twitter: https://x.com/matthiasmende
+  - X/Twitter: https://x.com/mendematthias
   - LinkedIn: https://linkedin.com/in/matthiasmende
   - bonuz ID: https://bonuz.id/mende
+
+## Social
+- X/Twitter: https://x.com/bonuzmarket
+- LinkedIn: https://linkedin.com/company/bonuzmarket
+- GitHub: https://github.com/bonuz-market
 
 ## Links
 - Main Website: https://bonuz.tech
