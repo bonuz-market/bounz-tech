@@ -4,7 +4,7 @@ const en: Dictionary = {
 	meta: {
 		title: "Bonuz Technology DMCC | Blockchain & Web3 Development Dubai",
 		description:
-			"Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure. We forge invisible technology that makes humans sovereign.",
+			"Dubai-based software house building self-custodial wallets, digital identity solutions, and blockchain infrastructure for human sovereignty.",
 		keywords: [
 			"self-custodial wallet",
 			"blockchain development Dubai",

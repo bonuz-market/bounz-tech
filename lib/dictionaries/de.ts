@@ -4,7 +4,7 @@ const de: Dictionary = {
 	meta: {
 		title: "Bonuz Technology DMCC | Blockchain- & Web3-Entwicklung Dubai",
 		description:
-			"In Dubai ansässiges Softwareentwicklungsunternehmen, das selbstverwaltete Wallets, digitale Identitätslösungen und Blockchain-Infrastruktur entwickelt. Wir schmieden unsichtbare Technologie, die Menschen souverän macht.",
+			"Softwareentwicklung aus Dubai: selbstverwaltete Wallets, digitale Identitätslösungen und Blockchain-Infrastruktur für menschliche Souveränität.",
 		keywords: [
 			"selbstverwaltete Wallet",
 			"Blockchain-Entwicklung Dubai",
