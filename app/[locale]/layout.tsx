@@ -77,8 +77,8 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title: dict.meta.title,
 			description: dict.meta.description,
-			creator: "@matthiasmende",
-			site: "@matthiasmende",
+			creator: "@bonuzmarket",
+			site: "@bonuzmarket",
 			images: [`${siteUrl}/og-image.png`],
 		},
 		alternates: {
