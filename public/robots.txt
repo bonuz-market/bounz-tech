@@ -16,6 +16,10 @@ Crawl-delay: 0
 User-agent: Googlebot-Image
 Allow: /
 
+# Google AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
 # Bing
 User-agent: Bingbot
 Allow: /
@@ -23,6 +27,33 @@ Crawl-delay: 1
 
 # Bing Ads Bot
 User-agent: adidxbot
+Allow: /
+
+# OpenAI ChatGPT
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT Browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
 Allow: /
 
 # Yandex

@@ -21,7 +21,9 @@ export async function generateMetadata({
 
 	const dict = await getDictionary(locale as Locale);
 
-	const alternatesLanguages: Record<string, string> = {};
+	const alternatesLanguages: Record<string, string> = {
+		"x-default": `${siteUrl}/en`,
+	};
 	for (const l of locales) {
 		alternatesLanguages[l] = `${siteUrl}/${l}`;
 	}
@@ -33,37 +35,7 @@ export async function generateMetadata({
 			template: `%s | ${siteName}`,
 		},
 		description: dict.meta.description,
-		keywords: [
-			"self-custodial wallet",
-			"blockchain development Dubai",
-			"Web3 development UAE",
-			"digital identity solutions",
-			"white-label crypto wallet",
-			"blockchain software development",
-			"self-sovereignty technology",
-			"Dubai blockchain company",
-			"consumer blockchain applications",
-			"loyalty program blockchain",
-			"smart contract development",
-			"AR spatial computing",
-			"bonuz wallet",
-			"bonuz ID",
-			"crypto wallet development",
-			"decentralized identity",
-			"DID solutions",
-			"blockchain consulting Dubai",
-			"Web3 infrastructure",
-			"onchain identity",
-			"loyalty rewards blockchain",
-			"enterprise blockchain solutions",
-			"white-label wallet platform",
-			"self-sovereign identity",
-			"blockchain app development UAE",
-			"Dubai tech company",
-			"Matthias Mende",
-			"Dubai Blockchain Center",
-			"bonuz technology",
-		],
+		keywords: dict.meta.keywords,
 		authors: [{ name: "Matthias Mende", url: "https://bonuz.id/mende" }],
 		creator: "Bonuz Technology DMCC",
 		publisher: "Bonuz Technology DMCC",
@@ -93,7 +65,7 @@ export async function generateMetadata({
 					url: `${siteUrl}/og-image.png`,
 					width: 1200,
 					height: 630,
-					alt: "Bonuz Technology - We forge invisible technology that makes humans sovereign",
+					alt: dict.meta.title,
 				},
 			],
 		},
@@ -101,7 +73,8 @@ export async function generateMetadata({
 			card: "summary_large_image",
 			title: dict.meta.title,
 			description: dict.meta.description,
-			creator: "@matthiasmende",
+			creator: "@bonuzmarket",
+			site: "@bonuzmarket",
 			images: [`${siteUrl}/og-image.png`],
 		},
 		alternates: {
@@ -134,231 +107,244 @@ export async function generateMetadata({
 	};
 }
 
-// JSON-LD Structured Data (kept in English for schema.org)
-const siteDescription =
-	"Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure. We forge invisible technology that makes humans sovereign.";
+function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDictionary>>) {
+	const localeUrl = `${siteUrl}/${locale}`;
+	const inLanguage = locale === "zh" ? "zh-Hans" : locale;
 
-const structuredData = {
-	"@context": "https://schema.org",
-	"@graph": [
-		{
-			"@type": "Organization",
-			"@id": `${siteUrl}/#organization`,
-			name: "Bonuz Technology DMCC",
-			url: siteUrl,
-			logo: {
-				"@type": "ImageObject",
-				url: "https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png",
-			},
-			description: siteDescription,
-			foundingDate: "2018",
-			founder: {
-				"@type": "Person",
-				name: "Matthias Mende",
-				url: "https://bonuz.id/mende",
+	return {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"@id": `${siteUrl}/#organization`,
+				name: "Bonuz Technology DMCC",
+				url: siteUrl,
+				logo: {
+					"@type": "ImageObject",
+					url: "https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png",
+				},
+				description: dict.meta.description,
+				foundingDate: "2018",
+				founder: {
+					"@type": "Person",
+					name: "Matthias Mende",
+					url: "https://bonuz.id/mende",
+					sameAs: [
+						"https://x.com/mendematthias",
+						"https://linkedin.com/in/matthiasmende",
+					],
+				},
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Dubai",
+					addressCountry: "AE",
+				},
 				sameAs: [
-					"https://x.com/matthiasmende",
-					"https://linkedin.com/in/matthiasmende",
+					"https://x.com/bonuzmarket",
+					"https://linkedin.com/company/bonuzmarket",
+					"https://github.com/bonuz-market",
+					"https://bonuz.xyz",
+					"https://bonuz.id",
+				],
+				contactPoint: {
+					"@type": "ContactPoint",
+					contactType: "business inquiries",
+					url: "https://tally.so/r/7RR9r0",
+				},
+			},
+			{
+				"@type": "LocalBusiness",
+				"@id": `${siteUrl}/#localbusiness`,
+				name: "Bonuz Technology DMCC",
+				description: dict.meta.description,
+				url: siteUrl,
+				address: {
+					"@type": "PostalAddress",
+					addressLocality: "Dubai",
+					addressRegion: "Dubai",
+					addressCountry: "AE",
+				},
+				geo: {
+					"@type": "GeoCoordinates",
+					latitude: 25.2048,
+					longitude: 55.2708,
+				},
+				priceRange: "$$$",
+			},
+			{
+				"@type": "WebSite",
+				"@id": `${siteUrl}/#website`,
+				name: siteName,
+				url: siteUrl,
+				description: dict.meta.description,
+				inLanguage,
+				publisher: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "WebPage",
+				"@id": `${localeUrl}/#webpage`,
+				url: localeUrl,
+				name: dict.meta.title,
+				inLanguage,
+				isPartOf: {
+					"@id": `${siteUrl}/#website`,
+				},
+				about: {
+					"@id": `${siteUrl}/#organization`,
+				},
+				description: dict.meta.description,
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "bonuz Lifestyle Wallet",
+				description: dict.ourWork.wallet.description,
+				url: "https://bonuz.xyz",
+				applicationCategory: "FinanceApplication",
+				operatingSystem: "iOS, Android",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "bonuz ID",
+				description: dict.ourWork.id.description,
+				url: "https://bonuz.id",
+				applicationCategory: "SocialNetworkingApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "bonuz Partner Dashboard",
+				description: dict.ourWork.dashboard.description,
+				url: "https://app.bonuz.market",
+				applicationCategory: "BusinessApplication",
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "Service",
+				name: dict.ourWork.whiteLabel.title,
+				description: dict.ourWork.whiteLabel.description,
+				provider: {
+					"@id": `${siteUrl}/#organization`,
+				},
+				areaServed: "Worldwide",
+			},
+			{
+				"@type": "Service",
+				name: dict.ourWork.consulting.title,
+				description: dict.ourWork.consulting.description,
+				provider: {
+					"@id": `${siteUrl}/#organization`,
+				},
+				areaServed: "Worldwide",
+			},
+			{
+				"@type": "BreadcrumbList",
+				"@id": `${localeUrl}/#breadcrumb`,
+				itemListElement: [
+					{
+						"@type": "ListItem",
+						position: 1,
+						name: dict.breadcrumbs.home,
+						item: localeUrl,
+					},
+					{
+						"@type": "ListItem",
+						position: 2,
+						name: dict.breadcrumbs.whatWeDo,
+						item: `${localeUrl}#what-we-do`,
+					},
+					{
+						"@type": "ListItem",
+						position: 3,
+						name: dict.breadcrumbs.ourWork,
+						item: `${localeUrl}#our-work`,
+					},
+					{
+						"@type": "ListItem",
+						position: 4,
+						name: dict.breadcrumbs.founder,
+						item: `${localeUrl}#founder`,
+					},
+					{
+						"@type": "ListItem",
+						position: 5,
+						name: dict.breadcrumbs.projectIntake,
+						item: `${localeUrl}#request-intro`,
+					},
 				],
 			},
-			address: {
-				"@type": "PostalAddress",
-				addressLocality: "Dubai",
-				addressCountry: "AE",
-			},
-			sameAs: [
-				"https://x.com/matthiasmende",
-				"https://linkedin.com/in/matthiasmende",
-				"https://bonuz.xyz",
-				"https://bonuz.id",
-			],
-			contactPoint: {
-				"@type": "ContactPoint",
-				contactType: "business inquiries",
-				url: "https://tally.so/r/7RR9r0",
-			},
-		},
-		{
-			"@type": "LocalBusiness",
-			"@id": `${siteUrl}/#localbusiness`,
-			name: "Bonuz Technology DMCC",
-			description:
-				"Dubai-based software development house specializing in blockchain, Web3, and self-custodial wallet technology.",
-			url: siteUrl,
-			address: {
-				"@type": "PostalAddress",
-				addressLocality: "Dubai",
-				addressRegion: "Dubai",
-				addressCountry: "AE",
-			},
-			geo: {
-				"@type": "GeoCoordinates",
-				latitude: 25.2048,
-				longitude: 55.2708,
-			},
-			priceRange: "$$$",
-		},
-		{
-			"@type": "WebSite",
-			"@id": `${siteUrl}/#website`,
-			name: siteName,
-			url: siteUrl,
-			description: siteDescription,
-			publisher: {
-				"@id": `${siteUrl}/#organization`,
-			},
-		},
-		{
-			"@type": "WebPage",
-			"@id": `${siteUrl}/#webpage`,
-			url: siteUrl,
-			name: siteName,
-			isPartOf: {
-				"@id": `${siteUrl}/#website`,
-			},
-			about: {
-				"@id": `${siteUrl}/#organization`,
-			},
-			description: siteDescription,
-		},
-		{
-			"@type": "Product",
-			name: "bonuz Lifestyle Wallet",
-			description:
-				"Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs. Available for iOS and Android.",
-			url: "https://bonuz.xyz",
-			brand: {
-				"@type": "Brand",
-				name: "bonuz",
-			},
-			manufacturer: {
-				"@id": `${siteUrl}/#organization`,
-			},
-		},
-		{
-			"@type": "Product",
-			name: "bonuz ID",
-			description:
-				"A unified profile layer where people connect their favorite links, socials, and presence into one simple public page.",
-			url: "https://bonuz.id",
-			brand: {
-				"@type": "Brand",
-				name: "bonuz",
-			},
-			manufacturer: {
-				"@id": `${siteUrl}/#organization`,
-			},
-		},
-		{
-			"@type": "Product",
-			name: "bonuz Partner Dashboard",
-			description:
-				"Comprehensive dashboard for brand partners to create real-world quests, loyalty or membership programs.",
-			url: "https://app.bonuz.market",
-			brand: {
-				"@type": "Brand",
-				name: "bonuz",
-			},
-			manufacturer: {
-				"@id": `${siteUrl}/#organization`,
-			},
-		},
-		{
-			"@type": "Service",
-			name: "White-label Blockchain Platforms",
-			description:
-				"Custom branded apps using Bonuz core modules including identity, wallet structure, quest, loyalty and membership systems.",
-			provider: {
-				"@id": `${siteUrl}/#organization`,
-			},
-			areaServed: "Worldwide",
-		},
-		{
-			"@type": "Service",
-			name: "Blockchain Consulting",
-			description:
-				"Product architecture, user experience, and infrastructure consulting for teams building in the blockchain ecosystem.",
-			provider: {
-				"@id": `${siteUrl}/#organization`,
-			},
-			areaServed: "Worldwide",
-		},
-		{
-			"@type": "BreadcrumbList",
-			"@id": `${siteUrl}/#breadcrumb`,
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					name: "Home",
-					item: siteUrl,
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					name: "What We Do",
-					item: `${siteUrl}/#what-we-do`,
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					name: "Our Work",
-					item: `${siteUrl}/#our-work`,
-				},
-				{
-					"@type": "ListItem",
-					position: 4,
-					name: "Founder",
-					item: `${siteUrl}/#founder`,
-				},
-				{
-					"@type": "ListItem",
-					position: 5,
-					name: "Project Intake Request",
-					item: `${siteUrl}/#request-intro`,
-				},
-			],
-		},
-		{
-			"@type": "FAQPage",
-			"@id": `${siteUrl}/#faq`,
-			mainEntity: [
-				{
-					"@type": "Question",
-					name: "What does Bonuz Technology build?",
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: "Bonuz Technology builds self-custodial wallets, digital identity solutions, and blockchain infrastructure. Our flagship products include the bonuz Lifestyle Wallet, bonuz ID, and the bonuz Partner Dashboard.",
+			{
+				"@type": "FAQPage",
+				"@id": `${localeUrl}/#faq`,
+				inLanguage,
+				mainEntity: [
+					{
+						"@type": "Question",
+						name: dict.faq.q1,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a1,
+						},
 					},
-				},
-				{
-					"@type": "Question",
-					name: "Where is Bonuz Technology based?",
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: "Bonuz Technology DMCC is based in Dubai, United Arab Emirates. The company was founded by Matthias Mende, who also co-founded the Dubai Blockchain Center in 2018.",
+					{
+						"@type": "Question",
+						name: dict.faq.q2,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a2,
+						},
 					},
-				},
-				{
-					"@type": "Question",
-					name: "Does Bonuz offer white-label blockchain solutions?",
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: "Yes, Bonuz offers white-label blockchain platforms for enterprises. We use our core modules including identity, wallet structure, quest, loyalty and membership systems to launch fully branded apps without building from scratch.",
+					{
+						"@type": "Question",
+						name: dict.faq.q3,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a3,
+						},
 					},
-				},
-				{
-					"@type": "Question",
-					name: "What is a self-custodial wallet?",
-					acceptedAnswer: {
-						"@type": "Answer",
-						text: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Lifestyle Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
+					{
+						"@type": "Question",
+						name: dict.faq.q4,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a4,
+						},
 					},
-				},
-			],
-		},
-	],
-};
+				],
+			},
+		],
+	};
+}
 
 export default async function LocaleLayout({
 	children,
@@ -373,7 +359,9 @@ export default async function LocaleLayout({
 		notFound();
 	}
 
+	const dict = await getDictionary(locale as Locale);
 	const isRTL = rtlLocales.includes(locale as Locale);
+	const structuredData = getStructuredData(locale, dict);
 
 	// Build Google Fonts URL based on locale
 	const fontFamilies = ["Space+Grotesk:wght@300;400;500;600;700"];

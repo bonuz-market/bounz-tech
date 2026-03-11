@@ -33,7 +33,7 @@ export default function HomePage({
 			</Link>
 
 			{/* Hero Section */}
-			<section className="hero">
+			<section id="hero" className="hero">
 				<div className="absolute inset-0 z-0">
 					<Galaxy
 						hueShift={220}
@@ -196,7 +196,7 @@ export default function HomePage({
 						</p>
 						<div className="founder-links">
 							<a
-								href="https://x.com/matthiasmende"
+								href="https://x.com/mendematthias"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
@@ -227,7 +227,7 @@ export default function HomePage({
 					<h2>{dict.intake.title}</h2>
 					<div className="request-content">
 						<p className="intro-text">{dict.intake.description}</p>
-						<a href="https://tally.so/r/7RR9r0" className="btn-form">
+						<a href="https://tally.so/r/7RR9r0" className="btn-form" target="_blank" rel="noopener noreferrer">
 							{dict.intake.button}
 						</a>
 					</div>
@@ -238,6 +238,37 @@ export default function HomePage({
 			<footer>
 				<div className="container">
 					<p className="text-lg!">{dict.footer.quote}</p>
+					<div className="flex items-center justify-center gap-4 mt-4 mb-3">
+						<a
+							href="https://x.com/bonuzmarket"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-500 hover:text-white transition-colors text-sm"
+							aria-label="Bonuz on X"
+						>
+							𝕏
+						</a>
+						<span className="text-gray-700">·</span>
+						<a
+							href="https://linkedin.com/company/bonuzmarket"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-500 hover:text-white transition-colors text-sm"
+							aria-label="Bonuz on LinkedIn"
+						>
+							LinkedIn
+						</a>
+						<span className="text-gray-700">·</span>
+						<a
+							href="https://github.com/bonuz-market"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-gray-500 hover:text-white transition-colors text-sm"
+							aria-label="Bonuz on GitHub"
+						>
+							GitHub
+						</a>
+					</div>
 					<p className="text-sm! text-gray-500!">
 						{dict.footer.copyright.replace(
 							"{year}",
