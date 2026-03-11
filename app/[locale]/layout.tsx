@@ -51,11 +51,7 @@ export async function generateMetadata({
 			},
 		},
 		verification: {
-			google: "GOOGLE_VERIFICATION_CODE",
 			yandex: "48d42867c455213b",
-			other: {
-				"msvalidate.01": "BING_VERIFICATION_CODE",
-			},
 		},
 		openGraph: {
 			type: "website",
