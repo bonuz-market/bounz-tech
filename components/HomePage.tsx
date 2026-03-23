@@ -17,20 +17,37 @@ export default function HomePage({
 
 	return (
 		<>
-			{/* Logo */}
-			<Link
-				href={`/${locale}`}
-				className="logo"
-				aria-label="Bonuz Technology - Home"
-			>
-				<Image
-					src="/logo.svg"
-					alt="Bonuz Logo"
-					width={180}
-					height={50}
-					priority
-				/>
-			</Link>
+			{/* Header Navigation */}
+			<header className="site-header">
+				<Link
+					href={`/${locale}`}
+					className="header-logo"
+					aria-label="Bonuz Technology - Home"
+				>
+					<Image
+						src="/logo.svg"
+						alt="Bonuz Logo"
+						width={180}
+						height={50}
+						priority
+					/>
+				</Link>
+
+				<nav className="header-nav" aria-label="Main navigation">
+					<a href="#what-we-do" className="nav-link">
+						{dict.whatWeDo.title}
+					</a>
+					<a href="#our-work" className="nav-link">
+						{dict.ourWork.title}
+					</a>
+					<a href="#founder" className="nav-link">
+						{dict.founder.title}
+					</a>
+					<a href="#request-intro" className="nav-link nav-link-cta">
+						{dict.hero.projectIntake}
+					</a>
+				</nav>
+			</header>
 
 			{/* Hero Section */}
 			<section id="hero" className="hero">
