@@ -46,6 +46,8 @@ const de: Dictionary = {
 		a3: "Ja, Bonuz bietet White-Label-Blockchain-Plattformen für Unternehmen an. Wir nutzen unsere Kernmodule einschließlich Identität, Wallet-Struktur, Quest-, Treue- und Mitgliedschaftssysteme, um vollständig gebrandete Apps zu starten.",
 		q4: "Was ist eine selbstverwaltete Wallet?",
 		a4: "Eine selbstverwaltete Wallet gibt Nutzern die volle Eigentümerschaft und Kontrolle über ihre digitalen Vermögenswerte und privaten Schlüssel, ohne auf Dritte angewiesen zu sein. Die bonuz Lifestyle Wallet ist benutzerfreundlich gestaltet und gewährleistet gleichzeitig volle Selbstverwaltung.",
+		q5: "Was ist bonuz ID und wie funktioniert es?",
+		a5: "bonuz ID ist eine einheitliche Plattform für digitale Identität, auf der Nutzer alle ihre Links, sozialen Profile und ihre Online-Präsenz auf einer einfachen öffentlichen Seite verbinden können. Es funktioniert als fortschrittliche, kostenlose Alternative zu Linktree mit Blockchain-basierter Identitätsverifizierung, verfügbar unter bonuz.id.",
 	},
 	breadcrumbs: {
 		home: "Startseite",

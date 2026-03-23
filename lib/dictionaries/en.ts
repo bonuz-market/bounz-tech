@@ -46,6 +46,8 @@ const en: Dictionary = {
 		a3: "Yes, Bonuz offers white-label blockchain platforms for enterprises. We use our core modules including identity, wallet structure, quest, loyalty and membership systems to launch fully branded apps without building from scratch.",
 		q4: "What is a self-custodial wallet?",
 		a4: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Lifestyle Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
+		q5: "What is bonuz ID and how does it work?",
+		a5: "bonuz ID is a unified digital identity platform where users connect all their links, social profiles, and online presence into one simple public page. It functions as an advanced, free alternative to Linktree with blockchain-based identity verification, available at bonuz.id.",
 	},
 	breadcrumbs: {
 		home: "Home",

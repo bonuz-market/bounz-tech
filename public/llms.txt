@@ -1,32 +1,44 @@
 # Bonuz Technology DMCC
 
-> Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure. We forge invisible technology that makes humans sovereign.
+> Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure for human sovereignty.
 
 ## Company Overview
 
-Bonuz Technology DMCC is a Dubai-based software development company founded in 2018 by Matthias Mende, who also co-founded the Dubai Blockchain Center. The company specializes in blockchain, Web3, AI, AR, and spatial computing technologies.
+Bonuz Technology DMCC is a Dubai-based software development company founded in 2018 by Matthias Mende, who also co-founded the Dubai Blockchain Center. The company specializes in blockchain, Web3, AI, AR, and spatial computing technologies. Our mission: forge invisible technology that makes humans sovereign.
+
+- Founded: 2018
+- Headquarters: Dubai, United Arab Emirates
+- Legal Entity: Bonuz Technology DMCC
+- Industry: Blockchain & Web3 Software Development
+- Slogan: "We forge invisible technology that makes humans sovereign."
 
 ## Core Products
 
 ### bonuz Lifestyle Wallet
-Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs for the real world. Available for iOS and Android.
+Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs for the real world. Built to feel like a normal app while maintaining full self-custody of digital assets and private keys. Available for iOS and Android.
 - URL: https://bonuz.xyz
+- Category: FinanceApplication
+- Platforms: iOS, Android
+- Price: Free
 
 ### bonuz ID
-A unified profile layer where people connect their favorite links, socials, and presence into one simple public page. Like Linktree, but more advanced and free.
+A unified profile layer where people connect their favorite links, socials, and presence into one simple public page. Think of it as a more advanced and free alternative to Linktree, with blockchain-based identity verification.
 - URL: https://bonuz.id
+- Category: SocialNetworkingApplication
+- Price: Free
 
 ### bonuz Partner Dashboard
-Comprehensive dashboard for brand partners (events, restaurants, communities, enterprises, creators) to create real-world quests, loyalty or membership programs.
+Comprehensive dashboard for brand partners (events, restaurants, communities, enterprises, creators) to create real-world quests, loyalty or membership programs using easy-to-use tools.
 - URL: https://app.bonuz.market
+- Category: BusinessApplication
 
 ## Services
 
 ### White-label Blockchain Platforms
-Custom branded apps using Bonuz core modules including identity, wallet structure, quest, loyalty and membership systems. Same engine, different skins, customized journeys.
+Custom branded apps using Bonuz core modules including identity, wallet structure, quest, loyalty and membership systems. Same engine, different skins, customized journeys. Ideal for enterprises wanting to launch blockchain-powered apps without building from scratch.
 
-### Blockchain Consulting
-Product architecture, user experience, and infrastructure consulting for teams building in the blockchain ecosystem.
+### Blockchain & Web3 Consulting
+Product architecture, user experience, and infrastructure consulting for teams building in the blockchain ecosystem. Selective engagements for projects aligned with the bonuz ecosystem.
 
 ## Key Technologies
 - Self-custodial wallet infrastructure
@@ -36,17 +48,24 @@ Product architecture, user experience, and infrastructure consulting for teams b
 - AR spatial computing
 - AI integration
 - White-label platform architecture
+- Full-stack product development (React, Next.js, Node.js, Solidity)
+
+## Founder
+
+Matthias Mende — Entrepreneur and builder based in Dubai, active in blockchain and consumer technology since early days. Co-founded the Dubai Blockchain Center in 2018.
+- X/Twitter: https://x.com/mendematthias
+- LinkedIn: https://linkedin.com/in/matthiasmende
+- bonuz ID: https://bonuz.id/mende
 
 ## Location
 Dubai, United Arab Emirates
+- Region: AE-DU
+- Coordinates: 25.2048°N, 55.2708°E
 
 ## Contact
 - Website: https://bonuz.tech
 - Project Intake: https://tally.so/r/7RR9r0
-- Founder: Matthias Mende
-  - X/Twitter: https://x.com/mendematthias
-  - LinkedIn: https://linkedin.com/in/matthiasmende
-  - bonuz ID: https://bonuz.id/mende
+- Email inquiries via project intake form
 
 ## Social
 - X/Twitter: https://x.com/bonuzmarket
@@ -58,3 +77,7 @@ Dubai, United Arab Emirates
 - Lifestyle Wallet: https://bonuz.xyz
 - Identity Platform: https://bonuz.id
 - Partner Dashboard: https://app.bonuz.market
+- Dubai Blockchain Center: https://www.dubaiblockchaincenter.com
+
+## Languages
+This website is available in English, Arabic (العربية), German (Deutsch), and Simplified Chinese (中文).

@@ -39,6 +39,11 @@ export async function generateMetadata({
 		authors: [{ name: "Matthias Mende", url: "https://bonuz.id/mende" }],
 		creator: "Bonuz Technology DMCC",
 		publisher: "Bonuz Technology DMCC",
+		formatDetection: {
+			telephone: false,
+			email: false,
+			address: false,
+		},
 		robots: {
 			index: true,
 			follow: true,
@@ -118,16 +123,26 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				"@type": "Organization",
 				"@id": `${siteUrl}/#organization`,
 				name: "Bonuz Technology DMCC",
+				legalName: "Bonuz Technology DMCC",
 				url: siteUrl,
 				logo: {
 					"@type": "ImageObject",
 					url: "https://res.cloudinary.com/dsmd4srf6/image/upload/v1763314576/1846x512_gr44cm.png",
+					width: 1846,
+					height: 512,
 				},
+				image: `${siteUrl}/og-image.png`,
 				description: dict.meta.description,
+				slogan: dict.hero.title,
 				foundingDate: "2018",
+				foundingLocation: {
+					"@type": "Place",
+					name: "Dubai, United Arab Emirates",
+				},
 				founder: {
 					"@type": "Person",
 					name: "Matthias Mende",
+					jobTitle: "Founder & CEO",
 					url: "https://bonuz.id/mende",
 					sameAs: [
 						"https://x.com/mendematthias",
@@ -137,8 +152,11 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				address: {
 					"@type": "PostalAddress",
 					addressLocality: "Dubai",
+					addressRegion: "Dubai",
 					addressCountry: "AE",
 				},
+				areaServed: "Worldwide",
+				knowsLanguage: ["en", "de", "ar", "zh"],
 				sameAs: [
 					"https://x.com/bonuzmarket",
 					"https://linkedin.com/company/bonuzmarket",
@@ -150,14 +168,16 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					"@type": "ContactPoint",
 					contactType: "business inquiries",
 					url: "https://tally.so/r/7RR9r0",
+					availableLanguage: ["English", "German", "Arabic", "Chinese"],
 				},
 			},
 			{
-				"@type": "LocalBusiness",
+				"@type": "ProfessionalService",
 				"@id": `${siteUrl}/#localbusiness`,
 				name: "Bonuz Technology DMCC",
 				description: dict.meta.description,
 				url: siteUrl,
+				image: `${siteUrl}/og-image.png`,
 				address: {
 					"@type": "PostalAddress",
 					addressLocality: "Dubai",
@@ -170,6 +190,10 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					longitude: 55.2708,
 				},
 				priceRange: "$$$",
+				areaServed: "Worldwide",
+				parentOrganization: {
+					"@id": `${siteUrl}/#organization`,
+				},
 			},
 			{
 				"@type": "WebSite",
@@ -195,6 +219,10 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					"@id": `${siteUrl}/#organization`,
 				},
 				description: dict.meta.description,
+				potentialAction: {
+					"@type": "ReadAction",
+					target: localeUrl,
+				},
 			},
 			{
 				"@type": "SoftwareApplication",
@@ -338,6 +366,14 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 						acceptedAnswer: {
 							"@type": "Answer",
 							text: dict.faq.a4,
+						},
+					},
+					{
+						"@type": "Question",
+						name: dict.faq.q5,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a5,
 						},
 					},
 				],

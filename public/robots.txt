@@ -20,6 +20,10 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+# Google Inspection Tool
+User-agent: Google-InspectionTool
+Allow: /
+
 # Bing
 User-agent: Bingbot
 Allow: /
@@ -37,6 +41,10 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+# OpenAI SearchGPT
+User-agent: OAI-SearchBot
+Allow: /
+
 # Anthropic Claude
 User-agent: ClaudeBot
 Allow: /
@@ -52,8 +60,27 @@ Allow: /
 User-agent: FacebookBot
 Allow: /
 
+User-agent: Meta-ExternalAgent
+Allow: /
+
 # Apple Intelligence / Siri
 User-agent: Applebot
+Allow: /
+
+# Amazon Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# DeepSeek
+User-agent: Deepseekbot
+Allow: /
+
+# You.com
+User-agent: YouBot
 Allow: /
 
 # Yandex
@@ -68,6 +95,23 @@ Allow: /
 # Yandex Direct
 User-agent: YandexDirect
 Allow: /
+
+# Bytedance / TikTok
+User-agent: Bytespider
+Disallow: /
+
+# Block common bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
 
 # Sitemap
 Sitemap: https://bonuz.tech/sitemap.xml

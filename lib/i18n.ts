@@ -26,6 +26,8 @@ export type Dictionary = {
 		a3: string;
 		q4: string;
 		a4: string;
+		q5: string;
+		a5: string;
 	};
 	breadcrumbs: {
 		home: string;
