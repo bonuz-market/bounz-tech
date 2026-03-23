@@ -94,6 +94,21 @@ const de: Dictionary = {
 			description:
 				"Ein umfassendes Dashboard, das unsere Markenpartner wie Events, Restaurants, Communities, Unternehmen, Creator und andere befähigt, ihre realen Quests, Treue- oder Mitgliedschaftsprogramme und mehr mit unseren benutzerfreundlichen Tools zu erstellen.",
 		},
+		events: {
+			title: "bonuz Events",
+			description:
+				"Unsere eigene Eventplattform f\u00fcr reale und digitale Veranstaltungen \u2014 wie Luma und Meetup, nativ in das bonuz-\u00d6kosystem integriert. Marken-Events, Quests und Aktionen, die \u00fcber das Partner Dashboard erstellt werden, erscheinen hier f\u00fcr Nutzer zum Entdecken und Teilnehmen.",
+		},
+		chess: {
+			title: "Onchain Chess",
+			description:
+				"Ein vollst\u00e4ndig onchain ablaufendes Spieler-gegen-Spieler-Schachspiel. Jeder Zug wird auf der Blockchain aufgezeichnet und schafft transparente, verifizierbare und permanente Spielprotokolle. Wettbewerbsschach trifft auf Web3.",
+		},
+		habibiPass: {
+			title: "Habibi Pass",
+			description:
+				"Eine Tourismus-Engagement-Plattform f\u00fcr die VAE, die Besucher mit lokalen Restaurants und Unternehmen durch Gutscheine, Pr\u00e4mien und exklusive Angebote verbindet. Eine Win-Win-Situation f\u00fcr Touristen und Unternehmen.",
+		},
 		whiteLabel: {
 			title: "White-Label-Plattformen",
 			description:

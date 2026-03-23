@@ -278,6 +278,63 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				},
 			},
 			{
+				"@type": "SoftwareApplication",
+				name: "bonuz Events",
+				description: dict.ourWork.events.description,
+				url: "https://app.bonuz.xyz",
+				applicationCategory: "SocialNetworkingApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "Onchain Chess",
+				description: dict.ourWork.chess.description,
+				url: "https://onchainchess.com",
+				applicationCategory: "GameApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "Habibi Pass",
+				description: dict.ourWork.habibiPass.description,
+				url: "https://habibipass.bonuz.xyz",
+				applicationCategory: "TravelApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
 				"@type": "Service",
 				name: dict.ourWork.whiteLabel.title,
 				description: dict.ourWork.whiteLabel.description,

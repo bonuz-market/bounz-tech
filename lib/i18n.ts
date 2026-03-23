@@ -54,6 +54,9 @@ export type Dictionary = {
 		wallet: { title: string; description: string };
 		id: { title: string; description: string };
 		dashboard: { title: string; description: string };
+		events: { title: string; description: string };
+		chess: { title: string; description: string };
+		habibiPass: { title: string; description: string };
 		whiteLabel: { title: string; description: string };
 		consulting: { title: string; description: string };
 		nextLayer: { title: string; description: string };

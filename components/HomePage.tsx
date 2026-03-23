@@ -170,6 +170,51 @@ export default function HomePage({
 							className="work-card-wrapper"
 							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
+							<a
+								className="work-card"
+								href="https://app.bonuz.xyz"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.events.title}</h3>
+								<p>{dict.ourWork.events.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a
+								className="work-card"
+								href="https://onchainchess.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.chess.title}</h3>
+								<p>{dict.ourWork.chess.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a
+								className="work-card"
+								href="https://habibipass.bonuz.xyz"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.habibiPass.title}</h3>
+								<p>{dict.ourWork.habibiPass.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
 							<a className="work-card" href="#request-intro">
 								<h3>{dict.ourWork.whiteLabel.title}</h3>
 								<p>{dict.ourWork.whiteLabel.description}</p>

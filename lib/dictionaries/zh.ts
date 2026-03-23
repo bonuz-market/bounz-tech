@@ -93,6 +93,21 @@ const zh: Dictionary = {
 			description:
 				"一个全面的仪表板，赋能我们的品牌合作伙伴（如活动、餐厅、社区、企业、创作者等），让他们使用我们易用的工具创建现实世界的任务、忠诚度或会员计划等。",
 		},
+		events: {
+			title: "bonuz Events",
+			description:
+				"我们自己的活动平台，适用于线下和线上活动 \u2014 类似Luma和Meetup，原生集成在bonuz生态系统中。通过合作伙伴仪表板创建的品牌活动、任务和激活内容会在此展示，供用户发现和参与。",
+		},
+		chess: {
+			title: "Onchain Chess",
+			description:
+				"一款完全在链上运行的玩家对战国际象棋游戏。每一步都记录在区块链上，创建透明、可验证且永久的游戏记录。竞技国际象棋遇见Web3。",
+		},
+		habibiPass: {
+			title: "Habibi Pass",
+			description:
+				"面向阿联酋的旅游互动平台，通过优惠券、奖励和专属优惠将游客与当地餐厅和商家连接起来。为游客和商家创造双赢。",
+		},
 		whiteLabel: {
 			title: "白标平台",
 			description:
