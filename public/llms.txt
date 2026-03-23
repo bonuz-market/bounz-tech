@@ -32,6 +32,24 @@ Comprehensive dashboard for brand partners (events, restaurants, communities, en
 - URL: https://app.bonuz.market
 - Category: BusinessApplication
 
+### bonuz Events
+Event platform for real-world and digital events, natively integrated with the bonuz ecosystem. Brand events, quests, and activations created through the Partner Dashboard are surfaced here for users to discover and join. Similar to Luma and Meetup.
+- URL: https://app.bonuz.xyz
+- Category: SocialNetworkingApplication
+- Price: Free
+
+### Onchain Chess
+Fully onchain player-versus-player chess game. Every move is recorded on the blockchain, creating transparent, verifiable, and permanent game records.
+- URL: https://onchainchess.com
+- Category: GameApplication
+- Price: Free
+
+### Habibi Pass
+Tourist engagement platform for the UAE that connects visitors with local restaurants and businesses through vouchers, rewards, and exclusive deals. A win-win for tourists and local businesses.
+- URL: https://habibipass.bonuz.xyz
+- Category: TravelApplication
+- Price: Free
+
 ## Services
 
 ### White-label Blockchain Platforms
@@ -77,6 +95,9 @@ Dubai, United Arab Emirates
 - Lifestyle Wallet: https://bonuz.xyz
 - Identity Platform: https://bonuz.id
 - Partner Dashboard: https://app.bonuz.market
+- Events Platform: https://app.bonuz.xyz
+- Onchain Chess: https://onchainchess.com
+- Habibi Pass: https://habibipass.bonuz.xyz
 - Dubai Blockchain Center: https://www.dubaiblockchaincenter.com
 
 ## Languages

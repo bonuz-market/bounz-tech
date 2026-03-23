@@ -631,10 +631,79 @@ html[dir="rtl"] .lang-dropdown {
 	font-weight: 400;
 }
 
+/* Mobile Menu (hamburger) */
+.mobile-menu {
+	display: none;
+	position: relative;
+}
+
+.mobile-menu-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+	height: 38px;
+	background: rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 10px;
+	color: rgba(255, 255, 255, 0.9);
+	cursor: pointer;
+	transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+	background: rgba(255, 255, 255, 0.14);
+	border-color: rgba(255, 255, 255, 0.25);
+}
+
+.mobile-menu-dropdown {
+	position: absolute;
+	top: calc(100% + 8px);
+	left: 50%;
+	transform: translateX(-50%) translateY(-6px) scale(0.96);
+	background: rgba(20, 20, 20, 0.95);
+	backdrop-filter: blur(24px);
+	-webkit-backdrop-filter: blur(24px);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 14px;
+	padding: 6px;
+	min-width: 180px;
+	opacity: 0;
+	transition: all 0.2s ease;
+	pointer-events: none;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu-dropdown-open {
+	opacity: 1;
+	transform: translateX(-50%) translateY(0) scale(1);
+	pointer-events: auto;
+}
+
+.mobile-menu-link {
+	display: block;
+	width: 100%;
+	padding: 10px 16px;
+	border-radius: 9px;
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	font-size: 0.88rem;
+	font-weight: 500;
+	transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mobile-menu-link:hover {
+	background: rgba(255, 255, 255, 0.08);
+	color: white;
+}
+
 /* Mobile */
 @media (max-width: 768px) {
 	.site-header {
 		padding: 14px 16px;
+		padding-inline-end: 100px;
 	}
 
 	.header-logo {
@@ -668,8 +737,17 @@ html[dir="rtl"] .lang-dropdown {
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
 	.header-nav {
 		display: none;
+	}
+
+	.mobile-menu {
+		display: block;
+		margin-inline-start: auto;
+	}
+
+	.site-header {
+		padding-inline-end: 100px;
 	}
 }

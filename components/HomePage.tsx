@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Galaxy from "@/components/Galaxy";
 import SpotlightCard from "@/components/SpotlightCard";
@@ -14,6 +15,25 @@ export default function HomePage({
 	locale: string;
 }) {
 	const currentYear = new Date().getFullYear();
+	const [menuOpen, setMenuOpen] = useState(false);
+	const menuRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		function handleClickOutside(e: MouseEvent) {
+			if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+				setMenuOpen(false);
+			}
+		}
+		document.addEventListener("mousedown", handleClickOutside);
+		return () => document.removeEventListener("mousedown", handleClickOutside);
+	}, []);
+
+	const navLinks = [
+		{ href: "#what-we-do", label: dict.whatWeDo.title },
+		{ href: "#our-work", label: dict.ourWork.title },
+		{ href: "#founder", label: dict.founder.title },
+		{ href: "#request-intro", label: dict.hero.projectIntake },
+	];
 
 	return (
 		<>
@@ -33,20 +53,65 @@ export default function HomePage({
 					/>
 				</Link>
 
+				{/* Desktop nav */}
 				<nav className="header-nav" aria-label="Main navigation">
-					<a href="#what-we-do" className="nav-link">
-						{dict.whatWeDo.title}
-					</a>
-					<a href="#our-work" className="nav-link">
-						{dict.ourWork.title}
-					</a>
-					<a href="#founder" className="nav-link">
-						{dict.founder.title}
-					</a>
+					{navLinks.slice(0, 3).map((link) => (
+						<a key={link.href} href={link.href} className="nav-link">
+							{link.label}
+						</a>
+					))}
 					<a href="#request-intro" className="nav-link nav-link-cta">
 						{dict.hero.projectIntake}
 					</a>
 				</nav>
+
+				{/* Mobile menu */}
+				<div className="mobile-menu" ref={menuRef}>
+					<button
+						className="mobile-menu-btn"
+						onClick={() => setMenuOpen(!menuOpen)}
+						aria-label="Menu"
+						aria-expanded={menuOpen}
+					>
+						<svg
+							width="18"
+							height="18"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							{menuOpen ? (
+								<>
+									<line x1="18" y1="6" x2="6" y2="18" />
+									<line x1="6" y1="6" x2="18" y2="18" />
+								</>
+							) : (
+								<>
+									<line x1="3" y1="6" x2="21" y2="6" />
+									<line x1="3" y1="12" x2="21" y2="12" />
+									<line x1="3" y1="18" x2="21" y2="18" />
+								</>
+							)}
+						</svg>
+					</button>
+					<div
+						className={`mobile-menu-dropdown ${menuOpen ? "mobile-menu-dropdown-open" : ""}`}
+					>
+						{navLinks.map((link) => (
+							<a
+								key={link.href}
+								href={link.href}
+								className="mobile-menu-link"
+								onClick={() => setMenuOpen(false)}
+							>
+								{link.label}
+							</a>
+						))}
+					</div>
+				</div>
 			</header>
 
 			{/* Hero Section */}
