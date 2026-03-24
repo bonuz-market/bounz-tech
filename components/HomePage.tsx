@@ -280,6 +280,51 @@ export default function HomePage({
 							className="work-card-wrapper"
 							spotlightColor="rgba(255, 0, 204, 0.25)"
 						>
+							<a
+								className="work-card"
+								href="https://uae971.social"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.uae971.title}</h3>
+								<p>{dict.ourWork.uae971.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a
+								className="work-card"
+								href="https://skyshield.bonuz.tech"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.skyShield.title}</h3>
+								<p>{dict.ourWork.skyShield.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
+							<a
+								className="work-card"
+								href="https://kilocorn.com"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<h3>{dict.ourWork.kilocorn.title}</h3>
+								<p>{dict.ourWork.kilocorn.description}</p>
+							</a>
+						</SpotlightCard>
+
+						<SpotlightCard
+							className="work-card-wrapper"
+							spotlightColor="rgba(255, 0, 204, 0.25)"
+						>
 							<a className="work-card" href="#request-intro">
 								<h3>{dict.ourWork.whiteLabel.title}</h3>
 								<p>{dict.ourWork.whiteLabel.description}</p>

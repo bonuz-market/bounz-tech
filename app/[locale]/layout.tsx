@@ -335,6 +335,44 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				},
 			},
 			{
+				"@type": "SoftwareApplication",
+				name: "UAE971",
+				description: dict.ourWork.uae971.description,
+				url: "https://uae971.social",
+				applicationCategory: "SocialNetworkingApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "Kilocorn",
+				description: dict.ourWork.kilocorn.description,
+				url: "https://kilocorn.com",
+				applicationCategory: "ReferenceApplication",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
 				"@type": "Service",
 				name: dict.ourWork.whiteLabel.title,
 				description: dict.ourWork.whiteLabel.description,

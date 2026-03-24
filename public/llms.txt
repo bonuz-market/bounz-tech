@@ -50,6 +50,23 @@ Tourist engagement platform for the UAE that connects visitors with local restau
 - Category: TravelApplication
 - Price: Free
 
+### UAE971
+The UAE's national creator index, tracking every voice building the country's global reputation on social media. Indexes residents, visitors, and international creators across all seven Emirates.
+- URL: https://uae971.social
+- Category: SocialNetworkingApplication
+- Price: Free
+
+### Kilocorn
+The trillion-dollar index — defining the kilocorn era. Tracks companies and assets valued at $1 trillion or more, the natural evolution of startup nomenclature.
+- URL: https://kilocorn.com
+- Category: ReferenceApplication
+- Price: Free
+
+### SkyShield (Non-Profit Research)
+A non-profit, open-source research concept exploring whether commercial FPV drones could be used for community-based coastal defense. All research is published openly. Not affiliated with any arms manufacturer.
+- URL: https://skyshield.bonuz.tech
+- Classification: Non-Profit, Open Source Research
+
 ## Services
 
 ### White-label Blockchain Platforms
@@ -98,6 +115,9 @@ Dubai, United Arab Emirates
 - Events Platform: https://app.bonuz.xyz
 - Onchain Chess: https://onchainchess.com
 - Habibi Pass: https://habibipass.bonuz.xyz
+- UAE971 Creator Index: https://uae971.social
+- Kilocorn Index: https://kilocorn.com
+- SkyShield Research: https://skyshield.bonuz.tech
 - Dubai Blockchain Center: https://www.dubaiblockchaincenter.com
 
 ## Languages

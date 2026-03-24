@@ -109,6 +109,21 @@ const de: Dictionary = {
 			description:
 				"Eine Tourismus-Engagement-Plattform f\u00fcr die VAE, die Besucher mit lokalen Restaurants und Unternehmen durch Gutscheine, Pr\u00e4mien und exklusive Angebote verbindet. Eine Win-Win-Situation f\u00fcr Touristen und Unternehmen.",
 		},
+		uae971: {
+			title: "UAE971",
+			description:
+				"Der nationale Creator-Index der VAE, der jede Stimme erfasst, die den globalen Ruf des Landes in den sozialen Medien aufbaut. Indexiert Einwohner, Besucher und internationale Creator in allen sieben Emiraten mit Live-Bewertung und Rankings.",
+		},
+		skyShield: {
+			title: "SkyShield",
+			description:
+				"Ein gemeinn\u00fctziges, quelloffenes Forschungskonzept, das untersucht, ob kommerzielle FPV-Drohnen f\u00fcr gemeinschaftsbasierte K\u00fcstenverteidigung eingesetzt werden k\u00f6nnten. Alle Forschungsergebnisse werden offen ver\u00f6ffentlicht \u2014 unser Beitrag f\u00fcr eine sicherere Welt.",
+		},
+		kilocorn: {
+			title: "Kilocorn",
+			description:
+				"Der Billionen-Dollar-Index \u2014 die Kilocorn-\u00c4ra definieren. Verfolgt Unternehmen und Verm\u00f6genswerte mit einem Wert von \u00fcber 1 Billion US-Dollar, gem\u00e4\u00df der metrischen Progression von Unicorn \u00fcber Decacorn und Hectocorn zu Kilocorn.",
+		},
 		whiteLabel: {
 			title: "White-Label-Plattformen",
 			description:
@@ -120,9 +135,9 @@ const de: Dictionary = {
 				"Wir beraten gelegentlich zu Produktarchitektur, User Experience und Infrastrukturentscheidungen für Teams, die im oder um das bonuz-Ökosystem herum entwickeln.",
 		},
 		nextLayer: {
-			title: "Next Layer",
+			title: "bonuz Next Layer",
 			description:
-				"Demnächst. Die gleiche Magie, aber in deiner Brille. Onchain-Präsenz trifft auf räumliche Realität.",
+				"Demnächst. bonuz Next Layer bringt das Ökosystem in die erweiterte Realität \u2014 bonuz-Anwendungen laufen nativ auf Datenbrillen und Spatial-Computing-Geräten. Die Zukunft, die man trägt.",
 		},
 		footer: "Das meiste, was wir bauen, ist nie laut. Es funktioniert einfach.",
 	},

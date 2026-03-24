@@ -57,6 +57,9 @@ export type Dictionary = {
 		events: { title: string; description: string };
 		chess: { title: string; description: string };
 		habibiPass: { title: string; description: string };
+		uae971: { title: string; description: string };
+		skyShield: { title: string; description: string };
+		kilocorn: { title: string; description: string };
 		whiteLabel: { title: string; description: string };
 		consulting: { title: string; description: string };
 		nextLayer: { title: string; description: string };

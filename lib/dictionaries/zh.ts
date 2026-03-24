@@ -108,6 +108,21 @@ const zh: Dictionary = {
 			description:
 				"面向阿联酋的旅游互动平台，通过优惠券、奖励和专属优惠将游客与当地餐厅和商家连接起来。为游客和商家创造双赢。",
 		},
+		uae971: {
+			title: "UAE971",
+			description:
+				"阿联酋国家创作者指数，追踪每一个在社交媒体上建设国家全球声誉的声音。索引所有七个酋长国的居民、游客和国际创作者，提供实时评分和排名。",
+		},
+		skyShield: {
+			title: "SkyShield",
+			description:
+				"一个非营利、开源的研究概念，探索商用FPV无人机是否可用于社区海岸防御。所有研究成果公开发布 \u2014 我们为更安全世界做出的贡献。",
+		},
+		kilocorn: {
+			title: "Kilocorn",
+			description:
+				"万亿美元指数 \u2014 定义Kilocorn时代。追踪价值1万亿美元或以上的公司和资产，遵循从独角兽到十角兽、百角兽再到千角兽的度量级进程。",
+		},
 		whiteLabel: {
 			title: "白标平台",
 			description:
@@ -119,9 +134,9 @@ const zh: Dictionary = {
 				"我们偶尔为在bonuz生态系统中或其周围构建项目的团队提供产品架构、用户体验和基础设施选择方面的咨询。",
 		},
 		nextLayer: {
-			title: "下一层",
+			title: "bonuz Next Layer",
 			description:
-				"即将推出。同样的魔力，但在你的眼镜中。链上存在与空间现实的交汇。",
+				"即将推出。bonuz Next Layer将生态系统带入增强现实 \u2014 在智能眼镜和空间计算设备上原生运行bonuz应用。你穿戴的未来。",
 		},
 		footer: "我们构建的大多数东西从不张扬。它们只是默默运行。",
 	},
