@@ -21,7 +21,7 @@ function getPreferredLocale(request: NextRequest): string {
 	return defaultLocale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	// Redirect www to non-www (canonical domain)
@@ -39,7 +39,11 @@ export function middleware(request: NextRequest) {
 			pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
 	);
 
-	if (pathnameHasLocale) return;
+	if (pathnameHasLocale) {
+		const response = NextResponse.next();
+		response.headers.set("x-next-pathname", pathname);
+		return response;
+	}
 
 	// Detect preferred locale from Accept-Language header
 	const locale = getPreferredLocale(request);
@@ -52,6 +56,6 @@ export function middleware(request: NextRequest) {
 export const config = {
 	matcher: [
 		// Match all paths except static files and Next.js internals
-		"/((?!_next|favicon\\.ico|favicon|apple-touch-icon|site\\.webmanifest|robots\\.txt|sitemap\\.xml|og-image|llms\\.txt|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|xml|txt|webmanifest)).*)",
+		"/((?!_next|favicon\\.ico|favicon|apple-touch-icon|site\\.webmanifest|robots\\.txt|sitemap\\.xml|og-image|llms\\.txt|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|xml|txt|html|webmanifest)).*)",
 	],
 };

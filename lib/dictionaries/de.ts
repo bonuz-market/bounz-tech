@@ -46,6 +46,8 @@ const de: Dictionary = {
 		a3: "Ja, Bonuz bietet White-Label-Blockchain-Plattformen für Unternehmen an. Wir nutzen unsere Kernmodule einschließlich Identität, Wallet-Struktur, Quest-, Treue- und Mitgliedschaftssysteme, um vollständig gebrandete Apps zu starten.",
 		q4: "Was ist eine selbstverwaltete Wallet?",
 		a4: "Eine selbstverwaltete Wallet gibt Nutzern die volle Eigentümerschaft und Kontrolle über ihre digitalen Vermögenswerte und privaten Schlüssel, ohne auf Dritte angewiesen zu sein. Die bonuz Lifestyle Wallet ist benutzerfreundlich gestaltet und gewährleistet gleichzeitig volle Selbstverwaltung.",
+		q5: "Was ist bonuz ID und wie funktioniert es?",
+		a5: "bonuz ID ist eine einheitliche Plattform für digitale Identität, auf der Nutzer alle ihre Links, sozialen Profile und ihre Online-Präsenz auf einer einfachen öffentlichen Seite verbinden können. Es funktioniert als fortschrittliche, kostenlose Alternative zu Linktree mit Blockchain-basierter Identitätsverifizierung, verfügbar unter bonuz.id.",
 	},
 	breadcrumbs: {
 		home: "Startseite",
@@ -92,6 +94,36 @@ const de: Dictionary = {
 			description:
 				"Ein umfassendes Dashboard, das unsere Markenpartner wie Events, Restaurants, Communities, Unternehmen, Creator und andere befähigt, ihre realen Quests, Treue- oder Mitgliedschaftsprogramme und mehr mit unseren benutzerfreundlichen Tools zu erstellen.",
 		},
+		events: {
+			title: "bonuz Events",
+			description:
+				"Unsere eigene Eventplattform f\u00fcr reale und digitale Veranstaltungen \u2014 wie Luma und Meetup, nativ in das bonuz-\u00d6kosystem integriert. Marken-Events, Quests und Aktionen, die \u00fcber das Partner Dashboard erstellt werden, erscheinen hier f\u00fcr Nutzer zum Entdecken und Teilnehmen.",
+		},
+		chess: {
+			title: "Onchain Chess",
+			description:
+				"Ein vollst\u00e4ndig onchain ablaufendes Spieler-gegen-Spieler-Schachspiel. Jeder Zug wird auf der Blockchain aufgezeichnet und schafft transparente, verifizierbare und permanente Spielprotokolle. Wettbewerbsschach trifft auf Web3.",
+		},
+		habibiPass: {
+			title: "Habibi Pass",
+			description:
+				"Eine Tourismus-Engagement-Plattform f\u00fcr die VAE, die Besucher mit lokalen Restaurants und Unternehmen durch Gutscheine, Pr\u00e4mien und exklusive Angebote verbindet. Eine Win-Win-Situation f\u00fcr Touristen und Unternehmen.",
+		},
+		uae971: {
+			title: "UAE971",
+			description:
+				"Der nationale Creator-Index der VAE, der jede Stimme erfasst, die den globalen Ruf des Landes in den sozialen Medien aufbaut. Indexiert Einwohner, Besucher und internationale Creator in allen sieben Emiraten mit Live-Bewertung und Rankings.",
+		},
+		skyShield: {
+			title: "SkyShield",
+			description:
+				"Ein gemeinn\u00fctziges, quelloffenes Forschungskonzept, das untersucht, ob kommerzielle FPV-Drohnen f\u00fcr gemeinschaftsbasierte K\u00fcstenverteidigung eingesetzt werden k\u00f6nnten. Alle Forschungsergebnisse werden offen ver\u00f6ffentlicht \u2014 unser Beitrag f\u00fcr eine sicherere Welt.",
+		},
+		kilocorn: {
+			title: "Kilocorn",
+			description:
+				"Der Billionen-Dollar-Index \u2014 die Kilocorn-\u00c4ra definieren. Verfolgt Unternehmen und Verm\u00f6genswerte mit einem Wert von \u00fcber 1 Billion US-Dollar, gem\u00e4\u00df der metrischen Progression von Unicorn \u00fcber Decacorn und Hectocorn zu Kilocorn.",
+		},
 		whiteLabel: {
 			title: "White-Label-Plattformen",
 			description:
@@ -103,9 +135,9 @@ const de: Dictionary = {
 				"Wir beraten gelegentlich zu Produktarchitektur, User Experience und Infrastrukturentscheidungen für Teams, die im oder um das bonuz-Ökosystem herum entwickeln.",
 		},
 		nextLayer: {
-			title: "Next Layer",
+			title: "bonuz Next Layer",
 			description:
-				"Demnächst. Die gleiche Magie, aber in deiner Brille. Onchain-Präsenz trifft auf räumliche Realität.",
+				"Demnächst. bonuz Next Layer bringt das Ökosystem in die erweiterte Realität \u2014 bonuz-Anwendungen laufen nativ auf Datenbrillen und Spatial-Computing-Geräten. Die Zukunft, die man trägt.",
 		},
 		footer: "Das meiste, was wir bauen, ist nie laut. Es funktioniert einfach.",
 	},

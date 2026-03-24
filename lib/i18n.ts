@@ -26,6 +26,8 @@ export type Dictionary = {
 		a3: string;
 		q4: string;
 		a4: string;
+		q5: string;
+		a5: string;
 	};
 	breadcrumbs: {
 		home: string;
@@ -52,6 +54,12 @@ export type Dictionary = {
 		wallet: { title: string; description: string };
 		id: { title: string; description: string };
 		dashboard: { title: string; description: string };
+		events: { title: string; description: string };
+		chess: { title: string; description: string };
+		habibiPass: { title: string; description: string };
+		uae971: { title: string; description: string };
+		skyShield: { title: string; description: string };
+		kilocorn: { title: string; description: string };
 		whiteLabel: { title: string; description: string };
 		consulting: { title: string; description: string };
 		nextLayer: { title: string; description: string };

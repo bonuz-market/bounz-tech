@@ -46,6 +46,8 @@ const en: Dictionary = {
 		a3: "Yes, Bonuz offers white-label blockchain platforms for enterprises. We use our core modules including identity, wallet structure, quest, loyalty and membership systems to launch fully branded apps without building from scratch.",
 		q4: "What is a self-custodial wallet?",
 		a4: "A self-custodial wallet gives users full ownership and control of their digital assets and private keys, without relying on a third party. The bonuz Lifestyle Wallet is designed to be consumer-grade and easy to use while maintaining full self-custody.",
+		q5: "What is bonuz ID and how does it work?",
+		a5: "bonuz ID is a unified digital identity platform where users connect all their links, social profiles, and online presence into one simple public page. It functions as an advanced, free alternative to Linktree with blockchain-based identity verification, available at bonuz.id.",
 	},
 	breadcrumbs: {
 		home: "Home",
@@ -92,6 +94,36 @@ const en: Dictionary = {
 			description:
 				"A comprehensive dashboard to empower our brand partners such as events, restaurants, communities, enterprises, creators and others to create their real-world quests, loyalty or membership programs and more with our easy-to-use tools.",
 		},
+		events: {
+			title: "bonuz Events",
+			description:
+				"Our own event platform for real-world and digital events \u2014 like Luma and Meetup, built natively into the bonuz ecosystem. Brand events, quests, and activations created through the Partner Dashboard are surfaced here for users to discover and join.",
+		},
+		chess: {
+			title: "Onchain Chess",
+			description:
+				"A fully onchain player-versus-player chess game. Every move is recorded on the blockchain, creating transparent, verifiable, and permanent game records. Competitive chess meets Web3.",
+		},
+		habibiPass: {
+			title: "Habibi Pass",
+			description:
+				"A tourist engagement platform for the UAE that connects visitors with local restaurants and businesses through vouchers, rewards, and exclusive deals. A win-win for tourists discovering the best of the UAE and businesses gaining new customers.",
+		},
+		uae971: {
+			title: "UAE971",
+			description:
+				"The UAE's national creator index, tracking every voice building the country's global reputation on social media. Indexes residents, visitors, and international creators across all seven Emirates with live scoring and rankings.",
+		},
+		skyShield: {
+			title: "SkyShield",
+			description:
+				"A non-profit, open-source research concept exploring whether commercial FPV drones could be used for community-based coastal defense. All research is published openly \u2014 our contribution toward a safer world.",
+		},
+		kilocorn: {
+			title: "Kilocorn",
+			description:
+				"The trillion-dollar index \u2014 defining the kilocorn era. Tracks companies and assets valued at $1 trillion or more, following the metric progression from unicorn to decacorn to hectocorn to kilocorn.",
+		},
 		whiteLabel: {
 			title: "White-label platforms",
 			description:
@@ -103,9 +135,9 @@ const en: Dictionary = {
 				"We occasionally consult on product architecture, user experience, and infrastructure choices for teams building in or around the bonuz ecosystem.",
 		},
 		nextLayer: {
-			title: "Next Layer",
+			title: "bonuz Next Layer",
 			description:
-				"Coming soon. The same magic, but in your glasses. Onchain presence meets spatial reality.",
+				"Coming soon. bonuz Next Layer brings the ecosystem into augmented reality \u2014 running bonuz applications natively on smart glasses and spatial computing devices. The future you wear.",
 		},
 		footer: "Most of what we build is never loud. It just works.",
 	},
