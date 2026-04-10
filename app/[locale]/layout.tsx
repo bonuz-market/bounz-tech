@@ -300,6 +300,26 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 			},
 			{
 				"@type": "SoftwareApplication",
+				name: "bonuz Swapz",
+				description: dict.ourWork.swapz.description,
+				url: "https://swapz.bonuz.market",
+				applicationCategory: "FinanceApplication",
+				operatingSystem: "Web",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
 				name: "bonuz Events",
 				description: dict.ourWork.events.description,
 				url: "https://app.bonuz.xyz",

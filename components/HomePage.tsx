@@ -37,6 +37,7 @@ const workItems: {
 	{ key: "wallet", href: "https://bonuz.xyz", external: true },
 	{ key: "id", href: "https://bonuz.id", external: true },
 	{ key: "dashboard", href: "https://app.bonuz.market", external: true },
+	{ key: "swapz", href: "https://swapz.bonuz.market", external: true },
 	{ key: "events", href: "https://app.bonuz.xyz", external: true },
 	{ key: "chess", href: "https://onchainchess.com", external: true },
 	{ key: "habibiPass", href: "https://habibipass.bonuz.xyz", external: true },
