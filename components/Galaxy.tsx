@@ -1,3 +1,5 @@
+"use client";
+
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
 import { useEffect, useRef } from "react";
 
@@ -83,7 +85,7 @@ float Star(vec2 uv, float flare) {
 vec3 StarLayer(vec2 uv) {
   vec3 col = vec3(0.0);
 
-  vec2 gv = fract(uv) - 0.5; 
+  vec2 gv = fract(uv) - 0.5;
   vec2 id = floor(uv);
 
   for (int y = -1; y <= 1; y++) {
@@ -99,7 +101,7 @@ vec3 StarLayer(vec2 uv) {
       float blu = smoothstep(STAR_COLOR_CUTOFF, 1.0, Hash21(si + 3.0)) + STAR_COLOR_CUTOFF;
       float grn = min(red, blu) * seed;
       vec3 base = vec3(red, grn, blu);
-      
+
       float hue = atan(base.g - base.r, base.b - base.r) / (2.0 * 3.14159) + 0.5;
       hue = fract(hue + uHueShift / 360.0);
       float sat = length(base - vec3(dot(base, vec3(0.299, 0.587, 0.114)))) * uSaturation;
@@ -114,7 +116,7 @@ vec3 StarLayer(vec2 uv) {
       float twinkle = trisn(uTime * uSpeed + seed * 6.2831) * 0.5 + 1.0;
       twinkle = mix(1.0, twinkle, uTwinkleIntensity);
       star *= twinkle;
-      
+
       col += star * size * color;
     }
   }
@@ -127,7 +129,7 @@ void main() {
   vec2 uv = (vUv * uResolution.xy - focalPx) / uResolution.y;
 
   vec2 mouseNorm = uMouse - vec2(0.5);
-  
+
   if (uAutoCenterRepulsion > 0.0) {
     vec2 centerUV = vec2(0.0, 0.0);
     float centerDist = length(uv - centerUV);
@@ -188,9 +190,12 @@ interface GalaxyProps {
 	transparent?: boolean;
 }
 
+const DEFAULT_FOCAL: [number, number] = [0.5, 0.5];
+const DEFAULT_ROTATION: [number, number] = [1.0, 0.0];
+
 export default function Galaxy({
-	focal = [0.5, 0.5],
-	rotation = [1.0, 0.0],
+	focal = DEFAULT_FOCAL,
+	rotation = DEFAULT_ROTATION,
 	starSpeed = 0.5,
 	density = 1,
 	hueShift = 140,
@@ -205,7 +210,6 @@ export default function Galaxy({
 	rotationSpeed = 0.1,
 	autoCenterRepulsion = 0,
 	transparent = true,
-	...rest
 }: GalaxyProps) {
 	const ctnDom = useRef<HTMLDivElement>(null);
 	const targetMousePos = useRef({ x: 0.5, y: 0.5 });
@@ -213,9 +217,22 @@ export default function Galaxy({
 	const targetMouseActive = useRef(0.0);
 	const smoothMouseActive = useRef(0.0);
 
+	const focalX = focal[0];
+	const focalY = focal[1];
+	const rotationX = rotation[0];
+	const rotationY = rotation[1];
+
 	useEffect(() => {
 		if (!ctnDom.current) return;
 		const ctn = ctnDom.current;
+
+		// Respect prefers-reduced-motion
+		const prefersReducedMotion = window.matchMedia(
+			"(prefers-reduced-motion: reduce)"
+		).matches;
+		const shouldAnimate = !disableAnimation && !prefersReducedMotion;
+
+		const dpr = Math.min(window.devicePixelRatio, 2);
 		const renderer = new Renderer({
 			alpha: transparent,
 			premultipliedAlpha: false,
@@ -230,26 +247,10 @@ export default function Galaxy({
 			gl.clearColor(0, 0, 0, 1);
 		}
 
-		let program: Program;
 		let cachedRect = ctn.getBoundingClientRect();
 
-		function resize() {
-			const scale = 1;
-			renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
-			cachedRect = ctn.getBoundingClientRect();
-			if (program) {
-				program.uniforms.uResolution.value = new Color(
-					gl.canvas.width,
-					gl.canvas.height,
-					gl.canvas.width / gl.canvas.height
-				);
-			}
-		}
-		window.addEventListener("resize", resize, false);
-		resize();
-
 		const geometry = new Triangle(gl);
-		program = new Program(gl, {
+		const program = new Program(gl, {
 			vertex: vertexShader,
 			fragment: fragmentShader,
 			uniforms: {
@@ -261,8 +262,8 @@ export default function Galaxy({
 						gl.canvas.width / gl.canvas.height
 					),
 				},
-				uFocal: { value: new Float32Array(focal) },
-				uRotation: { value: new Float32Array(rotation) },
+				uFocal: { value: new Float32Array([focalX, focalY]) },
+				uRotation: { value: new Float32Array([rotationX, rotationY]) },
 				uStarSpeed: { value: starSpeed },
 				uDensity: { value: density },
 				uHueShift: { value: hueShift },
@@ -285,6 +286,20 @@ export default function Galaxy({
 			},
 		});
 
+		function resize() {
+			renderer.setSize(ctn.offsetWidth * dpr, ctn.offsetHeight * dpr);
+			gl.canvas.style.width = ctn.offsetWidth + "px";
+			gl.canvas.style.height = ctn.offsetHeight + "px";
+			cachedRect = ctn.getBoundingClientRect();
+			program.uniforms.uResolution.value = new Color(
+				gl.canvas.width,
+				gl.canvas.height,
+				gl.canvas.width / gl.canvas.height
+			);
+		}
+		window.addEventListener("resize", resize, false);
+		resize();
+
 		const mesh = new Mesh(gl, { geometry, program });
 		let animateId: number;
 		let isVisible = false;
@@ -292,7 +307,7 @@ export default function Galaxy({
 		function update(t: number) {
 			if (!isVisible) return;
 			animateId = requestAnimationFrame(update);
-			if (!disableAnimation) {
+			if (shouldAnimate) {
 				program.uniforms.uTime.value = t * 0.001;
 				program.uniforms.uStarSpeed.value = (t * 0.001 * starSpeed) / 10.0;
 			}
@@ -313,13 +328,21 @@ export default function Galaxy({
 			renderer.render({ scene: mesh });
 		}
 
+		// For reduced motion: render a single static frame
+		if (!shouldAnimate) {
+			program.uniforms.uTime.value = 0;
+			renderer.render({ scene: mesh });
+		}
+
 		// Only render when visible in viewport
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting && !isVisible) {
 						isVisible = true;
-						animateId = requestAnimationFrame(update);
+						if (shouldAnimate) {
+							animateId = requestAnimationFrame(update);
+						}
 					} else if (!entry.isIntersecting && isVisible) {
 						isVisible = false;
 						cancelAnimationFrame(animateId);
@@ -373,8 +396,8 @@ export default function Galaxy({
 			gl.getExtension("WEBGL_lose_context")?.loseContext();
 		};
 	}, [
-		focal,
-		rotation,
+		focalX, focalY,
+		rotationX, rotationY,
 		starSpeed,
 		density,
 		hueShift,
@@ -391,5 +414,12 @@ export default function Galaxy({
 		transparent,
 	]);
 
-	return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
+	return (
+		<div
+			ref={ctnDom}
+			className="w-full h-full relative"
+			aria-hidden="true"
+			role="presentation"
+		/>
+	);
 }

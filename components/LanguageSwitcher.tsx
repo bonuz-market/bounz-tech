@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { locales, localeNames, type Locale } from "@/lib/i18n";
 
@@ -20,6 +20,15 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
 
+	const handleKeyDown = useCallback(
+		(e: React.KeyboardEvent) => {
+			if (e.key === "Escape") {
+				setOpen(false);
+			}
+		},
+		[]
+	);
+
 	function switchLocale(newLocale: Locale) {
 		const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
 		setOpen(false);
@@ -27,7 +36,7 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
 	}
 
 	return (
-		<div className="lang-switcher" ref={ref}>
+		<div className="lang-switcher" ref={ref} onKeyDown={handleKeyDown}>
 			<button
 				className="lang-btn"
 				onClick={() => setOpen(!open)}
@@ -43,6 +52,7 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
 					strokeWidth="2"
 					strokeLinecap="round"
 					strokeLinejoin="round"
+					aria-hidden="true"
 				>
 					<circle cx="12" cy="12" r="10" />
 					<path d="M2 12h20" />
@@ -59,16 +69,23 @@ export default function LanguageSwitcher({ locale }: { locale: Locale }) {
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					className={`lang-chevron ${open ? "lang-chevron-open" : ""}`}
+					aria-hidden="true"
 				>
 					<path d="M6 9l6 6 6-6" />
 				</svg>
 			</button>
-			<div className={`lang-dropdown ${open ? "lang-dropdown-open" : ""}`}>
+			<div
+				className={`lang-dropdown ${open ? "lang-dropdown-open" : ""}`}
+				role="listbox"
+				aria-label="Select language"
+			>
 				{locales.map((l) => (
 					<button
 						key={l}
 						className={`lang-option ${l === locale ? "lang-option-active" : ""}`}
 						onClick={() => switchLocale(l)}
+						role="option"
+						aria-selected={l === locale}
 					>
 						<span className="lang-option-code">{l.toUpperCase()}</span>
 						<span className="lang-option-name">{localeNames[l]}</span>

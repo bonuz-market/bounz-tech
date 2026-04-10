@@ -11,15 +11,26 @@ export async function generateStaticParams() {
 const siteUrl = "https://bonuz.tech";
 const siteName = "Bonuz Technology DMCC";
 
+function isLocale(value: string): value is Locale {
+	return locales.includes(value as Locale);
+}
+
+const ogLocaleMap: Record<Locale, string> = {
+	en: "en_US",
+	ar: "ar_AE",
+	de: "de_DE",
+	zh: "zh_CN",
+};
+
 export async function generateMetadata({
 	params,
 }: {
 	params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
 	const { locale } = await params;
-	if (!locales.includes(locale as Locale)) return {};
+	if (!isLocale(locale)) return {};
 
-	const dict = await getDictionary(locale as Locale);
+	const dict = await getDictionary(locale);
 
 	const alternatesLanguages: Record<string, string> = {
 		"x-default": `${siteUrl}/en`,
@@ -60,7 +71,10 @@ export async function generateMetadata({
 		},
 		openGraph: {
 			type: "website",
-			locale: locale === "zh" ? "zh_CN" : locale === "ar" ? "ar_AE" : locale === "de" ? "de_DE" : "en_US",
+			locale: ogLocaleMap[locale],
+			alternateLocale: locales
+				.filter((l) => l !== locale)
+				.map((l) => ogLocaleMap[l]),
 			url: `${siteUrl}/${locale}`,
 			siteName: siteName,
 			title: dict.meta.title,
@@ -98,7 +112,7 @@ export async function generateMetadata({
 			shortcut: [{ url: "/favicon.ico" }],
 		},
 		appleWebApp: {
-			title: "bonuz Tech",
+			title: siteName,
 		},
 		manifest: "/site.webmanifest",
 		category: "technology",
@@ -250,6 +264,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.id.description,
 				url: "https://bonuz.id",
 				applicationCategory: "SocialNetworkingApplication",
+				operatingSystem: "Web",
 				offers: {
 					"@type": "Offer",
 					price: "0",
@@ -269,6 +284,12 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.dashboard.description,
 				url: "https://app.bonuz.market",
 				applicationCategory: "BusinessApplication",
+				operatingSystem: "Web",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
 				brand: {
 					"@type": "Brand",
 					name: "bonuz",
@@ -283,6 +304,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.events.description,
 				url: "https://app.bonuz.xyz",
 				applicationCategory: "SocialNetworkingApplication",
+				operatingSystem: "Web, iOS, Android",
 				offers: {
 					"@type": "Offer",
 					price: "0",
@@ -302,6 +324,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.chess.description,
 				url: "https://onchainchess.com",
 				applicationCategory: "GameApplication",
+				operatingSystem: "Web",
 				offers: {
 					"@type": "Offer",
 					price: "0",
@@ -321,6 +344,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.habibiPass.description,
 				url: "https://habibipass.bonuz.xyz",
 				applicationCategory: "TravelApplication",
+				operatingSystem: "Web",
 				offers: {
 					"@type": "Offer",
 					price: "0",
@@ -340,6 +364,27 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.uae971.description,
 				url: "https://uae971.social",
 				applicationCategory: "SocialNetworkingApplication",
+				operatingSystem: "Web",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "SkyShield",
+				description: dict.ourWork.skyShield.description,
+				url: "https://skyshield.bonuz.tech",
+				applicationCategory: "UtilitiesApplication",
+				operatingSystem: "Web",
 				offers: {
 					"@type": "Offer",
 					price: "0",
@@ -359,11 +404,27 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				description: dict.ourWork.kilocorn.description,
 				url: "https://kilocorn.com",
 				applicationCategory: "ReferenceApplication",
+				operatingSystem: "Web",
 				offers: {
 					"@type": "Offer",
 					price: "0",
 					priceCurrency: "USD",
 				},
+				brand: {
+					"@type": "Brand",
+					name: "bonuz",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "bonuz Next Layer",
+				description: dict.ourWork.nextLayer.description,
+				url: `${siteUrl}/#our-work`,
+				applicationCategory: "UtilitiesApplication",
+				operatingSystem: "Web",
 				brand: {
 					"@type": "Brand",
 					name: "bonuz",
@@ -486,26 +547,27 @@ export default async function LocaleLayout({
 }) {
 	const { locale } = await params;
 
-	if (!locales.includes(locale as Locale)) {
+	if (!isLocale(locale)) {
 		notFound();
 	}
 
-	const dict = await getDictionary(locale as Locale);
-	const isRTL = rtlLocales.includes(locale as Locale);
+	const dict = await getDictionary(locale);
+	const isRTL = rtlLocales.includes(locale);
 	const structuredData = getStructuredData(locale, dict);
+	const htmlLang = locale === "zh" ? "zh-Hans" : locale;
 
-	// Build Google Fonts URL based on locale
-	const fontFamilies = ["Space+Grotesk:wght@300;400;500;600;700"];
+	// Build Google Fonts URL based on locale — only load weights actually used
+	const fontFamilies = ["Space+Grotesk:wght@400;500;600"];
 	if (locale === "ar") {
-		fontFamilies.push("Noto+Sans+Arabic:wght@300;400;500;600;700");
+		fontFamilies.push("Noto+Sans+Arabic:wght@400;500;600");
 	} else if (locale === "zh") {
-		fontFamilies.push("Noto+Sans+SC:wght@300;400;500;600;700");
+		fontFamilies.push("Noto+Sans+SC:wght@400;600");
 	}
 	const fontsUrl = `https://fonts.googleapis.com/css2?${fontFamilies.map((f) => `family=${f}`).join("&")}&display=swap`;
 
 	return (
 		<html
-			lang={locale}
+			lang={htmlLang}
 			dir={isRTL ? "rtl" : "ltr"}
 			className="scroll-smooth"
 		>
@@ -525,7 +587,7 @@ export default async function LocaleLayout({
 						__html: JSON.stringify(structuredData),
 					}}
 				/>
-				<LanguageSwitcher locale={locale as Locale} />
+				<LanguageSwitcher locale={locale} />
 				{children}
 			</body>
 		</html>
