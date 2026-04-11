@@ -2,10 +2,52 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import Galaxy from "@/components/Galaxy";
+import dynamic from "next/dynamic";
 import SpotlightCard from "@/components/SpotlightCard";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
+
+const Galaxy = dynamic(() => import("@/components/Galaxy"), { ssr: false });
+
+const currentYear = new Date().getFullYear();
+
+const galaxyProps = {
+	hueShift: 220,
+	density: 0.6,
+	glowIntensity: 0.3,
+	saturation: 0.8,
+	speed: 0.8,
+	starSpeed: 0.4,
+	twinkleIntensity: 0.9,
+	rotationSpeed: 0.15,
+	mouseRepulsion: true as const,
+	repulsionStrength: 0.3,
+	mouseInteraction: true,
+	autoCenterRepulsion: 0,
+	transparent: true,
+};
+
+type WorkItemKey = keyof Omit<Dictionary["ourWork"], "title" | "intro" | "footer">;
+
+const workItems: {
+	key: WorkItemKey;
+	href: string;
+	external: boolean;
+}[] = [
+	{ key: "wallet", href: "https://bonuz.xyz", external: true },
+	{ key: "id", href: "https://bonuz.id", external: true },
+	{ key: "dashboard", href: "https://app.bonuz.market", external: true },
+	{ key: "swapz", href: "https://swapz.bonuz.market", external: true },
+	{ key: "events", href: "https://app.bonuz.xyz", external: true },
+	{ key: "chess", href: "https://onchainchess.com", external: true },
+	{ key: "habibiPass", href: "https://habibipass.bonuz.xyz", external: true },
+	{ key: "uae971", href: "https://uae971.social", external: true },
+	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true },
+	{ key: "kilocorn", href: "https://kilocorn.com", external: true },
+	{ key: "whiteLabel", href: "#request-intro", external: false },
+	{ key: "consulting", href: "#request-intro", external: false },
+	{ key: "nextLayer", href: "#request-intro", external: false },
+];
 
 export default function HomePage({
 	dict,
@@ -14,7 +56,6 @@ export default function HomePage({
 	dict: Dictionary;
 	locale: string;
 }) {
-	const currentYear = new Date().getFullYear();
 	const [menuOpen, setMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
 
@@ -27,6 +68,17 @@ export default function HomePage({
 		document.addEventListener("mousedown", handleClickOutside);
 		return () => document.removeEventListener("mousedown", handleClickOutside);
 	}, []);
+
+	// Close mobile menu on Escape key
+	useEffect(() => {
+		function handleKeyDown(e: KeyboardEvent) {
+			if (e.key === "Escape" && menuOpen) {
+				setMenuOpen(false);
+			}
+		}
+		document.addEventListener("keydown", handleKeyDown);
+		return () => document.removeEventListener("keydown", handleKeyDown);
+	}, [menuOpen]);
 
 	const navLinks = [
 		{ href: "#what-we-do", label: dict.whatWeDo.title },
@@ -46,7 +98,7 @@ export default function HomePage({
 				>
 					<Image
 						src="/logo.svg"
-						alt="Bonuz Logo"
+						alt="Bonuz Technology DMCC"
 						width={180}
 						height={50}
 						priority
@@ -70,7 +122,7 @@ export default function HomePage({
 					<button
 						className="mobile-menu-btn"
 						onClick={() => setMenuOpen(!menuOpen)}
-						aria-label="Menu"
+						aria-label={menuOpen ? "Close menu" : "Open menu"}
 						aria-expanded={menuOpen}
 					>
 						<svg
@@ -82,6 +134,7 @@ export default function HomePage({
 							strokeWidth="2"
 							strokeLinecap="round"
 							strokeLinejoin="round"
+							aria-hidden="true"
 						>
 							{menuOpen ? (
 								<>
@@ -99,12 +152,14 @@ export default function HomePage({
 					</button>
 					<div
 						className={`mobile-menu-dropdown ${menuOpen ? "mobile-menu-dropdown-open" : ""}`}
+						role="menu"
 					>
 						{navLinks.map((link) => (
 							<a
 								key={link.href}
 								href={link.href}
 								className="mobile-menu-link"
+								role="menuitem"
 								onClick={() => setMenuOpen(false)}
 							>
 								{link.label}
@@ -116,22 +171,8 @@ export default function HomePage({
 
 			{/* Hero Section */}
 			<section id="hero" className="hero">
-				<div className="absolute inset-0 z-0">
-					<Galaxy
-						hueShift={220}
-						density={0.6}
-						glowIntensity={0.3}
-						saturation={0.8}
-						speed={0.8}
-						starSpeed={0.4}
-						twinkleIntensity={0.9}
-						rotationSpeed={0.15}
-						mouseRepulsion={true}
-						repulsionStrength={0.3}
-						mouseInteraction={true}
-						autoCenterRepulsion={0}
-						transparent={true}
-					/>
+				<div className="absolute inset-0 z-0" aria-hidden="true">
+					<Galaxy {...galaxyProps} />
 				</div>
 
 				<div className="hero-content">
@@ -164,192 +205,35 @@ export default function HomePage({
 
 			{/* Our Work Section */}
 			<section id="our-work" className="section-black relative">
-				<div className="absolute inset-0 z-0">
-					<Galaxy
-						hueShift={220}
-						density={0.6}
-						glowIntensity={0.3}
-						saturation={0.8}
-						speed={0.8}
-						starSpeed={0.4}
-						twinkleIntensity={0.9}
-						rotationSpeed={0.15}
-						mouseRepulsion={true}
-						repulsionStrength={0.3}
-						mouseInteraction={true}
-						autoCenterRepulsion={0}
-						transparent={true}
-					/>
+				<div className="absolute inset-0 z-0" aria-hidden="true">
+					<Galaxy {...galaxyProps} />
 				</div>
 				<div className="container relative">
 					<h2>{dict.ourWork.title}</h2>
 					<p className="intro-text">{dict.ourWork.intro}</p>
 
 					<div className="work-grid">
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://bonuz.xyz"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.wallet.title}</h3>
-								<p>{dict.ourWork.wallet.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://bonuz.id"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.id.title}</h3>
-								<p>{dict.ourWork.id.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://app.bonuz.market"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.dashboard.title}</h3>
-								<p>{dict.ourWork.dashboard.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://app.bonuz.xyz"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.events.title}</h3>
-								<p>{dict.ourWork.events.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://onchainchess.com"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.chess.title}</h3>
-								<p>{dict.ourWork.chess.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://habibipass.bonuz.xyz"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.habibiPass.title}</h3>
-								<p>{dict.ourWork.habibiPass.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://uae971.social"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.uae971.title}</h3>
-								<p>{dict.ourWork.uae971.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://skyshield.bonuz.tech"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.skyShield.title}</h3>
-								<p>{dict.ourWork.skyShield.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a
-								className="work-card"
-								href="https://kilocorn.com"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<h3>{dict.ourWork.kilocorn.title}</h3>
-								<p>{dict.ourWork.kilocorn.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a className="work-card" href="#request-intro">
-								<h3>{dict.ourWork.whiteLabel.title}</h3>
-								<p>{dict.ourWork.whiteLabel.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a className="work-card" href="#request-intro">
-								<h3>{dict.ourWork.consulting.title}</h3>
-								<p>{dict.ourWork.consulting.description}</p>
-							</a>
-						</SpotlightCard>
-
-						<SpotlightCard
-							className="work-card-wrapper"
-							spotlightColor="rgba(255, 0, 204, 0.25)"
-						>
-							<a className="work-card" href="#request-intro">
-								<h3>{dict.ourWork.nextLayer.title}</h3>
-								<p>{dict.ourWork.nextLayer.description}</p>
-							</a>
-						</SpotlightCard>
+						{workItems.map((item) => {
+							const work = dict.ourWork[item.key];
+							return (
+								<SpotlightCard
+									key={item.key}
+									className="work-card-wrapper"
+									spotlightColor="rgba(255, 0, 204, 0.25)"
+								>
+									<a
+										className="work-card"
+										href={item.href}
+										{...(item.external
+											? { target: "_blank", rel: "noopener noreferrer" }
+											: {})}
+									>
+										<h3>{work.title}</h3>
+										<p>{work.description}</p>
+									</a>
+								</SpotlightCard>
+							);
+						})}
 					</div>
 
 					<p className="work-footer">{dict.ourWork.footer}</p>
@@ -371,6 +255,7 @@ export default function HomePage({
 								href="https://x.com/mendematthias"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="Matthias Mende on X"
 							>
 								X
 							</a>
@@ -378,6 +263,7 @@ export default function HomePage({
 								href="https://linkedin.com/in/matthiasmende"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="Matthias Mende on LinkedIn"
 							>
 								LinkedIn
 							</a>
@@ -385,6 +271,7 @@ export default function HomePage({
 								href="https://bonuz.id/mende"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="Matthias Mende on bonuz ID"
 							>
 								bonuz ID
 							</a>
@@ -399,7 +286,12 @@ export default function HomePage({
 					<h2>{dict.intake.title}</h2>
 					<div className="request-content">
 						<p className="intro-text">{dict.intake.description}</p>
-						<a href="https://tally.so/r/7RR9r0" className="btn-form" target="_blank" rel="noopener noreferrer">
+						<a
+							href="https://tally.so/r/7RR9r0"
+							className="btn-form"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							{dict.intake.button}
 						</a>
 					</div>
@@ -415,17 +307,17 @@ export default function HomePage({
 							href="https://x.com/bonuzmarket"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-gray-500 hover:text-white transition-colors text-sm"
+							className="text-gray-400 hover:text-white transition-colors text-sm"
 							aria-label="Bonuz on X"
 						>
-							𝕏
+							&#x1D54F;
 						</a>
 						<span className="text-gray-700">·</span>
 						<a
 							href="https://linkedin.com/company/bonuzmarket"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-gray-500 hover:text-white transition-colors text-sm"
+							className="text-gray-400 hover:text-white transition-colors text-sm"
 							aria-label="Bonuz on LinkedIn"
 						>
 							LinkedIn
@@ -435,7 +327,7 @@ export default function HomePage({
 							href="https://github.com/bonuz-market"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-gray-500 hover:text-white transition-colors text-sm"
+							className="text-gray-400 hover:text-white transition-colors text-sm"
 							aria-label="Bonuz on GitHub"
 						>
 							GitHub

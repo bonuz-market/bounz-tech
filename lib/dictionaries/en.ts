@@ -94,10 +94,15 @@ const en: Dictionary = {
 			description:
 				"A comprehensive dashboard to empower our brand partners such as events, restaurants, communities, enterprises, creators and others to create their real-world quests, loyalty or membership programs and more with our easy-to-use tools.",
 		},
+		swapz: {
+			title: "bonuz Swapz",
+			description:
+				"A cross-chain token swap built for speed and simplicity. Trade any token across multiple blockchains in a single transaction \u2014 no manual bridging, no complexity. DeFi the way it should be.",
+		},
 		events: {
 			title: "bonuz Events",
 			description:
-				"Our own event platform for real-world and digital events \u2014 like Luma and Meetup, built natively into the bonuz ecosystem. Brand events, quests, and activations created through the Partner Dashboard are surfaced here for users to discover and join.",
+				"A discovery platform for real-world and digital events \u2014 think Luma meets Meetup, built natively on the bonuz human layer. Events, quests, and activations created by partners through the Dashboard appear here for users to find and join. One ecosystem from creation to attendance.",
 		},
 		chess: {
 			title: "Onchain Chess",
