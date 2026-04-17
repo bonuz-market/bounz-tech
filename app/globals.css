@@ -1,11 +1,40 @@
 @import "tailwindcss";
 
-/* Custom Bonuz Tech Styles */
+/* Bonuz brand typography: Urbanist (body) + Manrope (headings).
+   Fallback chains live INSIDE var() so declarations stay valid on render
+   paths that don't set --font-* (e.g. app/global-error.tsx renders its
+   own <html> without the next/font variable class). */
+html,
+body {
+	font-family: var(--font-urbanist, -apple-system, BlinkMacSystemFont,
+			"Segoe UI"), sans-serif;
+}
+
 body {
 	margin: 0;
-	font-family: "Space Grotesk", sans-serif;
 	background: #000;
 	color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-manrope, -apple-system, BlinkMacSystemFont,
+			"Segoe UI"), sans-serif;
+}
+
+p,
+li,
+label,
+button,
+input,
+textarea,
+select {
+	font-family: var(--font-urbanist, -apple-system, BlinkMacSystemFont,
+			"Segoe UI"), sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,13 +43,49 @@ body {
 	}
 }
 
-/* Locale-specific fonts */
-html[lang="ar"] body {
-	font-family: "Noto Sans Arabic", "Space Grotesk", sans-serif;
+/* Locale-specific fonts (non-latin scripts) */
+html[lang="ar"] body,
+html[lang="ar"] p,
+html[lang="ar"] li,
+html[lang="ar"] label,
+html[lang="ar"] button,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] select {
+	font-family: "Noto Sans Arabic", var(--font-urbanist, -apple-system,
+			BlinkMacSystemFont, "Segoe UI"), sans-serif;
 }
 
-html[lang="zh"] body {
-	font-family: "Noto Sans SC", "Space Grotesk", sans-serif;
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+	font-family: "Noto Sans Arabic", var(--font-manrope, -apple-system,
+			BlinkMacSystemFont, "Segoe UI"), sans-serif;
+}
+
+html[lang="zh-Hans"] body,
+html[lang="zh-Hans"] p,
+html[lang="zh-Hans"] li,
+html[lang="zh-Hans"] label,
+html[lang="zh-Hans"] button,
+html[lang="zh-Hans"] input,
+html[lang="zh-Hans"] textarea,
+html[lang="zh-Hans"] select {
+	font-family: "Noto Sans SC", var(--font-urbanist, -apple-system,
+			BlinkMacSystemFont, "Segoe UI"), sans-serif;
+}
+
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] h2,
+html[lang="zh-Hans"] h3,
+html[lang="zh-Hans"] h4,
+html[lang="zh-Hans"] h5,
+html[lang="zh-Hans"] h6 {
+	font-family: "Noto Sans SC", var(--font-manrope, -apple-system,
+			BlinkMacSystemFont, "Segoe UI"), sans-serif;
 }
 
 /* Header */
