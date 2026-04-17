@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { Urbanist, Manrope } from "next/font/google";
 import { locales, rtlLocales, getDictionary, type Locale } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import "../globals.css";
+
+const urbanist = Urbanist({
+	subsets: ["latin"],
+	weight: ["300", "400", "500", "600", "700", "800"],
+	variable: "--font-urbanist",
+	display: "swap",
+});
+
+const manrope = Manrope({
+	subsets: ["latin"],
+	weight: ["300", "400", "500", "600", "700", "800"],
+	variable: "--font-manrope",
+	display: "swap",
+});
 
 export async function generateStaticParams() {
 	return locales.map((locale) => ({ locale }));
@@ -576,29 +591,35 @@ export default async function LocaleLayout({
 	const structuredData = getStructuredData(locale, dict);
 	const htmlLang = locale === "zh" ? "zh-Hans" : locale;
 
-	// Build Google Fonts URL based on locale — only load weights actually used
-	const fontFamilies = ["Space+Grotesk:wght@400;500;600"];
-	if (locale === "ar") {
-		fontFamilies.push("Noto+Sans+Arabic:wght@400;500;600");
-	} else if (locale === "zh") {
-		fontFamilies.push("Noto+Sans+SC:wght@400;600");
-	}
-	const fontsUrl = `https://fonts.googleapis.com/css2?${fontFamilies.map((f) => `family=${f}`).join("&")}&display=swap`;
+	// Urbanist + Manrope load via next/font. Non-latin scripts still need Google Fonts.
+	const nonLatinFont =
+		locale === "ar"
+			? "Noto+Sans+Arabic:wght@400;500;600"
+			: locale === "zh"
+				? "Noto+Sans+SC:wght@400;600"
+				: null;
+	const fontsUrl = nonLatinFont
+		? `https://fonts.googleapis.com/css2?family=${nonLatinFont}&display=swap`
+		: null;
 
 	return (
 		<html
 			lang={htmlLang}
 			dir={isRTL ? "rtl" : "ltr"}
-			className="scroll-smooth"
+			className={`scroll-smooth ${urbanist.variable} ${manrope.variable}`}
 		>
 			<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin="anonymous"
-				/>
-				<link rel="stylesheet" href={fontsUrl} />
+				{fontsUrl && (
+					<>
+						<link rel="preconnect" href="https://fonts.googleapis.com" />
+						<link
+							rel="preconnect"
+							href="https://fonts.gstatic.com"
+							crossOrigin="anonymous"
+						/>
+						<link rel="stylesheet" href={fontsUrl} />
+					</>
+				)}
 			</head>
 			<body className="antialiased">
 				<script
