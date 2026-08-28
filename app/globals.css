@@ -317,12 +317,26 @@ html[dir="rtl"] .features-list li::before {
 }
 
 /* Work Grid */
+/* Explicit column counts, not auto-fit: the card count divides evenly by
+   4, 2 and 1, so no row is ever left with a single orphan card. */
 .work-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	grid-template-columns: repeat(4, 1fr);
 	gap: 32px;
 	margin-bottom: 48px;
 	align-items: stretch;
+}
+
+@media (max-width: 1180px) {
+	.work-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 680px) {
+	.work-grid {
+		grid-template-columns: 1fr;
+	}
 }
 
 .work-card {
@@ -366,6 +380,123 @@ html[dir="rtl"] .features-list li::before {
 	color: #999;
 	margin-top: 48px;
 	font-weight: 400;
+}
+
+/* Registered Developer credentials */
+.credentials-grid {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 1000px;
+	/* flex, not grid: with 5 items an auto-fit grid strands an unbalanced
+	   orphan row. Centred wrapping keeps every row visually balanced. */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.credential {
+	flex: 0 1 170px;
+	background: #1a1a1a;
+	border: 1px solid #333;
+	border-radius: 12px;
+	display: flex;
+	transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Inner wrapper so linked and unlinked cards share one layout. */
+.credential-inner {
+	flex: 1;
+	padding: 28px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	text-decoration: none;
+}
+
+.credential:hover {
+	border-color: #667eea;
+	transform: translateY(-2px);
+}
+
+.credential-link .credential-name {
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: 3px;
+	transition: text-decoration-color 0.3s ease;
+}
+
+.credential-link:hover .credential-name,
+.credential-link:focus-visible .credential-name {
+	text-decoration-color: #667eea;
+}
+
+/* Fixed-height slot; the mark's own height is set per brand in PlatformMark.tsx
+   so each logo carries equal optical mass despite different aspect ratios. */
+.platform-mark-slot {
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.platform-mark {
+	width: auto;
+	max-width: 80px;
+	color: #ffffff;
+}
+
+.platform-monogram {
+	width: 28px;
+	height: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1.5px solid #ffffff;
+	border-radius: 6px;
+	color: #ffffff;
+	font-size: 0.95rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.credential-name {
+	color: #ffffff;
+	font-size: 1.05rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}
+
+.credential-program {
+	color: #999;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	font-weight: 400;
+}
+
+/* Keep all five credentials on one row down to tablet; below that they wrap
+   centred, which stays symmetric rather than stranding a card. */
+@media (max-width: 1024px) {
+	.credentials-grid {
+		gap: 16px;
+	}
+
+	.credential {
+		flex-basis: 128px;
+	}
+}
+
+.credentials-disclaimer {
+	color: #8a8a8a !important;
+	font-size: 0.82rem !important;
+	line-height: 1.6;
+	text-align: center;
+	max-width: 720px;
+	margin: 32px auto 0;
 }
 
 /* Founder Section */
@@ -671,8 +802,12 @@ html[dir="rtl"] .lang-dropdown {
 		left: 16px;
 	}
 
-	.work-grid {
-		grid-template-columns: 1fr;
+	.credentials-grid {
+		gap: 16px;
+	}
+
+	.credential {
+		flex-basis: 128px;
 	}
 }
 

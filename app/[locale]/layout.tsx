@@ -62,7 +62,7 @@ export async function generateMetadata({
 		},
 		description: dict.meta.description,
 		keywords: dict.meta.keywords,
-		authors: [{ name: "Matthias Mende", url: "https://bonuz.id/mende" }],
+		authors: [{ name: "Matthias Mende", url: "https://matthiasmende.com" }],
 		creator: "Bonuz Technology DMCC",
 		publisher: "Bonuz Technology DMCC",
 		formatDetection: {
@@ -163,7 +163,6 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				image: `${siteUrl}/og-image.png`,
 				description: dict.meta.description,
 				slogan: dict.hero.title,
-				foundingDate: "2018",
 				foundingLocation: {
 					"@type": "Place",
 					name: "Dubai, United Arab Emirates",
@@ -172,8 +171,11 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					"@type": "Person",
 					name: "Matthias Mende",
 					jobTitle: "Founder & CEO",
-					url: "https://bonuz.id/mende",
+					url: "https://matthiasmende.com",
+					award: "Binance Industry Advocate (2025)",
 					sameAs: [
+						"https://matthiasmende.com",
+						"https://bonuz.id/mende",
 						"https://x.com/mendematthias",
 						"https://linkedin.com/in/matthiasmende",
 					],
@@ -192,6 +194,10 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					"https://github.com/bonuz-market",
 					"https://bonuz.xyz",
 					"https://bonuz.id",
+					"https://bonuz.life",
+					"https://pq-wallet.com",
+					"https://btxscan.io",
+					"https://postquantum.wiki",
 				],
 				contactPoint: {
 					"@type": "ContactPoint",
@@ -414,22 +420,11 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				},
 			},
 			{
-				"@type": "SoftwareApplication",
+				"@type": "ResearchProject",
 				name: "SkyShield",
 				description: dict.ourWork.skyShield.description,
 				url: "https://skyshield.bonuz.tech",
-				applicationCategory: "UtilitiesApplication",
-				operatingSystem: "Web",
-				offers: {
-					"@type": "Offer",
-					price: "0",
-					priceCurrency: "USD",
-				},
-				brand: {
-					"@type": "Brand",
-					name: "bonuz",
-				},
-				manufacturer: {
+				parentOrganization: {
 					"@id": `${siteUrl}/#organization`,
 				},
 			},
@@ -455,16 +450,65 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 			},
 			{
 				"@type": "SoftwareApplication",
-				name: "bonuz Next Layer",
-				description: dict.ourWork.nextLayer.description,
-				url: `${siteUrl}/#our-work`,
-				applicationCategory: "UtilitiesApplication",
-				operatingSystem: "Web",
+				name: "bonuz LIFE",
+				description: dict.ourWork.life.description,
+				url: "https://bonuz.life",
+				applicationCategory: "LifestyleApplication",
+				operatingSystem: "iOS, Android",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
 				brand: {
 					"@type": "Brand",
 					name: "bonuz",
 				},
 				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "SoftwareApplication",
+				name: "BTX PQ Wallet",
+				description: dict.ourWork.pqWallet.description,
+				url: "https://pq-wallet.com",
+				applicationCategory: "FinanceApplication",
+				operatingSystem: "macOS, Windows, Linux",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				manufacturer: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "WebApplication",
+				name: "BTXScan",
+				description: dict.ourWork.btxscan.description,
+				url: "https://btxscan.io",
+				applicationCategory: "UtilitiesApplication",
+				browserRequirements: "Requires JavaScript",
+				operatingSystem: "Web",
+				offers: {
+					"@type": "Offer",
+					price: "0",
+					priceCurrency: "USD",
+				},
+				publisher: {
+					"@id": `${siteUrl}/#organization`,
+				},
+			},
+			{
+				"@type": "CreativeWork",
+				"@id": "https://postquantum.wiki/#reference",
+				name: "postquantum.wiki",
+				description: dict.ourWork.pqWiki.description,
+				url: "https://postquantum.wiki",
+				inLanguage: "en",
+				publisher: {
 					"@id": `${siteUrl}/#organization`,
 				},
 			},
@@ -511,12 +555,18 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 					{
 						"@type": "ListItem",
 						position: 4,
+						name: dict.breadcrumbs.credentials,
+						item: `${localeUrl}#credentials`,
+					},
+					{
+						"@type": "ListItem",
+						position: 5,
 						name: dict.breadcrumbs.founder,
 						item: `${localeUrl}#founder`,
 					},
 					{
 						"@type": "ListItem",
-						position: 5,
+						position: 6,
 						name: dict.breadcrumbs.projectIntake,
 						item: `${localeUrl}#request-intro`,
 					},
@@ -565,6 +615,22 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 						acceptedAnswer: {
 							"@type": "Answer",
 							text: dict.faq.a5,
+						},
+					},
+					{
+						"@type": "Question",
+						name: dict.faq.q6,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a6,
+						},
+					},
+					{
+						"@type": "Question",
+						name: dict.faq.q7,
+						acceptedAnswer: {
+							"@type": "Answer",
+							text: dict.faq.a7,
 						},
 					},
 				],
