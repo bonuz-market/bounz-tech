@@ -200,9 +200,35 @@ const zh: Dictionary = {
 			"想要构建什么？或者想要一款由bonuz驱动、属于你自己的白标应用？可以把它理解为「bonuz + 你的品牌」。bonuz是母平台，承载全部功能，每一个白标都从它分支而来，这也正是生态中已有如此多应用使用bonuz ID登录的原因。请填写以下表格。",
 		button: "打开申请表",
 	},
+	proof: {
+		title: "自己来验证",
+		intro:
+			"与其让你相信，不如让你亲自核实。下面每一个链接都指向我们无法控制的第三方。",
+		items: [
+			{
+				label: "我们的链上身份注册表",
+				detail: "Base 上的 BonuzSocialId。你可以自己读合约、自己数档案数量。",
+			},
+			{
+				label: "在 Apple 以法律实体发布",
+				detail: "App Store 将我们的应用列在 BONUZ TECHNOLOGY DMCC 名下。",
+			},
+			{
+				label: "Google Play 同样如此",
+				detail: "相同的包名，相同的公司，公开可查。",
+			},
+			{
+				label: "我们的代码是公开的",
+				detail: "GitHub 上的公开仓库，包括 BTX 参考节点。",
+			},
+		],
+	},
 	footer: {
 		quote: '"未来是自托管的。未来是空间化的。未来是bonuz。"',
 		copyright: "\u00A9 {year} Bonuz Technology DMCC \u00B7 迪拜，阿联酋",
+		privacy: "隐私政策",
+		terms: "使用条款",
+		imprint: "法律声明",
 	},
 };
 
