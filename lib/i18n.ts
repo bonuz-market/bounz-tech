@@ -41,6 +41,7 @@ export type Dictionary = {
 	};
 	a11y: {
 		skipToContent: string;
+		ambientSound: string;
 	};
 	breadcrumbs: {
 		home: string;

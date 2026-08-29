@@ -63,6 +63,7 @@ const en: Dictionary = {
 	},
 	a11y: {
 		skipToContent: "Skip to content",
+		ambientSound: "Ambient sound",
 	},
 	breadcrumbs: {
 		home: "Home",
