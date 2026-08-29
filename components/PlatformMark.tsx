@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 /**
  * Platform marks and official account links for the "Registered developer" strip.
  *
- * TRADEMARK NOTE — this was a deliberate, informed decision by the owner (2026-08-28).
+ * TRADEMARK NOTE : this was a deliberate, informed decision by the owner (2026-08-28).
  * Apple's App Store marketing guidelines say the Apple logo must not be used to promote an app, and
  * Apple publishes no "registered developer" badge:
  *   https://developer.apple.com/app-store/marketing/guidelines/

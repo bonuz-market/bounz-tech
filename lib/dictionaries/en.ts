@@ -88,7 +88,7 @@ const en: Dictionary = {
 			"Augmented reality and spatial computing",
 			"Product and infrastructure consulting (selective)",
 			"Long-term operation and iteration",
-			"Future systems (AR lenses, AI companions, smart-glass-native experiences – shipping when ready)",
+			"Future systems (AR lenses, AI companions, smart-glass-native experiences, shipping when ready)",
 		],
 	},
 	ourWork: {

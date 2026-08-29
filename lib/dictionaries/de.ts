@@ -87,7 +87,7 @@ const de: Dictionary = {
 			"Augmented Reality und Spatial Computing",
 			"Produkt- und Infrastrukturberatung (selektiv)",
 			"Langfristiger Betrieb und Weiterentwicklung",
-			"Zukunftssysteme (AR-Brillen, KI-Begleiter, Smart-Glass-Erlebnisse \u2013 Veröffentlichung bei Bereitschaft)",
+			"Zukunftssysteme (AR-Brillen, KI-Begleiter, Smart-Glass-Erlebnisse, Veröffentlichung bei Bereitschaft)",
 		],
 	},
 	ourWork: {

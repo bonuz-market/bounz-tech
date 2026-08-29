@@ -29,9 +29,8 @@ export default async function Page({
 			updated="29 August 2026"
 			lede={
 				<p>
-					Everything you need to write about us accurately. Copy the boilerplate
-					as is, take the logos, and use the naming guide so the product names
-					come out right.
+					Copy the boilerplate as is. Take the logos. Use the naming guide so the
+					product names come out right.
 				</p>
 			}
 			nav={[
@@ -47,34 +46,33 @@ export default async function Page({
 				reality and post-quantum infrastructure.
 			</p>
 			<p>
-				<strong>Short.</strong> Bonuz Technology DMCC is a software house based
-				in Dubai, United Arab Emirates. It builds and operates consumer and
+				<strong>Short.</strong> Bonuz Technology DMCC is a software house in
+				Dubai, United Arab Emirates. It builds and operates consumer and
 				infrastructure products across blockchain, augmented reality and
-				post-quantum cryptography, including the bonuz self-custodial wallet,
-				the bonuz ID identity layer, and bonuz LIFE, an augmented reality layer
-				over real places. The company is led by founder Matthias Mende, who also
-				co-founded the Dubai Blockchain Center in 2018.
+				post-quantum cryptography: the bonuz self-custodial wallet, the bonuz ID
+				identity layer, and bonuz LIFE, an augmented reality layer over real
+				places. Founder and Managing Director Matthias Mende also co-founded the
+				Dubai Blockchain Center in 2018.
 			</p>
 			<p>
 				<strong>Longer.</strong> Bonuz Technology DMCC is a Dubai-based software
-				house that invents, builds and operates the infrastructure behind
-				consumer blockchain products. Its work spans self-custodial wallets,
-				onchain digital identity, real-world loyalty and quests, augmented
-				reality, and post-quantum cryptography. The bonuz app is a consumer-grade
-				self-custodial wallet on iOS and Android; bonuz ID is a unified onchain
-				profile layer; bonuz LIFE brings quests and rewards into an augmented
-				view of the real world; and PQ Wallet for BTX is a desktop wallet built
-				on the post-quantum signature schemes standardised by NIST. The company
-				also offers white-label platforms, letting brands launch on the same
-				engine rather than building from scratch. It is a registered developer
-				with Apple, Google Play, Microsoft, Meta Wearables and MentraOS.
+				house that builds and operates the infrastructure behind consumer
+				blockchain products. Its work spans self-custodial wallets, onchain
+				digital identity, real-world loyalty and quests, augmented reality, and
+				post-quantum cryptography. The bonuz app is a consumer-grade
+				self-custodial wallet on iOS and Android. bonuz ID is a unified onchain
+				profile layer. bonuz LIFE brings quests and rewards into an augmented
+				view of the real world. PQ Wallet for BTX is a desktop wallet built on
+				the post-quantum signature schemes standardised by NIST. White-label
+				platforms let brands launch on the same engine. The company is a
+				registered developer with Apple, Google Play, Microsoft, Meta Wearables
+				and MentraOS.
 			</p>
 
 			<h2>Logos</h2>
 			<p>
-				Two assets, one for dark backgrounds and one for light. Both are SVG. Use
-				the wordmark rather than retyping &quot;bonuz&quot; as text, and do not
-				redraw or recolour it.
+				Use the wordmark, do not retype &quot;bonuz&quot;. Do not redraw or
+				recolour it. Both files are SVG.
 			</p>
 			<ul>
 				<li>
@@ -92,23 +90,20 @@ export default async function Page({
 			</ul>
 
 			<h2>Naming guide</h2>
-			<p>
-				These get written wrong often enough to be worth listing:
-			</p>
+			<p>Commonly written wrong:</p>
 			<ul>
 				<li>
 					<strong>bonuz</strong> is always lowercase, including at the start of
-					a sentence. The company entity, <strong>Bonuz Technology DMCC</strong>,
-					takes a capital B.
+					a sentence. The entity <strong>Bonuz Technology DMCC</strong> takes a
+					capital B.
 				</li>
 				<li>
 					<strong>LIFE</strong> is always full capitals. The product is{" "}
-					<strong>bonuz LIFE</strong>; the domain bonuz.life stays lowercase
-					because it is a URL.
+					<strong>bonuz LIFE</strong>. The domain bonuz.life stays lowercase.
 				</li>
 				<li>
 					<strong>Next Layer</strong> is the umbrella for our spatial computing
-					work. LIFE is the first product inside it. They are not synonyms.
+					work. LIFE is the first product inside it. Not synonyms.
 				</li>
 				<li>
 					<strong>PQ Wallet for BTX</strong>, not &quot;BTX PQ Wallet&quot;.
@@ -121,12 +116,11 @@ export default async function Page({
 
 			<h2>Things that are not true</h2>
 			<p>
-				Saves everyone a correction later. We do not own or operate the{" "}
-				<strong>BTX blockchain</strong>; it is third-party infrastructure and we
-				build tools for it. We have{" "}
-				<strong>no shipped product on any smart glasses platform</strong>; our
+				We do not own or operate the <strong>BTX blockchain</strong>. It is
+				third-party infrastructure. We build tools for it. We have{" "}
+				<strong>no shipped product on any smart glasses platform</strong>. Our
 				Meta Wearables and MentraOS presence is a developer registration, and
-				LIFE runs on phones today. Our developer registrations are{" "}
+				LIFE runs on phones today. Developer registrations are{" "}
 				<strong>not partnerships or endorsements</strong>.
 			</p>
 
@@ -148,10 +142,10 @@ export default async function Page({
 
 			<h2>Founder</h2>
 			<p>
-				Matthias Mende is an entrepreneur and builder based in Dubai, active in
-				blockchain and consumer technology since its early days. He co-founded
-				the Dubai Blockchain Center in 2018 and was named a Binance Industry
-				Advocate in 2025. More at{" "}
+				Matthias Mende is a Dubai entrepreneur, working in blockchain and
+				consumer technology since the early days. He co-founded the Dubai Blockchain
+				Center in 2018 and was named a Binance Industry Advocate in 2025. More
+				at{" "}
 				<a
 					href="https://matthiasmende.com"
 					target="_blank"
