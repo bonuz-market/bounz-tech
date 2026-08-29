@@ -1,3 +1,8 @@
+import type { PlatformName } from "@/components/PlatformMark";
+
+/** Lookup keys for the "check it yourself" links. Not display copy, do not translate. */
+export type ProofKey = "basescan" | "appstore" | "play" | "github";
+
 export const locales = ["en", "ar", "de", "zh"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
@@ -18,6 +23,7 @@ export type Dictionary = {
 		keywords: string[];
 	};
 	faq: {
+		title: string;
 		q1: string;
 		a1: string;
 		q2: string;
@@ -80,7 +86,7 @@ export type Dictionary = {
 	credentials: {
 		title: string;
 		intro: string;
-		items: { name: string; program: string }[];
+		items: { name: PlatformName; program: string }[];
 		disclaimer: string;
 	};
 	founder: {
@@ -97,7 +103,7 @@ export type Dictionary = {
 	proof: {
 		title: string;
 		intro: string;
-		items: { label: string; detail: string }[];
+		items: { key: ProofKey; label: string; detail: string }[];
 	};
 	footer: {
 		quote: string;

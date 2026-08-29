@@ -1,6 +1,18 @@
 import type { ReactNode } from "react";
 
 /**
+ * These are lookup keys, not display copy. They index both `platformLinks` and
+ * `marks`, so they must stay identical in every locale. Only `program` in the
+ * dictionaries is translatable.
+ */
+export type PlatformName =
+	| "Apple"
+	| "Google Play"
+	| "Microsoft"
+	| "Meta"
+	| "Mentra";
+
+/**
  * Platform marks and official account links for the "Registered developer" strip.
  *
  * TRADEMARK NOTE : this was a deliberate, informed decision by the owner (2026-08-28).
@@ -22,7 +34,7 @@ export const SHOW_BRAND_MARKS = true;
  * Meta Wearables and MentraOS have no public developer directory or store listing to link to
  * (the Mentra MiniApp Store is still "Coming Soon"), so those two cards render unlinked.
  */
-export const platformLinks: Record<string, string> = {
+export const platformLinks: Partial<Record<PlatformName, string>> = {
 	Apple: "https://apps.apple.com/ae/developer/bonuz/id1637687441",
 	"Google Play": "https://play.google.com/store/apps/dev?id=8658583252213251696",
 	Microsoft: "https://apps.microsoft.com/detail/9nnfjbph98c6",
@@ -37,7 +49,7 @@ export const platformLinks: Record<string, string> = {
  */
 type Mark = { viewBox: string; height: number; body: ReactNode };
 
-const marks: Record<string, Mark> = {
+const marks: Record<PlatformName, Mark> = {
 	Apple: {
 		height: 26,
 		viewBox: "0 0 24 24",
@@ -72,7 +84,7 @@ const marks: Record<string, Mark> = {
 	},
 };
 
-export default function PlatformMark({ name }: { name: string }) {
+export default function PlatformMark({ name }: { name: PlatformName }) {
 	const mark = marks[name];
 
 	if (!mark) {
