@@ -46,6 +46,15 @@ const backdropGalaxyProps = {
 
 type WorkItemKey = keyof Omit<Dictionary["ourWork"], "title" | "intro" | "footer">;
 
+// Third-party destinations for the "check it yourself" block. Kept in code
+// because the URLs are the same in every language.
+const proofLinks = [
+	"https://basescan.org/address/0x9220070245b67130977FdF32acA4acdF6aD163cC",
+	"https://apps.apple.com/ae/developer/bonuz/id1637687441",
+	"https://play.google.com/store/apps/dev?id=8658583252213251696",
+	"https://github.com/bonuz-market",
+];
+
 const workItems: {
 	key: WorkItemKey;
 	href: string;
@@ -297,6 +306,28 @@ export default function HomePage({
 				</div>
 			</section>
 
+			{/* Check it yourself */}
+			<section id="proof" className="section-black">
+				<div className="container">
+					<h2>{dict.proof.title}</h2>
+					<p className="intro-text">{dict.proof.intro}</p>
+					<ul className="proof-grid">
+						{dict.proof.items.map((item, i) => (
+							<li key={item.label} className="proof-item">
+								<a
+									href={proofLinks[i]}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<span className="proof-label">{item.label}</span>
+									<span className="proof-detail">{item.detail}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			</section>
+
 			{/* Founder Section */}
 			<section id="founder" className="section-black">
 				<div className="container">
@@ -404,6 +435,11 @@ export default function HomePage({
 							String(currentYear)
 						)}
 					</p>
+					<nav className="footer-legal" aria-label="Legal">
+						<a href={`/${locale}/legal/privacy`}>{dict.footer.privacy}</a>
+						<a href={`/${locale}/legal/terms`}>{dict.footer.terms}</a>
+						<a href={`/${locale}/legal/imprint`}>{dict.footer.imprint}</a>
+					</nav>
 				</div>
 			</footer>
 		</>

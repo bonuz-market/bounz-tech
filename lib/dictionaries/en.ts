@@ -202,10 +202,36 @@ const en: Dictionary = {
 			"Want to build something? Or a white-label app of your own, powered by bonuz? Think of it as bonuz featuring your brand. bonuz is the mother platform and carries every feature, and each white label breaks off from it, which is why so many apps in the ecosystem already sign in with bonuz ID. Fill out the form below.",
 		button: "Open request form",
 	},
+	proof: {
+		title: "Check it yourself",
+		intro:
+			"We would rather you verified this than believed it. Every link below is a third party we do not control.",
+		items: [
+			{
+				label: "Our identity registry, onchain",
+				detail: "BonuzSocialId on Base. Read the contract and count the profiles yourself.",
+			},
+			{
+				label: "Published by the legal entity on Apple",
+				detail: "The App Store lists our apps under BONUZ TECHNOLOGY DMCC.",
+			},
+			{
+				label: "And on Google Play",
+				detail: "Same bundle, same entity, publicly listed.",
+			},
+			{
+				label: "Our code, in the open",
+				detail: "Public repositories on GitHub, including the BTX reference node.",
+			},
+		],
+	},
 	footer: {
 		quote:
 			'"The future is self-custodial. The future is spatial. The future is bonuz."',
 		copyright: "© {year} Bonuz Technology DMCC · Dubai, United Arab Emirates",
+		privacy: "Privacy",
+		terms: "Terms",
+		imprint: "Legal notice",
 	},
 };
 

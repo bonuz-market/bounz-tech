@@ -91,9 +91,17 @@ export type Dictionary = {
 		description: string;
 		button: string;
 	};
+	proof: {
+		title: string;
+		intro: string;
+		items: { label: string; detail: string }[];
+	};
 	footer: {
 		quote: string;
 		copyright: string;
+		privacy: string;
+		terms: string;
+		imprint: string;
 	};
 };
 

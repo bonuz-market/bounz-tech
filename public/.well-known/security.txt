@@ -1,0 +1,14 @@
+# Security contact for bonuz.tech and the bonuz ecosystem.
+# https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: mailto:security@bonuz.market
+Contact: https://bonuz.tech/en/legal/imprint
+Expires: 2027-08-29T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://bonuz.tech/.well-known/security.txt
+Policy: https://bonuz.market/security
+
+# We build self-custodial wallets and onchain identity. If you have found a
+# vulnerability in any bonuz product, please report it to the address above
+# before disclosing it publicly, and give us a reasonable window to fix it.
+# We will not pursue legal action against good-faith security research.
