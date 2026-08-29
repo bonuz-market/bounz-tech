@@ -1441,7 +1441,7 @@ html[dir="rtl"] .lang-dropdown {
 }
 
 .ai-row dt {
-	color: #6f6f6f;
+	color: #8a8a8a;
 	font-size: 0.78rem;
 }
 
@@ -1516,7 +1516,7 @@ html[dir="rtl"] .lang-dropdown {
 
 .ai-prod-url {
 	display: block;
-	color: #6f6f6f;
+	color: #8a8a8a;
 	font-size: 0.76rem;
 	margin-bottom: 5px;
 }

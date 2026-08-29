@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Urbanist, Manrope } from "next/font/google";
 import { locales, rtlLocales, getDictionary, type Locale } from "@/lib/i18n";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import AmbientSound from "@/components/AmbientSound";
 import "../globals.css";
 
 const urbanist = Urbanist({
@@ -197,6 +198,7 @@ export default async function LocaleLayout({
 				)}
 			</head>
 			<body className="antialiased">
+				<AmbientSound locale={locale} />
 				<LanguageSwitcher locale={locale} />
 				{children}
 			</body>
