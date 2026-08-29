@@ -293,6 +293,8 @@ export default function Galaxy({
 			},
 		});
 
+		const mesh = new Mesh(gl, { geometry, program });
+
 		function resize() {
 			renderer.setSize(ctn.offsetWidth * dpr, ctn.offsetHeight * dpr);
 			gl.canvas.style.width = ctn.offsetWidth + "px";
@@ -303,11 +305,11 @@ export default function Galaxy({
 				gl.canvas.height,
 				gl.canvas.width / gl.canvas.height
 			);
+			if (!shouldAnimate) renderer.render({ scene: mesh });
 		}
 		window.addEventListener("resize", resize, false);
 		resize();
 
-		const mesh = new Mesh(gl, { geometry, program });
 		let animateId: number;
 		let isVisible = false;
 

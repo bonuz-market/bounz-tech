@@ -33,6 +33,9 @@ export type Dictionary = {
 		q7: string;
 		a7: string;
 	};
+	a11y: {
+		skipToContent: string;
+	};
 	breadcrumbs: {
 		home: string;
 		whatWeDo: string;

@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-	title: "Privacy Policy | Bonuz Technology DMCC",
+	title: "Privacy Policy",
 	description:
 		"How bonuz.tech handles personal data. This website sets no cookies, runs no analytics and tracks no visitors.",
 	alternates: { canonical: "https://bonuz.tech/en/legal/privacy" },

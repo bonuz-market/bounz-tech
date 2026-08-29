@@ -13,6 +13,23 @@ import type { Dictionary } from "@/lib/i18n";
 
 const Galaxy = dynamic(() => import("@/components/Galaxy"), { ssr: false });
 
+// Hidden arcade game. next/dynamic only fetches this chunk when the component is
+// actually rendered, so a normal visitor never downloads a byte of it.
+const ArcadeEgg = dynamic(() => import("@/components/ArcadeEgg"), { ssr: false });
+
+const KONAMI = [
+	"ArrowUp",
+	"ArrowUp",
+	"ArrowDown",
+	"ArrowDown",
+	"ArrowLeft",
+	"ArrowRight",
+	"ArrowLeft",
+	"ArrowRight",
+	"b",
+	"a",
+];
+
 const currentYear = new Date().getFullYear();
 
 // The hero galaxy is the signature: animated, mouse-reactive, full quality.
@@ -87,6 +104,35 @@ export default function HomePage({
 }) {
 	const [menuOpen, setMenuOpen] = useState(false);
 	const menuRef = useRef<HTMLDivElement>(null);
+	const [arcadeOpen, setArcadeOpen] = useState(false);
+	const konamiRef = useRef(0);
+
+	// The only way in. No link, no button, nothing in the DOM to find.
+	useEffect(() => {
+		function onKey(e: KeyboardEvent) {
+			const want = KONAMI[konamiRef.current];
+			if (e.key === want || e.key.toLowerCase() === want) {
+				konamiRef.current += 1;
+				if (konamiRef.current === KONAMI.length) {
+					konamiRef.current = 0;
+					setArcadeOpen(true);
+				}
+			} else {
+				konamiRef.current = e.key === KONAMI[0] ? 1 : 0;
+			}
+		}
+		window.addEventListener("keydown", onKey);
+		return () => window.removeEventListener("keydown", onKey);
+	}, []);
+
+	// A nudge for anyone who opens the console. Nothing on the page hints at it.
+	useEffect(() => {
+		console.log(
+			"%cbonuz%c  the old code still works.",
+			"color:#FFA34E;font-weight:700",
+			"color:#8a8a8a"
+		);
+	}, []);
 
 	useEffect(() => {
 		function handleClickOutside(e: MouseEvent) {
@@ -116,8 +162,21 @@ export default function HomePage({
 		{ href: "#request-intro", label: dict.hero.projectIntake },
 	];
 
+	useEffect(() => {
+		document.body.style.overflow = arcadeOpen ? "hidden" : "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [arcadeOpen]);
+
 	return (
 		<>
+			{arcadeOpen && <ArcadeEgg onExit={() => setArcadeOpen(false)} />}
+
+			<a href="#main" className="skip-link">
+				{dict.a11y.skipToContent}
+			</a>
+
 			{/* Header Navigation */}
 			<header className="site-header">
 				<Link
@@ -198,10 +257,11 @@ export default function HomePage({
 				</div>
 			</header>
 
+			<main id="main">
 			{/* Hero Section */}
 			<section id="hero" className="hero">
 				<div className="absolute inset-0 z-0" aria-hidden="true">
-					<Galaxy {...galaxyProps} />
+					{!arcadeOpen && <Galaxy {...galaxyProps} />}
 				</div>
 
 				<div className="hero-content">
@@ -235,7 +295,7 @@ export default function HomePage({
 			{/* Our Work Section */}
 			<section id="our-work" className="section-black relative">
 				<div className="absolute inset-0 z-0" aria-hidden="true">
-					<Galaxy {...backdropGalaxyProps} />
+					{!arcadeOpen && <Galaxy {...backdropGalaxyProps} />}
 				</div>
 				<div className="container relative">
 					<h2>{dict.ourWork.title}</h2>
@@ -397,6 +457,8 @@ export default function HomePage({
 					</div>
 				</div>
 			</section>
+
+			</main>
 
 			{/* Footer */}
 			<footer>

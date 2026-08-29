@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
-	title: "Post-quantum work | Bonuz Technology DMCC",
+	title: "Post-quantum work",
 	description:
 		"What we build around post-quantum cryptography: PQ Wallet for BTX, the BTXScan explorer, and postquantum.wiki. ML-DSA and SLH-DSA, the signature schemes standardised by NIST.",
 	keywords: [

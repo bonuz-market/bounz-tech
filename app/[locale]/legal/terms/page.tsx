@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-	title: "Terms of Use | Bonuz Technology DMCC",
+	title: "Terms of Use",
 	description:
 		"Terms governing the use of bonuz.tech, the corporate website of Bonuz Technology DMCC, Dubai.",
 	alternates: { canonical: "https://bonuz.tech/en/legal/terms" },
