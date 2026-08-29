@@ -231,6 +231,9 @@ const de: Dictionary = {
 		privacy: "Datenschutz",
 		terms: "Nutzungsbedingungen",
 		imprint: "Impressum",
+		postQuantum: "Post-Quanten",
+		shipping: "Was wir liefern",
+		press: "Presse",
 	},
 };
 

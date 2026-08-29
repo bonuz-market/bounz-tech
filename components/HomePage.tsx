@@ -74,7 +74,7 @@ const workItems: {
 	{ key: "chess", href: "https://onchainchess.com", external: true },
 	{ key: "kilocorn", href: "https://kilocorn.com", external: true },
 	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true },
-	{ key: "whiteLabel", href: "#request-intro", external: false },
+	{ key: "whiteLabel", href: "/white-label", external: false },
 	{ key: "consulting", href: "#request-intro", external: false },
 ];
 
@@ -252,7 +252,11 @@ export default function HomePage({
 								>
 									<a
 										className="work-card"
-										href={item.href}
+										href={
+											item.external || item.href.startsWith("#")
+												? item.href
+												: `/${locale}${item.href}`
+										}
 										{...(item.external
 											? { target: "_blank", rel: "noopener noreferrer" }
 											: {})}
@@ -435,6 +439,12 @@ export default function HomePage({
 							String(currentYear)
 						)}
 					</p>
+					<nav className="footer-legal" aria-label="More pages">
+						<a href={`/${locale}/white-label`}>{dict.ourWork.whiteLabel.title}</a>
+						<a href={`/${locale}/post-quantum`}>{dict.footer.postQuantum}</a>
+						<a href={`/${locale}/shipping`}>{dict.footer.shipping}</a>
+						<a href={`/${locale}/press`}>{dict.footer.press}</a>
+					</nav>
 					<nav className="footer-legal" aria-label="Legal">
 						<a href={`/${locale}/legal/privacy`}>{dict.footer.privacy}</a>
 						<a href={`/${locale}/legal/terms`}>{dict.footer.terms}</a>

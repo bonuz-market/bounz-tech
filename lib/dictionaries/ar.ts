@@ -230,6 +230,9 @@ const ar: Dictionary = {
 		privacy: "الخصوصية",
 		terms: "شروط الاستخدام",
 		imprint: "بيان قانوني",
+		postQuantum: "ما بعد الكم",
+		shipping: "ما نطلقه",
+		press: "الصحافة",
 	},
 };
 

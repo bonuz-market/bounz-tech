@@ -1022,3 +1022,41 @@ html[dir="rtl"] .lang-dropdown {
 	font-size: 0.82rem;
 	line-height: 1.6;
 }
+
+/* ---------- Shipping log ---------- */
+
+.ship-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 16px;
+}
+
+.ship-list li {
+	padding: 20px 0;
+	border-bottom: 1px solid #1e1e1e;
+}
+
+.ship-date {
+	display: block;
+	color: #777;
+	font-size: 0.76rem;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	margin-bottom: 6px;
+}
+
+.ship-what {
+	display: block;
+	color: #ffffff;
+	font-size: 1.02rem;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+.ship-detail {
+	display: block;
+	color: #c8c8c8;
+	font-size: 0.95rem;
+	line-height: 1.75;
+	margin-bottom: 8px;
+}

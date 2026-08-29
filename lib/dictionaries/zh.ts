@@ -229,6 +229,9 @@ const zh: Dictionary = {
 		privacy: "隐私政策",
 		terms: "使用条款",
 		imprint: "法律声明",
+		postQuantum: "后量子",
+		shipping: "我们的发布",
+		press: "媒体",
 	},
 };
 

@@ -30,5 +30,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		priority: 0.3,
 	}));
 
-	return [...localeHomes, ...legalPages];
+	// English-only subpages, canonicalised to /en.
+	const contentPages = [
+		{ slug: "white-label", priority: 0.8 },
+		{ slug: "post-quantum", priority: 0.8 },
+		{ slug: "shipping", priority: 0.6 },
+		{ slug: "press", priority: 0.5 },
+	].map(({ slug, priority }) => ({
+		url: `${baseUrl}/en/${slug}`,
+		lastModified: "2026-08-29",
+		changeFrequency: "monthly" as const,
+		priority,
+	}));
+
+	return [...localeHomes, ...contentPages, ...legalPages];
 }
