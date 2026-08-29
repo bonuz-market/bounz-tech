@@ -28,11 +28,16 @@ export type Dictionary = {
 		a4: string;
 		q5: string;
 		a5: string;
+		q6: string;
+		a6: string;
+		q7: string;
+		a7: string;
 	};
 	breadcrumbs: {
 		home: string;
 		whatWeDo: string;
 		ourWork: string;
+		credentials: string;
 		founder: string;
 		projectIntake: string;
 	};
@@ -61,10 +66,19 @@ export type Dictionary = {
 		uae971: { title: string; description: string };
 		skyShield: { title: string; description: string };
 		kilocorn: { title: string; description: string };
+		life: { title: string; description: string };
+		pqWallet: { title: string; description: string };
+		btxscan: { title: string; description: string };
+		pqWiki: { title: string; description: string };
 		whiteLabel: { title: string; description: string };
 		consulting: { title: string; description: string };
-		nextLayer: { title: string; description: string };
 		footer: string;
+	};
+	credentials: {
+		title: string;
+		intro: string;
+		items: { name: string; program: string }[];
+		disclaimer: string;
 	};
 	founder: {
 		title: string;

@@ -4,6 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import SpotlightCard from "@/components/SpotlightCard";
+import PlatformMark, {
+	SHOW_BRAND_MARKS,
+	platformLinks,
+} from "@/components/PlatformMark";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 
@@ -36,17 +40,20 @@ const workItems: {
 }[] = [
 	{ key: "wallet", href: "https://bonuz.xyz", external: true },
 	{ key: "id", href: "https://bonuz.id", external: true },
+	{ key: "life", href: "https://bonuz.life", external: true },
 	{ key: "dashboard", href: "https://app.bonuz.market", external: true },
-	{ key: "swapz", href: "https://swapz.bonuz.market", external: true },
 	{ key: "events", href: "https://app.bonuz.xyz", external: true },
-	{ key: "chess", href: "https://onchainchess.com", external: true },
+	{ key: "swapz", href: "https://swapz.bonuz.market", external: true },
+	{ key: "pqWallet", href: "https://pq-wallet.com", external: true },
+	{ key: "btxscan", href: "https://btxscan.io", external: true },
+	{ key: "pqWiki", href: "https://postquantum.wiki", external: true },
 	{ key: "habibiPass", href: "https://habibipass.bonuz.xyz", external: true },
 	{ key: "uae971", href: "https://uae971.social", external: true },
-	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true },
+	{ key: "chess", href: "https://onchainchess.com", external: true },
 	{ key: "kilocorn", href: "https://kilocorn.com", external: true },
+	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true },
 	{ key: "whiteLabel", href: "#request-intro", external: false },
 	{ key: "consulting", href: "#request-intro", external: false },
-	{ key: "nextLayer", href: "#request-intro", external: false },
 ];
 
 export default function HomePage({
@@ -240,6 +247,43 @@ export default function HomePage({
 				</div>
 			</section>
 
+			{/* Registered Developer Section */}
+			<section id="credentials" className="section-black">
+				<div className="container">
+					<h2>{dict.credentials.title}</h2>
+					<p className="intro-text">{dict.credentials.intro}</p>
+					<ul className="credentials-grid">
+						{dict.credentials.items.map((item) => {
+							const href = platformLinks[item.name];
+							const body = (
+								<>
+									{SHOW_BRAND_MARKS && <PlatformMark name={item.name} />}
+									<span className="credential-name">{item.name}</span>
+									<span className="credential-program">{item.program}</span>
+								</>
+							);
+							return (
+								<li key={item.name} className="credential">
+									{href ? (
+										<a
+											className="credential-inner credential-link"
+											href={href}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{body}
+										</a>
+									) : (
+										<div className="credential-inner">{body}</div>
+									)}
+								</li>
+							);
+						})}
+					</ul>
+					<p className="credentials-disclaimer">{dict.credentials.disclaimer}</p>
+				</div>
+			</section>
+
 			{/* Founder Section */}
 			<section id="founder" className="section-black">
 				<div className="container">
@@ -251,6 +295,14 @@ export default function HomePage({
 							<br /> {dict.founder.mission2}
 						</p>
 						<div className="founder-links">
+							<a
+								href="https://matthiasmende.com"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Matthias Mende personal website"
+							>
+								matthiasmende.com
+							</a>
 							<a
 								href="https://x.com/mendematthias"
 								target="_blank"

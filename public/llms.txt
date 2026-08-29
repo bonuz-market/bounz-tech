@@ -1,12 +1,11 @@
 # Bonuz Technology DMCC
 
-> Dubai-based software development house building self-custodial wallets, digital identity solutions, and blockchain infrastructure for human sovereignty.
+> Dubai-based software development house building self-custodial wallets, onchain identity, augmented reality, and post-quantum infrastructure for human sovereignty.
 
 ## Company Overview
 
-Bonuz Technology DMCC is a Dubai-based software development company founded in 2018 by Matthias Mende, who also co-founded the Dubai Blockchain Center. The company specializes in blockchain, Web3, AI, AR, and spatial computing technologies. Our mission: forge invisible technology that makes humans sovereign.
+Bonuz Technology DMCC is a Dubai-based software development company led by Matthias Mende, who also co-founded the Dubai Blockchain Center in 2018. The company specializes in blockchain, Web3, AI, AR, spatial computing, and post-quantum cryptography. Across our repositories, something has shipped every week for more than four years. Our mission: forge invisible technology that makes humans sovereign.
 
-- Founded: 2018
 - Headquarters: Dubai, United Arab Emirates
 - Legal Entity: Bonuz Technology DMCC
 - Industry: Blockchain & Web3 Software Development
@@ -15,7 +14,7 @@ Bonuz Technology DMCC is a Dubai-based software development company founded in 2
 ## Core Products
 
 ### bonuz Lifestyle Wallet
-Award-winning consumer-grade self-custodial wallet with social features, quests, and loyalty programs for the real world. Built to feel like a normal app while maintaining full self-custody of digital assets and private keys. Available for iOS and Android.
+Consumer-grade self-custodial wallet with social features, quests, and loyalty programs for the real world. Built to feel like a normal app while maintaining full self-custody of digital assets and private keys. Carries the major chains and BTX, the post-quantum chain, side by side. Available for iOS and Android.
 - URL: https://bonuz.xyz
 - Category: FinanceApplication
 - Platforms: iOS, Android
@@ -25,6 +24,38 @@ Award-winning consumer-grade self-custodial wallet with social features, quests,
 A unified profile layer where people connect their favorite links, socials, and presence into one simple public page. Think of it as a more advanced and free alternative to Linktree, with blockchain-based identity verification.
 - URL: https://bonuz.id
 - Category: SocialNetworkingApplication
+- Price: Free
+
+### bonuz LIFE
+Our augmented reality layer over the real world, live inside the bonuz mobile app. Point your phone and quests, rewards, and things other people left behind appear anchored to real places you can walk to, live in Dubai today. What you collect stays in the user's own self-custodial wallet. LIFE is the first product of bonuz Next Layer, our spatial computing layer. It runs on phones today and is built for the smart glasses that are arriving.
+- URL: https://bonuz.life
+- Category: LifestyleApplication
+- Platforms: iOS, Android (inside the bonuz app)
+- Price: Free
+
+### bonuz Swapz
+Cross-chain token swap built for speed and simplicity. Trade tokens across multiple blockchains in one flow, with no manual bridging.
+- URL: https://swapz.bonuz.market
+- Category: FinanceApplication
+- Price: Free
+
+### BTX PQ Wallet
+Self-custodial desktop wallet for BTX, built for the day quantum computers can break the signatures in use today. Keys are generated and held on the user's own machine using ML-DSA and SLH-DSA, the post-quantum signature schemes standardised by NIST.
+- URL: https://pq-wallet.com
+- Category: FinanceApplication
+- Platforms: macOS, Windows, Linux
+- Price: Free
+
+### BTXScan
+Public block explorer for BTX, a post-quantum, Bitcoin-derived blockchain with a matrix-multiplication proof of work. Search blocks, transactions and addresses; follow supply, difficulty and network health. Open REST API at api.btxscan.io.
+- URL: https://btxscan.io
+- Category: UtilitiesApplication
+- Price: Free
+
+### postquantum.wiki
+A cited, plain-language encyclopedia of the quantum world and the cryptography built to survive it: how quantum computers work, the quantum threat, the NIST standards, migration in practice, and what it means for blockchains. Over 150 entries. Primary sources only, no market commentary.
+- URL: https://postquantum.wiki
+- Category: Reference
 - Price: Free
 
 ### bonuz Partner Dashboard
@@ -51,13 +82,13 @@ Tourist engagement platform for the UAE that connects visitors with local restau
 - Price: Free
 
 ### UAE971
-The UAE's national creator index, tracking every voice building the country's global reputation on social media. Indexes residents, visitors, and international creators across all seven Emirates.
+The UAE's national creator index, tracking the voices building the country's global reputation on social media. Indexes residents, visitors, and international creators across all seven Emirates.
 - URL: https://uae971.social
 - Category: SocialNetworkingApplication
 - Price: Free
 
 ### Kilocorn
-The trillion-dollar index — defining the kilocorn era. Tracks companies and assets valued at $1 trillion or more, the natural evolution of startup nomenclature.
+The trillion-dollar index, defining the kilocorn era. Tracks companies and assets valued at $1 trillion or more, the natural evolution of startup nomenclature.
 - URL: https://kilocorn.com
 - Category: ReferenceApplication
 - Price: Free
@@ -69,25 +100,38 @@ A non-profit, open-source research concept exploring whether commercial FPV dron
 
 ## Services
 
-### White-label Blockchain Platforms
-Custom branded apps using Bonuz core modules including identity, wallet structure, quest, loyalty and membership systems. Same engine, different skins, customized journeys. Ideal for enterprises wanting to launch blockchain-powered apps without building from scratch.
+### White-label Blockchain Platforms (bonuz featuring your brand)
+bonuz is the mother platform and carries every feature; a white label breaks off from it rather than starting from zero. Identity, wallet structure, quests, loyalty and membership come with it, and sign-in runs on bonuz ID like the rest of the ecosystem. Same engine, different skin, customized journey.
 
 ### Blockchain & Web3 Consulting
 Product architecture, user experience, and infrastructure consulting for teams building in the blockchain ecosystem. Selective engagements for projects aligned with the bonuz ecosystem.
+
+## Registered Developer Programs
+
+Bonuz Technology DMCC is a registered developer under its own legal entity on:
+- Apple Developer Program (App Store publisher: BONUZ TECHNOLOGY DMCC)
+- Google Play Developer account (Bonuz Technology DMCC)
+- Microsoft Store, via Partner Center (publisher: Bonuz Technology DMCC)
+- Meta Wearables Developer Center
+- MentraOS Developer Console
+
+These are developer program registrations. All product names and logos are trademarks of their respective owners. No endorsement, partnership, or sponsorship is implied.
 
 ## Key Technologies
 - Self-custodial wallet infrastructure
 - Onchain digital identity (DID / SSI)
 - Smart contract development
 - Loyalty & membership systems on blockchain
-- AR spatial computing
+- AR spatial computing and location-anchored augmented reality
+- Post-quantum cryptography (ML-DSA, SLH-DSA) and blockchain tooling
 - AI integration
 - White-label platform architecture
 - Full-stack product development (React, Next.js, Node.js, Solidity)
 
 ## Founder
 
-Matthias Mende — Entrepreneur and builder based in Dubai, active in blockchain and consumer technology since early days. Co-founded the Dubai Blockchain Center in 2018.
+Matthias Mende. Entrepreneur and builder based in Dubai, active in blockchain and consumer technology since early days. Co-founded the Dubai Blockchain Center in 2018. Named a Binance Industry Advocate in 2025.
+- Personal website: https://matthiasmende.com
 - X/Twitter: https://x.com/mendematthias
 - LinkedIn: https://linkedin.com/in/matthiasmende
 - bonuz ID: https://bonuz.id/mende
@@ -113,12 +157,23 @@ Dubai, United Arab Emirates
 - Identity Platform: https://bonuz.id
 - Partner Dashboard: https://app.bonuz.market
 - Events Platform: https://app.bonuz.xyz
+- bonuz LIFE: https://bonuz.life
+- BTX PQ Wallet: https://pq-wallet.com
+- BTXScan: https://btxscan.io
+- postquantum.wiki: https://postquantum.wiki
+- bonuz Swapz: https://swapz.bonuz.market
 - Onchain Chess: https://onchainchess.com
 - Habibi Pass: https://habibipass.bonuz.xyz
 - UAE971 Creator Index: https://uae971.social
 - Kilocorn Index: https://kilocorn.com
 - SkyShield Research: https://skyshield.bonuz.tech
 - Dubai Blockchain Center: https://www.dubaiblockchaincenter.com
+- Founder's personal site: https://matthiasmende.com
+
+## Developer Account Pages
+- Apple: https://apps.apple.com/ae/developer/bonuz/id1637687441
+- Google Play: https://play.google.com/store/apps/dev?id=8658583252213251696
+- Microsoft Store: https://apps.microsoft.com/detail/9nnfjbph98c6
 
 ## Languages
 This website is available in English, Arabic (العربية), German (Deutsch), and Simplified Chinese (中文).

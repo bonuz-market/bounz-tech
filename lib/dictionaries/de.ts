@@ -2,9 +2,9 @@ import type { Dictionary } from "../i18n";
 
 const de: Dictionary = {
 	meta: {
-		title: "Bonuz Technology DMCC | Blockchain- & Web3-Entwicklung Dubai",
+		title: "Bonuz Technology DMCC | Blockchain-, AR- & Post-Quanten-Entwicklung Dubai",
 		description:
-			"Softwareentwicklung aus Dubai: selbstverwaltete Wallets, digitale Identitätslösungen und Blockchain-Infrastruktur für menschliche Souveränität.",
+			"Softwareentwicklung aus Dubai: selbstverwaltete Wallets, Onchain-Identität, Augmented Reality und Post-Quanten-Infrastruktur. Registrierter Entwickler in den Entwicklerprogrammen von Apple, Google Play, Microsoft, Meta und Mentra.",
 		keywords: [
 			"selbstverwaltete Wallet",
 			"Blockchain-Entwicklung Dubai",
@@ -18,6 +18,13 @@ const de: Dictionary = {
 			"Treueprogramm Blockchain",
 			"Smart-Contract-Entwicklung",
 			"AR räumliche Datenverarbeitung",
+			"Augmented-Reality-App-Entwicklung",
+			"Post-Quanten-Kryptografie",
+			"quantensichere Wallet",
+			"quantenresistente Blockchain",
+			"BTX Blockchain",
+			"Datenbrillen-Entwicklung",
+			"bonuz LIFE",
 			"bonuz Wallet",
 			"bonuz ID",
 			"Krypto-Wallet-Entwicklung",
@@ -39,7 +46,7 @@ const de: Dictionary = {
 	},
 	faq: {
 		q1: "Was entwickelt Bonuz Technology?",
-		a1: "Bonuz Technology entwickelt selbstverwaltete Wallets, digitale Identitätslösungen und Blockchain-Infrastruktur. Unsere Flaggschiffprodukte umfassen die bonuz Lifestyle Wallet, bonuz ID und das bonuz Partner Dashboard.",
+		a1: "Bonuz Technology entwickelt selbstverwaltete Wallets, Onchain-Identität, Augmented Reality und Post-Quanten-Infrastruktur. Zu unseren Produkten zählen die bonuz Lifestyle Wallet, bonuz ID, bonuz LIFE, das bonuz Partner Dashboard sowie eine Reihe von Post-Quanten-Werkzeugen rund um die BTX-Blockchain.",
 		q2: "Wo hat Bonuz Technology seinen Sitz?",
 		a2: "Bonuz Technology DMCC hat seinen Sitz in Dubai, Vereinigte Arabische Emirate. Das Unternehmen wurde von Matthias Mende gegründet, der 2018 auch das Dubai Blockchain Center mitgegründet hat.",
 		q3: "Bietet Bonuz White-Label-Blockchain-Lösungen an?",
@@ -48,11 +55,16 @@ const de: Dictionary = {
 		a4: "Eine selbstverwaltete Wallet gibt Nutzern die volle Eigentümerschaft und Kontrolle über ihre digitalen Vermögenswerte und privaten Schlüssel, ohne auf Dritte angewiesen zu sein. Die bonuz Lifestyle Wallet ist benutzerfreundlich gestaltet und gewährleistet gleichzeitig volle Selbstverwaltung.",
 		q5: "Was ist bonuz ID und wie funktioniert es?",
 		a5: "bonuz ID ist eine einheitliche Plattform für digitale Identität, auf der Nutzer alle ihre Links, sozialen Profile und ihre Online-Präsenz auf einer einfachen öffentlichen Seite verbinden können. Es funktioniert als fortschrittliche, kostenlose Alternative zu Linktree mit Blockchain-basierter Identitätsverifizierung, verfügbar unter bonuz.id.",
+		q6: "Was ist bonuz LIFE?",
+		a6: "bonuz LIFE ist unsere Augmented-Reality-Ebene über der realen Welt, heute live in der bonuz Mobile App. Du hebst dein Handy hoch, und Quests, Prämien und Dinge, die andere hinterlassen haben, erscheinen, verankert an realen Orten, zu denen du hinlaufen kannst. Es läuft auf dem Handy in deiner Tasche und ist für die Datenbrillen gebaut, die gerade auf den Markt kommen. Mehr dazu unter bonuz.life.",
+		q7: "Arbeitet Bonuz an Post-Quanten-Sicherheit?",
+		a7: "Ja. Wir entwickeln und pflegen Werkzeuge für BTX, eine Post-Quanten-Blockchain: die BTX PQ Wallet, eine selbstverwaltete Desktop-Wallet unter pq-wallet.com, und BTXScan, einen öffentlichen Block-Explorer unter btxscan.io. Außerdem veröffentlichen wir postquantum.wiki, eine belegte Enzyklopädie zur Quanteninformatik und zur Kryptografie, die sie überdauern soll.",
 	},
 	breadcrumbs: {
 		home: "Startseite",
 		whatWeDo: "Was wir machen",
 		ourWork: "Unsere Arbeit",
+		credentials: "Registrierter Entwickler",
 		founder: "Gründer",
 		projectIntake: "Projektanfrage",
 	},
@@ -66,11 +78,13 @@ const de: Dictionary = {
 	},
 	whatWeDo: {
 		title: "Was wir machen",
-		intro: "Wir erfinden, gestalten und betreiben die verborgene Infrastruktur von morgen. Von selbstverwalteten Identitäten bis hin zu lebendigen digitalen Pässen, von Onchain-Identitäten bis zu White-Label-Imperien. Blockchain \u00B7 KI \u00B7 AR \u00B7 Spatial Computing \u00B7 Was auch immer nötig ist. Die Technologie ist unsichtbar. Die Souveränität ist dauerhaft.",
+		intro: "Wir erfinden, gestalten und betreiben die verborgene Infrastruktur von morgen. Von selbstverwalteten Identitäten bis hin zu lebendigen digitalen Pässen, von Onchain-Identitäten bis zu White-Label-Imperien, von einer erweiterten Ebene über Dubai bis zu Kryptografie, die den Quantencomputer überdauern soll. In unseren Repositories ist seit mehr als vier Jahren jede Woche etwas ausgeliefert worden. Blockchain \u00B7 KI \u00B7 AR \u00B7 Spatial Computing \u00B7 Post-Quanten \u00B7 Was auch immer nötig ist. Die Technologie ist unsichtbar. Die Souveränität ist dauerhaft.",
 		features: [
 			"Forschung & Entwicklung",
 			"Full-Stack-Produktentwicklung",
 			"Infrastruktur- & Protokollintegrationen",
+			"Post-Quanten-Kryptografie und Blockchain-Werkzeuge",
+			"Augmented Reality und Spatial Computing",
 			"Produkt- und Infrastrukturberatung (selektiv)",
 			"Langfristiger Betrieb und Weiterentwicklung",
 			"Zukunftssysteme (AR-Brillen, KI-Begleiter, Smart-Glass-Erlebnisse \u2013 Veröffentlichung bei Bereitschaft)",
@@ -82,7 +96,7 @@ const de: Dictionary = {
 		wallet: {
 			title: "bonuz Lifestyle Wallet",
 			description:
-				"Eine preisgekrönte, verbraucherfreundliche, selbstverwaltete Wallet mit sozialen Funktionen, Quests und Treueprogrammen für die reale Welt. Konzipiert, um sich wie eine normale App anzufühlen, auch wenn unter der Haube alles hochentwickelt ist. Selbstsouveränität beginnt hier. Verfügbar für iOS und Android.",
+				"Eine verbraucherfreundliche, selbstverwaltete Wallet mit sozialen Funktionen, Quests und Treueprogrammen für die reale Welt. Konzipiert, um sich wie eine normale App anzufühlen, auch wenn unter der Haube alles hochentwickelt ist. Sie führt die großen Chains und BTX, die Post-Quanten-Chain, nebeneinander. Selbstsouveränität beginnt hier. Verfügbar für iOS und Android.",
 		},
 		id: {
 			title: "bonuz ID",
@@ -97,12 +111,12 @@ const de: Dictionary = {
 		swapz: {
 			title: "bonuz Swapz",
 			description:
-				"Ein Cross-Chain-Token-Swap f\u00fcr Geschwindigkeit und Einfachheit. Tausche jeden Token \u00fcber mehrere Blockchains hinweg in einer einzigen Transaktion \u2014 kein manuelles Bridging, keine Komplexit\u00e4t. DeFi so, wie es sein sollte.",
+				"Ein Cross-Chain-Token-Swap f\u00fcr Geschwindigkeit und Einfachheit. Tausche jeden Token \u00fcber mehrere Blockchains hinweg in einer einzigen Transaktion, ohne manuelles Bridging, keine Komplexit\u00e4t. DeFi so, wie es sein sollte.",
 		},
 		events: {
 			title: "bonuz Events",
 			description:
-				"Eine Entdeckungsplattform f\u00fcr reale und digitale Veranstaltungen \u2014 Luma trifft Meetup, nativ auf dem bonuz Human Layer aufgebaut. Events, Quests und Aktionen, die Partner \u00fcber das Dashboard erstellen, erscheinen hier f\u00fcr Nutzer zum Entdecken und Teilnehmen. Ein \u00d6kosystem von der Erstellung bis zur Teilnahme.",
+				"Eine Entdeckungsplattform f\u00fcr reale und digitale Veranstaltungen. Luma trifft Meetup, nativ auf dem bonuz Human Layer aufgebaut. Events, Quests und Aktionen, die Partner \u00fcber das Dashboard erstellen, erscheinen hier f\u00fcr Nutzer zum Entdecken und Teilnehmen. Ein \u00d6kosystem von der Erstellung bis zur Teilnahme.",
 		},
 		chess: {
 			title: "Onchain Chess",
@@ -122,45 +136,74 @@ const de: Dictionary = {
 		skyShield: {
 			title: "SkyShield",
 			description:
-				"Ein gemeinn\u00fctziges, quelloffenes Forschungskonzept, das untersucht, ob kommerzielle FPV-Drohnen f\u00fcr gemeinschaftsbasierte K\u00fcstenverteidigung eingesetzt werden k\u00f6nnten. Alle Forschungsergebnisse werden offen ver\u00f6ffentlicht \u2014 unser Beitrag f\u00fcr eine sicherere Welt.",
+				"Ein gemeinn\u00fctziges, quelloffenes Forschungskonzept, das untersucht, ob kommerzielle FPV-Drohnen f\u00fcr gemeinschaftsbasierte K\u00fcstenverteidigung eingesetzt werden k\u00f6nnten. Alle Forschungsergebnisse werden offen ver\u00f6ffentlicht, unser Beitrag f\u00fcr eine sicherere Welt.",
 		},
 		kilocorn: {
 			title: "Kilocorn",
 			description:
-				"Der Billionen-Dollar-Index \u2014 die Kilocorn-\u00c4ra definieren. Verfolgt Unternehmen und Verm\u00f6genswerte mit einem Wert von \u00fcber 1 Billion US-Dollar, gem\u00e4\u00df der metrischen Progression von Unicorn \u00fcber Decacorn und Hectocorn zu Kilocorn.",
+				"Der Billionen-Dollar-Index, der die Kilocorn-\u00c4ra definiert. Verfolgt Unternehmen und Verm\u00f6genswerte mit einem Wert von \u00fcber 1 Billion US-Dollar, gem\u00e4\u00df der metrischen Progression von Unicorn \u00fcber Decacorn und Hectocorn zu Kilocorn.",
 		},
 		whiteLabel: {
 			title: "White-Label-Plattformen",
 			description:
-				"Für ausgewählte Unternehmen nutzen wir unsere Kernmodule und Infrastruktur wie Identität, Wallet-Struktur, Quest-, Treue- und Mitgliedschaftssysteme, um vollständig gebrandete Apps zu starten, ohne alles von Grund auf neu entwickeln zu müssen. Gleicher Motor, verschiedene Oberflächen, maßgeschneiderte Journeys.",
+				"bonuz mit Ihrer Marke. bonuz ist die Mutterplattform und bringt alle Funktionen mit, ein White Label zweigt also davon ab, statt bei null zu beginnen: Identität, Wallet-Struktur, Quests, Treue und Mitgliedschaft sind bereits dabei, und die Anmeldung läuft über bonuz ID wie im übrigen Ökosystem. Gleicher Motor, andere Oberfläche, maßgeschneiderte Journey.",
 		},
 		consulting: {
 			title: "Beratung",
 			description:
 				"Wir beraten gelegentlich zu Produktarchitektur, User Experience und Infrastrukturentscheidungen für Teams, die im oder um das bonuz-Ökosystem herum entwickeln.",
 		},
-		nextLayer: {
-			title: "bonuz Next Layer",
+		life: {
+			title: "bonuz LIFE",
 			description:
-				"Demnächst. bonuz Next Layer bringt das Ökosystem in die erweiterte Realität \u2014 bonuz-Anwendungen laufen nativ auf Datenbrillen und Spatial-Computing-Geräten. Die Zukunft, die man trägt.",
+				"Jetzt live in der bonuz App, heute in Dubai. Richte dein Handy auf die Welt, und sie antwortet: Quests, Prämien und Dinge, die andere hinterlassen haben, verankert an realen Orten, zu denen du hinlaufen kannst. Was du einsammelst, bleibt in deiner eigenen Wallet. LIFE ist das erste Produkt von bonuz Next Layer, unserer Spatial-Computing-Ebene, es läuft auf dem Handy in deiner Tasche und ist für die Brillen gebaut, die gerade auf den Markt kommen.",
+		},
+		pqWallet: {
+			title: "BTX PQ Wallet",
+			description:
+				"Eine selbstverwaltete Desktop-Wallet für BTX, gebaut für den Tag, an dem Quantencomputer die Signaturen brechen können, auf die wir uns heute alle verlassen. Schlüssel werden auf dem eigenen Rechner erzeugt und gehalten, mit ML-DSA und SLH-DSA, den vom NIST standardisierten Post-Quanten-Signaturverfahren. Verfügbar für macOS, Windows und Linux.",
+		},
+		btxscan: {
+			title: "BTXScan",
+			description:
+				"Ein öffentlicher Block-Explorer für BTX, eine von Bitcoin abgeleitete Post-Quanten-Blockchain mit einem Proof of Work auf Basis von Matrixmultiplikation. Durchsuche Blöcke, Transaktionen und Adressen und verfolge Umlaufmenge, Difficulty und Netzwerkzustand. Neutrale Infrastruktur mit einer offenen REST-API, auf der jeder aufbauen kann.",
+		},
+		pqWiki: {
+			title: "postquantum.wiki",
+			description:
+				"Eines unserer Spaßprojekte, inzwischen ein ernsthaftes Nachschlagewerk. Eine belegte, verständlich geschriebene Enzyklopädie der Quantenwelt und der Kryptografie, die sie überdauern soll: wie Quantencomputer wirklich funktionieren, was sie bedrohen, die NIST-Standards und was eine Migration in der Praxis bedeutet. Über 150 Einträge. Nur Primärquellen, keine Marktkommentare.",
 		},
 		footer: "Das meiste, was wir bauen, ist nie laut. Es funktioniert einfach.",
 	},
+	credentials: {
+		title: "Registrierter Entwickler",
+		intro:
+			"Wir sind unter unserem eigenen Firmennamen als Entwickler registriert, auf den Plattformen, die Menschen heute nutzen, und auf jenen, auf denen das nächste Jahrzehnt der Computertechnik laufen wird.",
+		items: [
+			{ name: "Apple", program: "Apple Developer Program" },
+			{ name: "Google Play", program: "Google Play Developer Account" },
+			{ name: "Microsoft", program: "Microsoft Store, über Partner Center" },
+			{ name: "Meta", program: "Meta Wearables Developer Center" },
+			{ name: "Mentra", program: "MentraOS Developer Console" },
+		],
+		disclaimer:
+			"Entwicklerprogramm-Registrierungen der Bonuz Technology DMCC. Alle Produktnamen und Logos sind Marken der jeweiligen Inhaber. Eine Empfehlung, Partnerschaft oder ein Sponsoring ist damit nicht verbunden.",
+	},
 	founder: {
 		title: "Gründer",
-		bio: "Bonuz Technology DMCC wird von Matthias Mende geführt, einem Unternehmer und Entwickler mit Sitz in Dubai, der seit den Anfängen in Blockchain und Verbrauchertechnologie aktiv ist. Er hat 2018 auch das Dubai Blockchain Center mitgegründet.",
+		bio: "Bonuz Technology DMCC wird von Matthias Mende geführt, einem Unternehmer und Entwickler mit Sitz in Dubai, der seit den Anfängen in Blockchain und Verbrauchertechnologie aktiv ist. Er hat 2018 auch das Dubai Blockchain Center mitgegründet und wurde 2025 als Binance Industry Advocate ausgezeichnet. Mehr über ihn auf matthiasmende.com.",
 		mission1: "Wir sind nicht hier, um eine weitere App zu bauen.",
 		mission2: "Wir sind hier, um Technologie verschwinden zu lassen.",
 	},
 	intake: {
 		title: "Projektanfrage",
 		description:
-			"Möchten Sie etwas entwickeln? Oder suchen Sie eine White-Label-Wallet-App, die auf Ihre Marke zugeschnitten ist? Füllen Sie das untenstehende Formular aus.",
+			"Möchten Sie etwas entwickeln? Oder eine eigene White-Label-App, angetrieben von bonuz? Stellen Sie es sich vor als bonuz mit Ihrer Marke. bonuz ist die Mutterplattform und bringt alle Funktionen mit, und jedes White Label zweigt davon ab. Genau deshalb melden sich schon so viele Apps im Ökosystem mit bonuz ID an. Füllen Sie das untenstehende Formular aus.",
 		button: "Anfrageformular öffnen",
 	},
 	footer: {
 		quote:
-			'„Die Zukunft ist selbstverwaltet. Die Zukunft ist räumlich. Die Zukunft ist bonuz."',
+			'„Die Zukunft ist selbstverwaltet. Die Zukunft ist räumlich. Die Zukunft ist bonuz.“',
 		copyright: "\u00A9 {year} Bonuz Technology DMCC \u00B7 Dubai, Vereinigte Arabische Emirate",
 	},
 };
