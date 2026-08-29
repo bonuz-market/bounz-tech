@@ -25,7 +25,7 @@ const milestones: {
 		date: "18 Aug 2026",
 		what: "bonuz app 4.0.0, LIFE Mode",
 		detail:
-			"The augmented reality layer went live inside the mobile app. Open the lens, look around, and quests and rewards appear anchored to real places.",
+			"Augmented reality inside the app. Quests and rewards anchored to real places.",
 		href: "https://apps.apple.com/ae/app/bonuz-social-crypto-wallet/id1637687439",
 		source: "App Store",
 	},
@@ -33,15 +33,15 @@ const milestones: {
 		date: "17 Aug 2026",
 		what: "PQ Wallet for BTX 1.1.0",
 		detail:
-			"Latest release of the post-quantum desktop wallet, on macOS, Windows and Linux.",
+			"Latest release of the post-quantum desktop wallet. macOS, Windows, Linux.",
 		href: "https://pq-wallet.com/changelog",
 		source: "changelog",
 	},
 	{
-		date: "Jul–Aug 2026",
+		date: "Jul to Aug 2026",
 		what: "Eight PQ Wallet releases in six weeks",
 		detail:
-			"Public, dated releases between 7 July and 17 August 2026, roughly one a week.",
+			"Dated public releases, 7 July to 17 August 2026, roughly one a week.",
 		href: "https://pq-wallet.com/changelog",
 		source: "changelog",
 	},
@@ -55,8 +55,7 @@ const milestones: {
 	{
 		date: "13 Oct 2023",
 		what: "bonuz app, first App Store release",
-		detail:
-			"The consumer wallet has been publicly available and continuously updated ever since.",
+		detail: "Publicly available and updated continuously ever since.",
 		href: "https://apps.apple.com/ae/app/bonuz-social-crypto-wallet/id1637687439",
 		source: "App Store",
 	},
@@ -66,12 +65,12 @@ const changelogs: { name: string; href: string; note: string }[] = [
 	{
 		name: "PQ Wallet for BTX",
 		href: "https://pq-wallet.com/changelog",
-		note: "Full per-release changelog, every version since 0.1.0.",
+		note: "Every version since 0.1.0.",
 	},
 	{
 		name: "bonuz app",
 		href: "https://apps.apple.com/ae/app/bonuz-social-crypto-wallet/id1637687439",
-		note: "Version history and release notes on the App Store listing.",
+		note: "Version history and release notes on the App Store.",
 	},
 	{
 		name: "bonuz.market",
@@ -81,7 +80,7 @@ const changelogs: { name: string; href: string; note: string }[] = [
 	{
 		name: "bonuz.xyz",
 		href: "https://bonuz.xyz",
-		note: "Product updates for the consumer app and its surfaces.",
+		note: "Product updates for the consumer app.",
 	},
 ];
 
@@ -99,10 +98,9 @@ export default async function Page({
 			title="What we ship"
 			lede={
 				<p>
-					Every product in the ecosystem keeps its own changelog, and those are
-					the live source. This page does not duplicate them. It is a small
-					selection of milestones, each one pointing at a record you can check
-					without trusting us.
+					Every product keeps its own changelog. Those are the live source.
+					Below, a short selection of milestones, each pointing at a record you
+					can check without trusting us.
 				</p>
 			}
 			nav={[
@@ -126,11 +124,7 @@ export default async function Page({
 			</ul>
 
 			<h2>The live changelogs</h2>
-			<p>
-				If you want the complete picture rather than highlights, go straight to
-				the source. These are maintained per product and are always more current
-				than this page.
-			</p>
+			<p>Maintained per product, and always more current than this page.</p>
 			<ul>
 				{changelogs.map((c) => (
 					<li key={c.name}>
@@ -144,11 +138,10 @@ export default async function Page({
 
 			<h2>A note on cadence</h2>
 			<p>
-				We say on the homepage that something ships every week across our
-				repositories. That is a measure of engineering activity, not of public
-				releases, and most of our repositories are private. The public record
-				above is the part you can independently verify, which is why it is the
-				part we link to.
+				The homepage says something ships every week across our repositories.
+				That measures repository activity, not public releases, and most of our
+				repositories are private. The public record above is what you can
+				verify independently, so it is what we link to.
 			</p>
 		</ContentPage>
 	);

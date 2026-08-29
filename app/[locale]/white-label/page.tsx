@@ -36,9 +36,9 @@ export default async function Page({
 			title="bonuz featuring your brand"
 			lede={
 				<p>
-					bonuz is the mother platform and carries every feature. A white label
-					breaks off from it rather than starting from zero, which is why so
-					many apps in the ecosystem already sign in with bonuz ID.
+					Your brand, on a platform that already runs. A white label breaks off
+					from bonuz rather than starting at zero. Apps across the ecosystem
+					already sign in with bonuz ID.
 				</p>
 			}
 			nav={[
@@ -49,41 +49,35 @@ export default async function Page({
 		>
 			<h2>What you inherit on day one</h2>
 			<p>
-				These are not features we would build for you. They are running in
-				production today across our own apps, and your app is another skin on the
-				same engine.
+				Running in production today, across our own apps. Your app is another
+				skin on the same engine.
 			</p>
 			<ul>
 				<li>
 					<strong>Identity.</strong> bonuz ID, an onchain profile layer with
-					social verification. Users sign in with an identity that works across
-					every app in the ecosystem, including yours.
+					social verification. One sign-in that works across every app in the
+					ecosystem, including yours.
 				</li>
 				<li>
-					<strong>Self-custodial wallet.</strong> Keys stay with the user. Built
-					to feel like a normal app, so your customers do not need to understand
-					any of it.
+					<strong>Self-custodial wallet.</strong> Keys stay with the user. It
+					feels like a normal app, so your customers never think about it.
 				</li>
 				<li>
 					<strong>Quests and activations.</strong> Real-world tasks, check-ins
-					and rewards, created and managed through a dashboard rather than by
-					your engineers.
+					and rewards. Created in a dashboard, not by your engineers.
 				</li>
 				<li>
 					<strong>Loyalty and membership.</strong> Passes, vouchers, tiers and
 					redemption, tied to the same identity.
 				</li>
 				<li>
-					<strong>Partner dashboard.</strong> Your team creates and runs
-					campaigns without shipping code.
+					<strong>Partner dashboard.</strong> Your team runs campaigns without
+					shipping code.
 				</li>
 			</ul>
 
 			<h2>What it looks like when it is done</h2>
-			<p>
-				Two of the products on our own site are the pattern, so you can go and
-				use them rather than take our word for it:
-			</p>
+			<p>Two products on our own site, live and usable today:</p>
 			<ul>
 				<li>
 					<a
@@ -93,10 +87,9 @@ export default async function Page({
 					>
 						Habibi Pass
 					</a>{" "}
-					is a tourism engagement platform for the UAE. Visitors collect
-					vouchers and rewards from local restaurants and businesses. Underneath
-					it is the same identity, wallet and loyalty stack described above,
-					wearing a different brand.
+					is a tourism engagement platform for the UAE. Visitors collect vouchers
+					and rewards from local restaurants and businesses. Same identity,
+					wallet and loyalty stack, different brand.
 				</li>
 				<li>
 					<a
@@ -107,43 +100,38 @@ export default async function Page({
 						UAE971
 					</a>{" "}
 					is a national creator index with live scoring and rankings. Same
-					engine, an entirely different product surface.
+					engine, a different product surface.
 				</li>
 			</ul>
-			<p>
-				Same engine, different skin, customised journey. That is the whole idea.
-			</p>
+			<p>Same engine, different skin, customised journey.</p>
 
 			<h2>Who this is for</h2>
 			<p>
-				Brands and operators who already have an audience and want to own the
-				relationship with it: hospitality groups, event organisers, retail and
-				F&amp;B chains, tourism boards, communities, creator platforms, and
-				enterprises that need a wallet or a loyalty layer without becoming a
-				blockchain company to get one.
+				Brands and operators with an audience they want to own the relationship
+				with: hospitality groups, event organisers, retail and F&amp;B chains,
+				tourism boards, communities, creator platforms, and enterprises that need
+				a wallet or a loyalty layer without becoming a blockchain company.
 			</p>
 			<p>
-				If you are pre-audience, a white label is probably the wrong tool. Tell
-				us anyway and we will say so.
+				No audience yet? A white label is probably the wrong tool. Tell us anyway and we
+				will say so.
 			</p>
 
 			<h2>How we work</h2>
 			<p>
-				We take selected engagements rather than every enquiry, because we
-				operate what we launch rather than handing over a repository and
-				disappearing. A conversation usually starts with three questions: who
-				your audience is, what you want them to do, and what you already have
-				running. From there we scope it honestly, including telling you when the
-				answer is that you do not need us.
+				We take selected engagements. We operate what we launch rather than hand
+				over a repository and disappear. Three questions start it: who your
+				audience is, what you want them to do, what you already run. We scope
+				from there, including telling you when you do not need us.
 			</p>
 			<p>
-				We do not publish a price list, because the work genuinely varies. We
-				will give you a straight number once we understand the scope.
+				No price list. The work varies. You get a straight number once we
+				understand the scope.
 			</p>
 
 			<h2>Start a conversation</h2>
 			<p>
-				Send the details through the{" "}
+				Send it through the{" "}
 				<a
 					href="https://tally.so/r/7RR9r0"
 					target="_blank"
@@ -151,8 +139,7 @@ export default async function Page({
 				>
 					project intake form
 				</a>
-				. Real description, real timeline, real constraints. It reaches us
-				directly.
+				. Real description, real timeline, real constraints.
 			</p>
 		</ContentPage>
 	);
