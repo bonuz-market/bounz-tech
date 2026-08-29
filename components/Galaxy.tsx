@@ -188,6 +188,11 @@ interface GalaxyProps {
 	repulsionStrength?: number;
 	autoCenterRepulsion?: number;
 	transparent?: boolean;
+	/** Cap on devicePixelRatio. Fragment cost scales with the square of this. */
+	maxDpr?: number;
+	/** Render cap in frames per second. The starfield drifts slowly, so rendering
+	 * it at display rate (120Hz on ProMotion) is wasted GPU for no visible gain. */
+	fpsCap?: number;
 }
 
 const DEFAULT_FOCAL: [number, number] = [0.5, 0.5];
@@ -210,6 +215,8 @@ export default function Galaxy({
 	rotationSpeed = 0.1,
 	autoCenterRepulsion = 0,
 	transparent = true,
+	maxDpr = 1.5,
+	fpsCap = 30,
 }: GalaxyProps) {
 	const ctnDom = useRef<HTMLDivElement>(null);
 	const targetMousePos = useRef({ x: 0.5, y: 0.5 });
@@ -232,7 +239,7 @@ export default function Galaxy({
 		).matches;
 		const shouldAnimate = !disableAnimation && !prefersReducedMotion;
 
-		const dpr = Math.min(window.devicePixelRatio, 2);
+		const dpr = Math.min(window.devicePixelRatio, maxDpr);
 		const renderer = new Renderer({
 			alpha: transparent,
 			premultipliedAlpha: false,
@@ -304,15 +311,27 @@ export default function Galaxy({
 		let animateId: number;
 		let isVisible = false;
 
+		let lastFrame = 0;
+		const minFrameMs = 1000 / fpsCap;
+
 		function update(t: number) {
 			if (!isVisible) return;
 			animateId = requestAnimationFrame(update);
+
+			// Skip frames above the cap. The shader evaluates 36 stars per pixel,
+			// so every skipped frame is real GPU time returned to the browser.
+			const dt = t - lastFrame;
+			if (dt < minFrameMs) return;
+			lastFrame = t;
+
 			if (shouldAnimate) {
 				program.uniforms.uTime.value = t * 0.001;
 				program.uniforms.uStarSpeed.value = (t * 0.001 * starSpeed) / 10.0;
 			}
 
-			const lerpFactor = 0.05;
+			// Time-based so the mouse easing feels identical at any frame rate
+			// (matches the old fixed 0.05 per frame at 120fps).
+			const lerpFactor = Math.min(1, (dt / 1000) * 6);
 			smoothMousePos.current.x +=
 				(targetMousePos.current.x - smoothMousePos.current.x) * lerpFactor;
 			smoothMousePos.current.y +=
@@ -412,6 +431,8 @@ export default function Galaxy({
 		repulsionStrength,
 		autoCenterRepulsion,
 		transparent,
+		maxDpr,
+		fpsCap,
 	]);
 
 	return (
