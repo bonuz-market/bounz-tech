@@ -58,7 +58,7 @@ const de: Dictionary = {
 		q6: "Was ist bonuz LIFE?",
 		a6: "bonuz LIFE ist unsere Augmented-Reality-Ebene über der realen Welt, heute live in der bonuz Mobile App. Du hebst dein Handy hoch, und Quests, Prämien und Dinge, die andere hinterlassen haben, erscheinen, verankert an realen Orten, zu denen du hinlaufen kannst. Es läuft auf dem Handy in deiner Tasche und ist für die Datenbrillen gebaut, die gerade auf den Markt kommen. Mehr dazu unter bonuz.life.",
 		q7: "Arbeitet Bonuz an Post-Quanten-Sicherheit?",
-		a7: "Ja. Wir entwickeln und pflegen Werkzeuge für BTX, eine Post-Quanten-Blockchain: die BTX PQ Wallet, eine selbstverwaltete Desktop-Wallet unter pq-wallet.com, und BTXScan, einen öffentlichen Block-Explorer unter btxscan.io. Außerdem veröffentlichen wir postquantum.wiki, eine belegte Enzyklopädie zur Quanteninformatik und zur Kryptografie, die sie überdauern soll.",
+		a7: "Ja. Wir entwickeln und pflegen Werkzeuge für BTX, eine Post-Quanten-Blockchain: PQ Wallet for BTX, eine selbstverwaltete Desktop-Wallet unter pq-wallet.com, und BTXScan, einen öffentlichen Block-Explorer unter btxscan.io. Außerdem veröffentlichen wir postquantum.wiki, eine belegte Enzyklopädie zur Quanteninformatik und zur Kryptografie, die sie überdauern soll.",
 	},
 	breadcrumbs: {
 		home: "Startseite",
@@ -159,7 +159,7 @@ const de: Dictionary = {
 				"Jetzt live in der bonuz App, heute in Dubai. Richte dein Handy auf die Welt, und sie antwortet: Quests, Prämien und Dinge, die andere hinterlassen haben, verankert an realen Orten, zu denen du hinlaufen kannst. Was du einsammelst, bleibt in deiner eigenen Wallet. LIFE ist das erste Produkt von bonuz Next Layer, unserer Spatial-Computing-Ebene, es läuft auf dem Handy in deiner Tasche und ist für die Brillen gebaut, die gerade auf den Markt kommen.",
 		},
 		pqWallet: {
-			title: "BTX PQ Wallet",
+			title: "PQ Wallet for BTX",
 			description:
 				"Eine selbstverwaltete Desktop-Wallet für BTX, gebaut für den Tag, an dem Quantencomputer die Signaturen brechen können, auf die wir uns heute alle verlassen. Schlüssel werden auf dem eigenen Rechner erzeugt und gehalten, mit ML-DSA und SLH-DSA, den vom NIST standardisierten Post-Quanten-Signaturverfahren. Verfügbar für macOS, Windows und Linux.",
 		},

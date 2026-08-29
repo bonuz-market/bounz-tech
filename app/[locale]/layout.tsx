@@ -170,6 +170,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 				image: `${siteUrl}/og-image.png`,
 				description: dict.meta.description,
 				slogan: dict.hero.title,
+				foundingDate: "2021",
 				foundingLocation: {
 					"@type": "Place",
 					name: "Dubai, United Arab Emirates",
@@ -477,7 +478,7 @@ function getStructuredData(locale: string, dict: Awaited<ReturnType<typeof getDi
 			},
 			{
 				"@type": "SoftwareApplication",
-				name: "BTX PQ Wallet",
+				name: "PQ Wallet for BTX",
 				description: dict.ourWork.pqWallet.description,
 				url: "https://pq-wallet.com",
 				applicationCategory: "FinanceApplication",
