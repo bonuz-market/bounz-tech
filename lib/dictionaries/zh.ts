@@ -58,7 +58,7 @@ const zh: Dictionary = {
 		q6: "什么是bonuz LIFE？",
 		a6: "bonuz LIFE是我们叠加在现实世界之上的增强现实层，今天已在bonuz手机应用中上线。举起手机，任务、奖励以及别人留下的东西便会锚定在你可以走过去的真实地点上出现。它运行在你口袋里的手机上，也是为即将到来的智能眼镜而构建的。详见bonuz.life。",
 		q7: "Bonuz在研究后量子安全吗？",
-		a7: "是的。我们为后量子区块链BTX构建并维护工具：BTX PQ 钱包，一款位于pq-wallet.com的自托管桌面钱包；以及BTXScan，一个位于btxscan.io的公开区块浏览器。我们还发布postquantum.wiki，一部标注来源的百科全书，讲述量子计算以及为抵御它而构建的密码学。",
+		a7: "是的。我们为后量子区块链BTX构建并维护工具：PQ Wallet for BTX，一款位于pq-wallet.com的自托管桌面钱包；以及BTXScan，一个位于btxscan.io的公开区块浏览器。我们还发布postquantum.wiki，一部标注来源的百科全书，讲述量子计算以及为抵御它而构建的密码学。",
 	},
 	breadcrumbs: {
 		home: "首页",
@@ -158,7 +158,7 @@ const zh: Dictionary = {
 				"已在bonuz应用中上线，目前覆盖迪拜。举起手机，世界就会回应你：任务、奖励，以及别人留下的东西，锚定在你可以走过去的真实地点上。你收集到的一切都留在你自己的钱包里。LIFE是bonuz Next Layer（我们的空间计算层）的第一款产品，它运行在你口袋里的手机上，也是为即将到来的眼镜而构建的。",
 		},
 		pqWallet: {
-			title: "BTX PQ 钱包",
+			title: "PQ Wallet for BTX",
 			description:
 				"一款面向BTX的自托管桌面钱包，为量子计算机能够攻破我们今天所依赖的签名的那一天而构建。密钥在你自己的机器上生成并保存，使用NIST标准化的后量子签名算法ML-DSA与SLH-DSA。支持macOS、Windows和Linux。",
 		},

@@ -39,7 +39,7 @@ Cross-chain token swap built for speed and simplicity. Trade tokens across multi
 - Category: FinanceApplication
 - Price: Free
 
-### BTX PQ Wallet
+### PQ Wallet for BTX
 Self-custodial desktop wallet for BTX, built for the day quantum computers can break the signatures in use today. Keys are generated and held on the user's own machine using ML-DSA and SLH-DSA, the post-quantum signature schemes standardised by NIST.
 - URL: https://pq-wallet.com
 - Category: FinanceApplication
@@ -158,7 +158,7 @@ Dubai, United Arab Emirates
 - Partner Dashboard: https://app.bonuz.market
 - Events Platform: https://app.bonuz.xyz
 - bonuz LIFE: https://bonuz.life
-- BTX PQ Wallet: https://pq-wallet.com
+- PQ Wallet for BTX: https://pq-wallet.com
 - BTXScan: https://btxscan.io
 - postquantum.wiki: https://postquantum.wiki
 - bonuz Swapz: https://swapz.bonuz.market

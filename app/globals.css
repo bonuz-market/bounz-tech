@@ -128,9 +128,10 @@ html[lang="zh-Hans"] h6 {
 }
 
 /* Menu labels run lowercase, matching the lowercase bonuz wordmark.
-   Scoped to the nav so section headings and body copy keep normal casing. */
-.nav-link,
-.mobile-menu-link {
+   English only: German capitalises nouns, so "Gründer" must keep its capital.
+   Arabic and Chinese have no case, so this rule is a no-op for them either way. */
+html[lang="en"] .nav-link,
+html[lang="en"] .mobile-menu-link {
 	text-transform: lowercase;
 }
 

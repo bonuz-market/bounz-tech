@@ -58,7 +58,7 @@ const en: Dictionary = {
 		q6: "What is bonuz LIFE?",
 		a6: "bonuz LIFE is our augmented reality layer over the real world, live today inside the bonuz mobile app. You raise your phone and quests, rewards and things other people left behind appear anchored to real places you can walk to. It runs on the phone in your pocket and is built for the smart glasses that are arriving. Learn more at bonuz.life.",
 		q7: "Is Bonuz working on post-quantum security?",
-		a7: "Yes. We build and maintain tools for BTX, a post-quantum blockchain: the BTX PQ Wallet, a self-custodial desktop wallet at pq-wallet.com, and BTXScan, a public block explorer at btxscan.io. We also publish postquantum.wiki, a cited encyclopedia of quantum computing and the cryptography built to survive it.",
+		a7: "Yes. We build and maintain tools for BTX, a post-quantum blockchain: PQ Wallet for BTX, a self-custodial desktop wallet at pq-wallet.com, and BTXScan, a public block explorer at btxscan.io. We also publish postquantum.wiki, a cited encyclopedia of quantum computing and the cryptography built to survive it.",
 	},
 	breadcrumbs: {
 		home: "Home",
@@ -125,7 +125,7 @@ const en: Dictionary = {
 				"A discovery platform for real-world and digital events. Think Luma meets Meetup, built natively on the bonuz human layer. Events, quests, and activations created by partners through the Dashboard appear here for users to find and join. One ecosystem from creation to attendance.",
 		},
 		pqWallet: {
-			title: "BTX PQ Wallet",
+			title: "PQ Wallet for BTX",
 			description:
 				"A self-custodial desktop wallet for BTX, built for the day quantum computers can break the signatures we all rely on today. Keys are generated and held on your own machine using ML-DSA and SLH-DSA, the post-quantum signature schemes standardised by NIST. Shipping on macOS, Windows and Linux.",
 		},
