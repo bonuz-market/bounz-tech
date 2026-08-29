@@ -102,6 +102,9 @@ export type Dictionary = {
 		privacy: string;
 		terms: string;
 		imprint: string;
+		postQuantum: string;
+		shipping: string;
+		press: string;
 	};
 };
 

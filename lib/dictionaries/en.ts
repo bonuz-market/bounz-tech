@@ -232,6 +232,9 @@ const en: Dictionary = {
 		privacy: "Privacy",
 		terms: "Terms",
 		imprint: "Legal notice",
+		postQuantum: "Post-quantum",
+		shipping: "What we ship",
+		press: "Press",
 	},
 };
 
