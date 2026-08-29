@@ -64,6 +64,7 @@ const de: Dictionary = {
 	a11y: {
 		skipToContent: "Zum Inhalt springen",
 		ambientSound: "Hintergrundklang",
+		aiView: "Maschinenlesbare Ansicht",
 	},
 	breadcrumbs: {
 		home: "Startseite",
