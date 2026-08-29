@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
-	title: "Press kit | Bonuz Technology DMCC",
+	title: "Press kit",
 	description:
 		"Logos, boilerplate, company facts and a naming guide for anyone writing about Bonuz Technology DMCC.",
 	alternates: { canonical: "https://bonuz.tech/en/press" },

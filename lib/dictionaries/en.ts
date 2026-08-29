@@ -60,6 +60,9 @@ const en: Dictionary = {
 		q7: "Is Bonuz working on post-quantum security?",
 		a7: "Yes. We build and maintain tools for BTX, a post-quantum blockchain: PQ Wallet for BTX, a self-custodial desktop wallet at pq-wallet.com, and BTXScan, a public block explorer at btxscan.io. We also publish postquantum.wiki, a cited encyclopedia of quantum computing and the cryptography built to survive it.",
 	},
+	a11y: {
+		skipToContent: "Skip to content",
+	},
 	breadcrumbs: {
 		home: "Home",
 		whatWeDo: "What We Do",

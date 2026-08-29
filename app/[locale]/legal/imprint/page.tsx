@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-	title: "Legal Notice | Bonuz Technology DMCC",
+	title: "Legal Notice",
 	description:
 		"Company details for Bonuz Technology DMCC: legal entity, registered address in Dubai, management and contact.",
 	alternates: { canonical: "https://bonuz.tech/en/legal/imprint" },

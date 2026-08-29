@@ -60,6 +60,9 @@ const de: Dictionary = {
 		q7: "Arbeitet Bonuz an Post-Quanten-Sicherheit?",
 		a7: "Ja. Wir entwickeln und pflegen Werkzeuge für BTX, eine Post-Quanten-Blockchain: PQ Wallet for BTX, eine selbstverwaltete Desktop-Wallet unter pq-wallet.com, und BTXScan, einen öffentlichen Block-Explorer unter btxscan.io. Außerdem veröffentlichen wir postquantum.wiki, eine belegte Enzyklopädie zur Quanteninformatik und zur Kryptografie, die sie überdauern soll.",
 	},
+	a11y: {
+		skipToContent: "Zum Inhalt springen",
+	},
 	breadcrumbs: {
 		home: "Startseite",
 		whatWeDo: "Was wir machen",
@@ -191,7 +194,7 @@ const de: Dictionary = {
 	},
 	founder: {
 		title: "Gründer",
-		bio: "Bonuz Technology DMCC wird von Matthias Mende geführt, einem Unternehmer und Entwickler mit Sitz in Dubai, der seit den Anfängen in Blockchain und Verbrauchertechnologie aktiv ist. Er hat 2018 auch das Dubai Blockchain Center mitgegründet und wurde 2025 als Binance Industry Advocate ausgezeichnet. Mehr über ihn auf matthiasmende.com.",
+		bio: "Bonuz Technology DMCC gehört Matthias Mende und wird von ihm geführt, einem Unternehmer und Entwickler mit Sitz in Dubai, der seit den Anfängen in Blockchain und Verbrauchertechnologie aktiv ist. Er hat 2018 auch das Dubai Blockchain Center mitgegründet und wurde 2025 als Binance Industry Advocate ausgezeichnet. Mehr über ihn auf matthiasmende.com.",
 		mission1: "Wir sind nicht hier, um eine weitere App zu bauen.",
 		mission2: "Wir sind hier, um Technologie verschwinden zu lassen.",
 	},

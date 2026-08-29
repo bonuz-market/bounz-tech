@@ -4,7 +4,7 @@ import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
 
 export const metadata: Metadata = {
-	title: "White-label wallet platform | Bonuz Technology DMCC",
+	title: "White-label wallet platform",
 	description:
 		"bonuz featuring your brand. Launch a branded app on the bonuz platform: onchain identity, self-custodial wallet, quests, loyalty and membership, without building any of it from scratch.",
 	keywords: [

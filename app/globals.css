@@ -232,7 +232,7 @@ html[lang="en"] .mobile-menu-link {
 
 .btn-primary {
 	background: white;
-	color: #667eea;
+	color: #5165cc;
 }
 
 .btn-primary:hover {
@@ -248,7 +248,7 @@ html[lang="en"] .mobile-menu-link {
 
 .btn-secondary:hover {
 	background: white;
-	color: #667eea;
+	color: #5165cc;
 }
 
 /* Section Styles */
@@ -545,7 +545,7 @@ html[dir="rtl"] .features-list li::before {
 
 .btn-form {
 	display: inline-block;
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #5566c8 0%, #764ba2 100%);
 	color: white;
 	padding: 18px 48px;
 	font-size: 1.125rem;
@@ -624,6 +624,7 @@ html[dir="rtl"] .lang-switcher {
 }
 
 .lang-dropdown {
+	visibility: hidden;
 	position: absolute;
 	top: calc(100% + 8px);
 	right: 0;
@@ -647,6 +648,8 @@ html[dir="rtl"] .lang-dropdown {
 }
 
 .lang-dropdown-open {
+	visibility: visible;
+	transition-delay: 0s;
 	opacity: 1;
 	transform: translateY(0) scale(1);
 	pointer-events: auto;
@@ -723,6 +726,7 @@ html[dir="rtl"] .lang-dropdown {
 }
 
 .mobile-menu-dropdown {
+	visibility: hidden;
 	position: absolute;
 	top: calc(100% + 8px);
 	left: 50%;
@@ -741,6 +745,7 @@ html[dir="rtl"] .lang-dropdown {
 }
 
 .mobile-menu-dropdown-open {
+	visibility: visible;
 	opacity: 1;
 	transform: translateX(-50%) translateY(0) scale(1);
 	pointer-events: auto;
@@ -1059,4 +1064,70 @@ html[dir="rtl"] .lang-dropdown {
 	font-size: 0.95rem;
 	line-height: 1.75;
 	margin-bottom: 8px;
+}
+
+/* ---------- Hidden arcade ---------- */
+
+.arcade-overlay {
+	position: fixed;
+	inset: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.94);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.arcade-canvas {
+	max-width: 100vw;
+	max-height: 100vh;
+	border: 1px solid #262626;
+	border-radius: 8px;
+	box-shadow: 0 0 60px rgba(206, 9, 255, 0.18);
+	image-rendering: pixelated;
+}
+
+.arcade-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: transparent;
+	border: 1px solid #333;
+	border-radius: 6px;
+	color: #888;
+	font-size: 0.78rem;
+	font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+	padding: 6px 12px;
+	cursor: pointer;
+}
+
+.arcade-close:hover,
+.arcade-close:focus-visible {
+	color: #ffffff;
+	border-color: #667eea;
+}
+
+@media (max-width: 520px) {
+	.arcade-canvas {
+		transform: scale(0.72);
+		transform-origin: center;
+	}
+}
+
+/* Skip link. inset-inline-start so it also lands correctly on the RTL locale. */
+.skip-link {
+	position: absolute;
+	inset-inline-start: -9999px;
+	top: 0;
+	z-index: 1100;
+	padding: 12px 20px;
+	border-radius: 0 0 8px 0;
+	background: #ffffff;
+	color: #000000;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	inset-inline-start: 0;
 }

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { headers } from "next/headers";
-import { locales, defaultLocale, type Locale } from "@/lib/i18n";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
 const notFoundText: Record<Locale, { title: string; description: string; home: string; contact: string }> = {
 	en: {
@@ -29,10 +28,11 @@ const notFoundText: Record<Locale, { title: string; description: string; home: s
 	},
 };
 
-export default async function NotFound() {
-	const headersList = await headers();
-	const pathname = headersList.get("x-next-pathname") || "";
-	const detectedLocale = locales.find((l) => pathname.startsWith(`/${l}`)) || defaultLocale;
+export default function NotFound() {
+	// Static on purpose. The localised 404 lives at app/[locale]/not-found.tsx,
+	// which reads the locale from the route segment; this root boundary only
+	// catches paths with no locale at all, so it answers in the default language.
+	const detectedLocale: Locale = defaultLocale;
 	const t = notFoundText[detectedLocale];
 	const dir = detectedLocale === "ar" ? "rtl" : "ltr";
 	const lang = detectedLocale === "zh" ? "zh-Hans" : detectedLocale;
