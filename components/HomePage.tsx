@@ -15,6 +15,7 @@ const Galaxy = dynamic(() => import("@/components/Galaxy"), { ssr: false });
 
 const currentYear = new Date().getFullYear();
 
+// The hero galaxy is the signature: animated, mouse-reactive, full quality.
 const galaxyProps = {
 	hueShift: 220,
 	density: 0.6,
@@ -29,6 +30,18 @@ const galaxyProps = {
 	mouseInteraction: true,
 	autoCenterRepulsion: 0,
 	transparent: true,
+};
+
+// The "Our work" galaxy sits behind ~2400px of text cards. Animating it cost more
+// fragment work per frame than the hero (a taller canvas), for a backdrop nobody
+// looks at directly. It renders one static frame at dpr 1 instead: same texture,
+// no render loop, no mouse handlers.
+const backdropGalaxyProps = {
+	...galaxyProps,
+	disableAnimation: true,
+	mouseInteraction: false,
+	mouseRepulsion: false as const,
+	maxDpr: 1,
 };
 
 type WorkItemKey = keyof Omit<Dictionary["ourWork"], "title" | "intro" | "footer">;
@@ -213,7 +226,7 @@ export default function HomePage({
 			{/* Our Work Section */}
 			<section id="our-work" className="section-black relative">
 				<div className="absolute inset-0 z-0" aria-hidden="true">
-					<Galaxy {...galaxyProps} />
+					<Galaxy {...backdropGalaxyProps} />
 				</div>
 				<div className="container relative">
 					<h2>{dict.ourWork.title}</h2>

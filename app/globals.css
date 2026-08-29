@@ -127,6 +127,13 @@ html[lang="zh-Hans"] h6 {
 	margin-inline-start: auto;
 }
 
+/* Menu labels run lowercase, matching the lowercase bonuz wordmark.
+   Scoped to the nav so section headings and body copy keep normal casing. */
+.nav-link,
+.mobile-menu-link {
+	text-transform: lowercase;
+}
+
 .nav-link {
 	color: rgba(255, 255, 255, 0.8);
 	text-decoration: none;

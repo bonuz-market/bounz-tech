@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Urbanist, Manrope } from "next/font/google";
 import { locales, rtlLocales, getDictionary, type Locale } from "@/lib/i18n";
@@ -7,14 +7,14 @@ import "../globals.css";
 
 const urbanist = Urbanist({
 	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800"],
+	weight: ["400", "500", "600", "700"],
 	variable: "--font-urbanist",
 	display: "swap",
 });
 
 const manrope = Manrope({
 	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700", "800"],
+	weight: ["400", "500", "600", "700"],
 	variable: "--font-manrope",
 	display: "swap",
 });
@@ -35,6 +35,13 @@ const ogLocaleMap: Record<Locale, string> = {
 	ar: "ar_AE",
 	de: "de_DE",
 	zh: "zh_CN",
+};
+
+// Matches the manifest's theme_color so mobile browser chrome is black instead
+// of the browser default. Must live in the viewport export, not metadata.
+export const viewport: Viewport = {
+	themeColor: "#000000",
+	colorScheme: "dark",
 };
 
 export async function generateMetadata({

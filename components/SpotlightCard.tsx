@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useCallback } from "react";
+import React, { useRef, useCallback, useEffect } from "react";
 
 interface SpotlightCardProps extends React.PropsWithChildren {
 	className?: string;
@@ -15,15 +15,33 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
 	const divRef = useRef<HTMLDivElement>(null);
 	const overlayRef = useRef<HTMLDivElement>(null);
 
+	const rafRef = useRef<number | null>(null);
+	const pendingRef = useRef<{ x: number; y: number } | null>(null);
+
 	const handleMouseMove = useCallback(
 		(e: React.MouseEvent<HTMLDivElement>) => {
 			if (!divRef.current || !overlayRef.current) return;
 			const rect = divRef.current.getBoundingClientRect();
-			const x = e.clientX - rect.left;
-			const y = e.clientY - rect.top;
-			overlayRef.current.style.background = `radial-gradient(circle at ${x}px ${y}px, ${spotlightColor}, transparent 80%)`;
+			pendingRef.current = {
+				x: e.clientX - rect.left,
+				y: e.clientY - rect.top,
+			};
+			if (rafRef.current !== null) return;
+			rafRef.current = requestAnimationFrame(() => {
+				rafRef.current = null;
+				const p = pendingRef.current;
+				if (!p || !overlayRef.current) return;
+				overlayRef.current.style.background = `radial-gradient(circle at ${p.x}px ${p.y}px, ${spotlightColor}, transparent 80%)`;
+			});
 		},
 		[spotlightColor]
+	);
+
+	useEffect(
+		() => () => {
+			if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+		},
+		[]
 	);
 
 	const handleMouseEnter = useCallback(() => {
