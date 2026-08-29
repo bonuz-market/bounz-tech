@@ -45,6 +45,7 @@ const zh: Dictionary = {
 		],
 	},
 	faq: {
+		title: "常见问题",
 		q1: "Bonuz Technology构建什么？",
 		a1: "Bonuz Technology构建自托管钱包、链上身份、增强现实和后量子基础设施。我们的产品包括bonuz生活方式钱包、bonuz ID、bonuz LIFE、bonuz合作伙伴仪表板，以及围绕BTX区块链构建的一系列后量子工具。",
 		q2: "Bonuz Technology总部在哪里？",
@@ -209,18 +210,22 @@ const zh: Dictionary = {
 			"与其让你相信，不如让你亲自核实。下面每一个链接都指向我们无法控制的第三方。",
 		items: [
 			{
+				key: "basescan",
 				label: "我们的链上身份注册表",
 				detail: "Base 上的 BonuzSocialId。你可以自己读合约、自己数档案数量。",
 			},
 			{
+				key: "appstore",
 				label: "在 Apple 以法律实体发布",
 				detail: "App Store 将我们的应用列在 BONUZ TECHNOLOGY DMCC 名下。",
 			},
 			{
+				key: "play",
 				label: "Google Play 同样如此",
 				detail: "相同的包名，相同的公司，公开可查。",
 			},
 			{
+				key: "github",
 				label: "我们的代码是公开的",
 				detail: "GitHub 上的公开仓库，包括 BTX 参考节点。",
 			},

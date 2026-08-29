@@ -4,6 +4,8 @@ import { locales } from "@/lib/i18n";
 export default function sitemap(): MetadataRoute.Sitemap {
 	const baseUrl = "https://bonuz.tech";
 
+	const lastModified = new Date().toISOString().split("T")[0];
+
 	const alternateLanguages: Record<string, string> = {
 		"x-default": `${baseUrl}/en`,
 	};
@@ -13,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	const localeHomes = locales.map((locale) => ({
 		url: `${baseUrl}/${locale}`,
-		lastModified: "2026-08-29",
+		lastModified,
 		changeFrequency: "weekly" as const,
 		priority: locale === "en" ? 1 : 0.9,
 		alternates: {
@@ -25,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	// English URL belongs in the sitemap.
 	const legalPages = ["privacy", "terms", "imprint"].map((slug) => ({
 		url: `${baseUrl}/en/legal/${slug}`,
-		lastModified: "2026-08-29",
+		lastModified,
 		changeFrequency: "yearly" as const,
 		priority: 0.3,
 	}));
@@ -38,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ slug: "press", priority: 0.5 },
 	].map(({ slug, priority }) => ({
 		url: `${baseUrl}/en/${slug}`,
-		lastModified: "2026-08-29",
+		lastModified,
 		changeFrequency: "monthly" as const,
 		priority,
 	}));

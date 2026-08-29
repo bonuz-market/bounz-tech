@@ -45,6 +45,7 @@ const en: Dictionary = {
 		],
 	},
 	faq: {
+		title: "Questions",
 		q1: "What does Bonuz Technology build?",
 		a1: "Bonuz Technology builds self-custodial wallets, onchain identity, augmented reality and post-quantum infrastructure. Our products include the bonuz Lifestyle Wallet, bonuz ID, bonuz LIFE, the bonuz Partner Dashboard, and a set of post-quantum tools built around the BTX blockchain.",
 		q2: "Where is Bonuz Technology based?",
@@ -211,18 +212,22 @@ const en: Dictionary = {
 			"We would rather you verified this than believed it. Every link below is a third party we do not control.",
 		items: [
 			{
+				key: "basescan",
 				label: "Our identity registry, onchain",
 				detail: "BonuzSocialId on Base. Read the contract and count the profiles yourself.",
 			},
 			{
+				key: "appstore",
 				label: "Published by the legal entity on Apple",
 				detail: "The App Store lists our apps under BONUZ TECHNOLOGY DMCC.",
 			},
 			{
+				key: "play",
 				label: "And on Google Play",
 				detail: "Same bundle, same entity, publicly listed.",
 			},
 			{
+				key: "github",
 				label: "Our code, in the open",
 				detail: "Public repositories on GitHub, including the BTX reference node.",
 			},

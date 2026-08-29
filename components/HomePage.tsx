@@ -9,7 +9,7 @@ import PlatformMark, {
 	platformLinks,
 } from "@/components/PlatformMark";
 import Link from "next/link";
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, ProofKey } from "@/lib/i18n";
 
 const Galaxy = dynamic(() => import("@/components/Galaxy"), { ssr: false });
 
@@ -29,8 +29,6 @@ const KONAMI = [
 	"b",
 	"a",
 ];
-
-const currentYear = new Date().getFullYear();
 
 // The hero galaxy is the signature: animated, mouse-reactive, full quality.
 const galaxyProps = {
@@ -65,12 +63,13 @@ type WorkItemKey = keyof Omit<Dictionary["ourWork"], "title" | "intro" | "footer
 
 // Third-party destinations for the "check it yourself" block. Kept in code
 // because the URLs are the same in every language.
-const proofLinks = [
-	"https://basescan.org/address/0x9220070245b67130977FdF32acA4acdF6aD163cC",
-	"https://apps.apple.com/ae/developer/bonuz/id1637687441",
-	"https://play.google.com/store/apps/dev?id=8658583252213251696",
-	"https://github.com/bonuz-market",
-];
+const proofLinks: Record<ProofKey, string> = {
+	basescan:
+		"https://basescan.org/address/0x9220070245b67130977FdF32acA4acdF6aD163cC",
+	appstore: "https://apps.apple.com/ae/developer/bonuz/id1637687441",
+	play: "https://play.google.com/store/apps/dev?id=8658583252213251696",
+	github: "https://github.com/bonuz-market",
+};
 
 const workItems: {
 	key: WorkItemKey;
@@ -159,7 +158,7 @@ export default function HomePage({
 		{ href: "#what-we-do", label: dict.whatWeDo.title },
 		{ href: "#our-work", label: dict.ourWork.title },
 		{ href: "#founder", label: dict.founder.title },
-		{ href: "#request-intro", label: dict.hero.projectIntake },
+		{ href: "#request-intro", label: dict.hero.projectIntake, cta: true },
 	];
 
 	useEffect(() => {
@@ -195,14 +194,15 @@ export default function HomePage({
 
 				{/* Desktop nav */}
 				<nav className="header-nav" aria-label="Main navigation">
-					{navLinks.slice(0, 3).map((link) => (
-						<a key={link.href} href={link.href} className="nav-link">
+					{navLinks.map((link) => (
+						<a
+							key={link.href}
+							href={link.href}
+							className={`nav-link${link.cta ? " nav-link-cta" : ""}`}
+						>
 							{link.label}
 						</a>
 					))}
-					<a href="#request-intro" className="nav-link nav-link-cta">
-						{dict.hero.projectIntake}
-					</a>
 				</nav>
 
 				{/* Mobile menu */}
@@ -294,7 +294,7 @@ export default function HomePage({
 
 			{/* Our Work Section */}
 			<section id="our-work" className="section-black relative">
-				<div className="absolute inset-0 z-0" aria-hidden="true">
+				<div className="backdrop-galaxy" aria-hidden="true">
 					{!arcadeOpen && <Galaxy {...backdropGalaxyProps} />}
 				</div>
 				<div className="container relative">
@@ -376,10 +376,10 @@ export default function HomePage({
 					<h2>{dict.proof.title}</h2>
 					<p className="intro-text">{dict.proof.intro}</p>
 					<ul className="proof-grid">
-						{dict.proof.items.map((item, i) => (
+						{dict.proof.items.map((item) => (
 							<li key={item.label} className="proof-item">
 								<a
-									href={proofLinks[i]}
+									href={proofLinks[item.key]}
 									target="_blank"
 									rel="noopener noreferrer"
 								>
@@ -440,6 +440,27 @@ export default function HomePage({
 				</div>
 			</section>
 
+			{/* FAQ. Rendered because the FAQPage schema declares it; Google requires
+			    the content to exist on the page that declares it. Accordion keeps the
+			    page short without hiding it from crawlers. */}
+			<section id="faq" className="section-black">
+				<div className="container">
+					<h2>{dict.faq.title}</h2>
+					<div className="faq-list">
+						{([1, 2, 3, 4, 5, 6, 7] as const).map((n) => {
+							const q = dict.faq[`q${n}` as const];
+							const a = dict.faq[`a${n}` as const];
+							return (
+								<details key={n} className="faq-item">
+									<summary>{q}</summary>
+									<p>{a}</p>
+								</details>
+							);
+						})}
+					</div>
+				</div>
+			</section>
+
 			{/* Project Intake Request Section */}
 			<section id="request-intro" className="section-black pb-50!">
 				<div className="container">
@@ -496,10 +517,12 @@ export default function HomePage({
 						</a>
 					</div>
 					<p className="text-sm! text-gray-500!">
-						{dict.footer.copyright.replace(
-							"{year}",
-							String(currentYear)
-						)}
+						<span suppressHydrationWarning>
+							{dict.footer.copyright.replace(
+								"{year}",
+								String(new Date().getFullYear())
+							)}
+						</span>
 					</p>
 					<nav className="footer-legal" aria-label="More pages">
 						<a href={`/${locale}/white-label`}>{dict.ourWork.whiteLabel.title}</a>

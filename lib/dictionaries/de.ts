@@ -45,6 +45,7 @@ const de: Dictionary = {
 		],
 	},
 	faq: {
+		title: "Fragen",
 		q1: "Was entwickelt Bonuz Technology?",
 		a1: "Bonuz Technology entwickelt selbstverwaltete Wallets, Onchain-Identität, Augmented Reality und Post-Quanten-Infrastruktur. Zu unseren Produkten zählen die bonuz Lifestyle Wallet, bonuz ID, bonuz LIFE, das bonuz Partner Dashboard sowie eine Reihe von Post-Quanten-Werkzeugen rund um die BTX-Blockchain.",
 		q2: "Wo hat Bonuz Technology seinen Sitz?",
@@ -210,18 +211,22 @@ const de: Dictionary = {
 			"Uns ist lieber, Sie überprüfen das, als dass Sie es glauben. Jeder Link unten führt zu einem Dritten, den wir nicht kontrollieren.",
 		items: [
 			{
+				key: "basescan",
 				label: "Unser Identitätsregister, onchain",
 				detail: "BonuzSocialId auf Base. Lesen Sie den Vertrag und zählen Sie die Profile selbst.",
 			},
 			{
+				key: "appstore",
 				label: "Bei Apple unter der Rechtsperson veröffentlicht",
 				detail: "Der App Store führt unsere Apps unter BONUZ TECHNOLOGY DMCC.",
 			},
 			{
+				key: "play",
 				label: "Und bei Google Play",
 				detail: "Gleiches Bundle, gleiche Firma, öffentlich gelistet.",
 			},
 			{
+				key: "github",
 				label: "Unser Code, offen einsehbar",
 				detail: "Öffentliche Repositories auf GitHub, inklusive der BTX-Referenz-Node.",
 			},

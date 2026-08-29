@@ -1131,3 +1131,63 @@ html[dir="rtl"] .lang-dropdown {
 .skip-link:focus {
 	inset-inline-start: 0;
 }
+
+/* ---------- FAQ ---------- */
+
+.faq-list {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.faq-item {
+	border-bottom: 1px solid #262626;
+}
+
+.faq-item summary {
+	cursor: pointer;
+	padding: 20px 0;
+	color: #ffffff;
+	font-size: 1.02rem;
+	font-weight: 600;
+	list-style: none;
+	position: relative;
+	padding-inline-end: 32px;
+}
+
+.faq-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.faq-item summary::after {
+	content: "+";
+	position: absolute;
+	inset-inline-end: 4px;
+	color: #667eea;
+	font-weight: 400;
+	font-size: 1.3rem;
+	line-height: 1;
+}
+
+.faq-item[open] summary::after {
+	content: "\2212";
+}
+
+.faq-item p {
+	color: #c8c8c8 !important;
+	font-size: 0.98rem;
+	line-height: 1.8;
+	padding: 0 0 22px;
+	margin: 0;
+	text-align: start;
+}
+
+/* Backdrop galaxy: sticky and viewport-tall rather than sized to the whole
+   section, so the WebGL buffer stays bounded on tall pages and small GPUs. */
+.backdrop-galaxy {
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	z-index: 0;
+	margin-bottom: -100vh;
+	pointer-events: none;
+}
