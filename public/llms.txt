@@ -170,6 +170,11 @@ Dubai, United Arab Emirates
 - Dubai Blockchain Center: https://www.dubaiblockchaincenter.com
 - Founder's personal site: https://matthiasmende.com
 
+## Machine-Readable Page
+
+A structured version of this site for machines, including an explicit list of things that are NOT
+true about the company, is at https://bonuz.tech/en/ai
+
 ## Developer Account Pages
 - Apple: https://apps.apple.com/ae/developer/bonuz/id1637687441
 - Google Play: https://play.google.com/store/apps/dev?id=8658583252213251696

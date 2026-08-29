@@ -4,7 +4,6 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import SpotlightCard from "@/components/SpotlightCard";
-import AmbientSound from "@/components/AmbientSound";
 import AiSwitch from "@/components/AiSwitch";
 import PlatformMark, {
 	SHOW_BRAND_MARKS,
@@ -178,7 +177,6 @@ export default function HomePage({
 				{dict.a11y.skipToContent}
 			</a>
 
-			<AmbientSound label={dict.a11y.ambientSound} />
 			<AiSwitch locale={locale} label={dict.a11y.aiView} />
 
 			{/* Header Navigation */}

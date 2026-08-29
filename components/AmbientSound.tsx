@@ -16,9 +16,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
  */
 
 const STORAGE_KEY = "bonuz.ambient";
-const TARGET_GAIN = 0.055;
 
-export default function AmbientSound({ label }: { label: string }) {
+/**
+ * Kept here rather than in the dictionaries because this renders from the locale
+ * layout, which deliberately does not load a dictionary (that would put a
+ * dictionary import on every subpage render).
+ */
+const LABELS: Record<string, string> = {
+	en: "Ambient sound",
+	de: "Hintergrundklang",
+	ar: "الصوت المحيط",
+	zh: "环境音",
+};
+const TARGET_GAIN = 0.055;
+const FADE_IN = 1.1;
+
+export default function AmbientSound({ locale }: { locale: string }) {
+	const label = LABELS[locale] ?? LABELS.en;
 	const [on, setOn] = useState(false);
 	const ctxRef = useRef<AudioContext | null>(null);
 	const masterRef = useRef<GainNode | null>(null);
@@ -179,7 +193,7 @@ export default function AmbientSound({ label }: { label: string }) {
 				return;
 			}
 		}
-		fade(TARGET_GAIN, 3);
+		fade(TARGET_GAIN, FADE_IN);
 		setOn(true);
 		try {
 			localStorage.setItem(STORAGE_KEY, "on");
@@ -231,22 +245,36 @@ export default function AmbientSound({ label }: { label: string }) {
 		return () => cleanup?.();
 	}, [build, enable]);
 
-	// Hand the tab back its CPU when the visitor leaves it.
+	// Keep it running. The graph is about a dozen oscillator nodes, so a hidden
+	// tab costs almost nothing, and stopping on blur made the bed cut out every
+	// time the visitor looked at another window. Resume defensively instead:
+	// some browsers auto-suspend a context in a backgrounded tab.
 	useEffect(() => {
-		function onVis() {
+		if (!on) return;
+		function keepRunning() {
 			const ctx = ctxRef.current;
-			if (!ctx || !on) return;
-			if (document.hidden) void ctx.suspend();
-			else void ctx.resume();
+			if (ctx && ctx.state === "suspended") void ctx.resume();
 		}
-		document.addEventListener("visibilitychange", onVis);
-		return () => document.removeEventListener("visibilitychange", onVis);
+		document.addEventListener("visibilitychange", keepRunning);
+		window.addEventListener("focus", keepRunning);
+		const iv = window.setInterval(keepRunning, 5000);
+		return () => {
+			document.removeEventListener("visibilitychange", keepRunning);
+			window.removeEventListener("focus", keepRunning);
+			clearInterval(iv);
+		};
 	}, [on]);
 
 	useEffect(
 		() => () => {
 			stopRef.current?.();
-			void ctxRef.current?.close().catch(() => {});
+			const ctx = ctxRef.current;
+			// Null the refs, otherwise build() short-circuits on a remount and
+			// reuses a closed context, which is silent forever.
+			ctxRef.current = null;
+			masterRef.current = null;
+			stopRef.current = null;
+			void ctx?.close().catch(() => {});
 		},
 		[]
 	);
