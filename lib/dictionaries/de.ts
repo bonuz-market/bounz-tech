@@ -63,6 +63,7 @@ const de: Dictionary = {
 	},
 	a11y: {
 		skipToContent: "Zum Inhalt springen",
+		ambientSound: "Hintergrundklang",
 	},
 	breadcrumbs: {
 		home: "Startseite",

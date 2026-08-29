@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import SpotlightCard from "@/components/SpotlightCard";
+import AmbientSound from "@/components/AmbientSound";
 import PlatformMark, {
 	SHOW_BRAND_MARKS,
 	platformLinks,
@@ -175,6 +176,8 @@ export default function HomePage({
 			<a href="#main" className="skip-link">
 				{dict.a11y.skipToContent}
 			</a>
+
+			<AmbientSound label={dict.a11y.ambientSound} />
 
 			{/* Header Navigation */}
 			<header className="site-header">
