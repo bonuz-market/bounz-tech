@@ -5,6 +5,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import SpotlightCard from "@/components/SpotlightCard";
 import AmbientSound from "@/components/AmbientSound";
+import AiSwitch from "@/components/AiSwitch";
 import PlatformMark, {
 	SHOW_BRAND_MARKS,
 	platformLinks,
@@ -178,6 +179,7 @@ export default function HomePage({
 			</a>
 
 			<AmbientSound label={dict.a11y.ambientSound} />
+			<AiSwitch locale={locale} label={dict.a11y.aiView} />
 
 			{/* Header Navigation */}
 			<header className="site-header">

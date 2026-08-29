@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AmbientSound from "@/components/AmbientSound";
+import AiSwitch from "@/components/AiSwitch";
 import Image from "next/image";
 
 export type ContentNavLink = { href: string; label: string };
@@ -33,6 +34,7 @@ export default function ContentPage({
 			{/* Same control as the homepage, so the preference carries across the
 			    site and the sound can be stopped from wherever the visitor is. */}
 			<AmbientSound label="Ambient sound" />
+			<AiSwitch locale={locale} label="Machine-readable view" />
 
 			<header className="site-header">
 				<Link

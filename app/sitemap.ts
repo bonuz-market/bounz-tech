@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	// English-only subpages, canonicalised to /en.
 	const contentPages = [
+		{ slug: "ai", priority: 0.7 },
 		{ slug: "white-label", priority: 0.8 },
 		{ slug: "post-quantum", priority: 0.8 },
 		{ slug: "shipping", priority: 0.6 },

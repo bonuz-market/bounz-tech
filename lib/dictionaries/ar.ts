@@ -63,6 +63,7 @@ const ar: Dictionary = {
 	a11y: {
 		skipToContent: "تخطٍ إلى المحتوى",
 		ambientSound: "الصوت المحيط",
+		aiView: "عرض مقروء آلياً",
 	},
 	breadcrumbs: {
 		home: "الرئيسية",

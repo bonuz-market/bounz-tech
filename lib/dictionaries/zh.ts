@@ -64,6 +64,7 @@ const zh: Dictionary = {
 	a11y: {
 		skipToContent: "跳转到主要内容",
 		ambientSound: "环境音",
+		aiView: "机器可读视图",
 	},
 	breadcrumbs: {
 		home: "首页",

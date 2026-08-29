@@ -42,6 +42,7 @@ export type Dictionary = {
 	a11y: {
 		skipToContent: string;
 		ambientSound: string;
+		aiView: string;
 	};
 	breadcrumbs: {
 		home: string;
