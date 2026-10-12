@@ -423,7 +423,7 @@ export default function HomePage({
 								X
 							</a>
 							<a
-								href="https://linkedin.com/in/matthiasmende"
+								href="https://www.linkedin.com/in/mendematthias"
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label="Matthias Mende on LinkedIn"
