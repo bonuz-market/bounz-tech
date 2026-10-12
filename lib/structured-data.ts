@@ -43,15 +43,20 @@ export function getStructuredData(locale: string, dict: Awaited<ReturnType<typeo
 				},
 				founder: {
 					"@type": "Person",
+					// Same entity as the Person on matthiasmende.com, so search engines join them.
+					"@id": "https://matthiasmende.com/#person",
 					name: "Matthias Mende",
 					jobTitle: "Founder & CEO",
 					url: "https://matthiasmende.com",
-					award: "Binance Industry Advocate (2025)",
+					award: [
+						"Binance Industry Advocate (2025)",
+						"Binance Square Creator of the Year (2024)",
+					],
 					sameAs: [
 						"https://matthiasmende.com",
 						"https://bonuz.id/mende",
 						"https://x.com/mendematthias",
-						"https://linkedin.com/in/matthiasmende",
+						"https://www.linkedin.com/in/mendematthias",
 					],
 				},
 				address: {
