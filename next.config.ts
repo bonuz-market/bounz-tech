@@ -49,10 +49,11 @@ const nextConfig: NextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              // https://bonuz.life: the bonuz orientation page (script, images, fonts).
+              "script-src 'self' 'unsafe-inline' https://bonuz.life",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "img-src 'self' data: https://res.cloudinary.com",
-              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: https://res.cloudinary.com https://bonuz.life",
+              "font-src 'self' https://fonts.gstatic.com https://bonuz.life",
               "connect-src 'self' https://res.cloudinary.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",

@@ -201,6 +201,15 @@ export default async function LocaleLayout({
 				<AmbientSound locale={locale} />
 				<LanguageSwitcher locale={locale} />
 				{children}
+				{/* The bonuz orientation page: the same card on every bonuz site,
+				    served from bonuz.life (bonuz-monorepoo apps/bonuz-life/orientation).
+				    Home pages only, never after a QR scan, once per season. */}
+				<script
+					src="https://bonuz.life/orientation/v1/orient.js"
+					data-hubs={["/", ...locales.map((l) => `/${l}`)].join(",")}
+					data-site="tech"
+					async
+				/>
 			</body>
 		</html>
 	);
