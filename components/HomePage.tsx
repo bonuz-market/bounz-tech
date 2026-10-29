@@ -48,13 +48,13 @@ const galaxyProps = {
 	transparent: true,
 };
 
-// The "Our work" galaxy sits behind ~2400px of text cards. Animating it cost more
-// fragment work per frame than the hero (a taller canvas), for a backdrop nobody
-// looks at directly. It renders one static frame at dpr 1 instead: same texture,
-// no render loop, no mouse handlers.
+// The backdrop galaxies behind "Our work" and the request form. They are
+// sticky and viewport-tall (see .backdrop-galaxy), so an animated one costs no
+// more than the hero, and each pauses when it scrolls out of view. The stars
+// keep flying all the way down (Mende, 30 Oct: "the stars are not flying
+// anymore"); only mouse handling stays off, at dpr 1.
 const backdropGalaxyProps = {
 	...galaxyProps,
-	disableAnimation: true,
 	mouseInteraction: false,
 	mouseRepulsion: false as const,
 	maxDpr: 1,
@@ -514,8 +514,11 @@ export default function HomePage({
 			</section>
 
 			{/* Project Intake Request Section */}
-			<section id="request-intro" className="section-black pb-50!">
-				<div className="container">
+			<section id="request-intro" className="section-black relative pb-50!">
+				<div className="backdrop-galaxy" aria-hidden="true">
+					{!arcadeOpen && <Galaxy {...backdropGalaxyProps} />}
+				</div>
+				<div className="container relative">
 					<h2>{dict.intake.title}</h2>
 					<div className="request-content">
 						<p className="intro-text">{dict.intake.description}</p>
@@ -534,7 +537,7 @@ export default function HomePage({
 			</main>
 
 			{/* Footer */}
-			<footer>
+			<footer className="site-footer">
 				<div className="container">
 					<p className="text-lg!">{dict.footer.quote}</p>
 					<div className="flex items-center justify-center gap-4 mt-4 mb-3">
