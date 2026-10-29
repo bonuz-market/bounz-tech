@@ -76,24 +76,58 @@ const workItems: {
 	key: WorkItemKey;
 	href: string;
 	external: boolean;
+	// Picture of the live site, taken by scripts/shoot-our-work.mjs into
+	// public/work/<key>.webp. Items with no public website of their own get
+	// a branded panel instead of a made-up screenshot.
+	shot?: boolean;
 }[] = [
-	{ key: "wallet", href: "https://bonuz.xyz", external: true },
-	{ key: "id", href: "https://bonuz.id", external: true },
-	{ key: "life", href: "https://bonuz.life", external: true },
-	{ key: "dashboard", href: "https://app.bonuz.market", external: true },
-	{ key: "events", href: "https://app.bonuz.xyz", external: true },
-	{ key: "swapz", href: "https://swapz.bonuz.market", external: true },
-	{ key: "pqWallet", href: "https://pq-wallet.com", external: true },
-	{ key: "btxscan", href: "https://btxscan.io", external: true },
-	{ key: "pqWiki", href: "https://postquantum.wiki", external: true },
-	{ key: "habibiPass", href: "https://habibipass.bonuz.xyz", external: true },
-	{ key: "uae971", href: "https://uae971.social", external: true },
-	{ key: "chess", href: "https://onchainchess.com", external: true },
-	{ key: "kilocorn", href: "https://kilocorn.com", external: true },
-	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true },
+	{ key: "wallet", href: "https://bonuz.xyz", external: true, shot: true },
+	{ key: "id", href: "https://bonuz.id", external: true, shot: true },
+	{ key: "life", href: "https://bonuz.life", external: true, shot: true },
+	{ key: "dashboard", href: "https://app.bonuz.market", external: true, shot: true },
+	{ key: "events", href: "https://app.bonuz.xyz", external: true, shot: true },
+	{ key: "swapz", href: "https://swapz.bonuz.market", external: true, shot: true },
+	{ key: "pqWallet", href: "https://pq-wallet.com", external: true, shot: true },
+	{ key: "btxscan", href: "https://btxscan.io", external: true, shot: true },
+	{ key: "pqWiki", href: "https://postquantum.wiki", external: true, shot: true },
+	{ key: "habibiPass", href: "https://habibipass.bonuz.xyz", external: true, shot: true },
+	{ key: "uae971", href: "https://uae971.social", external: true, shot: true },
+	{ key: "chess", href: "https://onchainchess.com", external: true, shot: true },
+	{ key: "kilocorn", href: "https://kilocorn.com", external: true, shot: true },
+	{ key: "skyShield", href: "https://skyshield.bonuz.tech", external: true, shot: true },
 	{ key: "whiteLabel", href: "/white-label", external: false },
 	{ key: "consulting", href: "#request-intro", external: false },
 ];
+
+// Icons for the items with no website to photograph. Pictures, not words,
+// so the panel needs no translation and does not repeat the card's title.
+const panelIconProps = {
+	width: 56,
+	height: 56,
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: 1.5,
+	strokeLinecap: "round" as const,
+	strokeLinejoin: "round" as const,
+};
+const workPanelIcon: Partial<Record<WorkItemKey, React.ReactNode>> = {
+	// Stacked layers: one engine, your skin on top.
+	whiteLabel: (
+		<svg {...panelIconProps}>
+			<path d="M12 3 3 8l9 5 9-5-9-5Z" />
+			<path d="m3 13 9 5 9-5" />
+			<path d="m3 17.5 9 5 9-5" opacity="0.5" />
+		</svg>
+	),
+	// Two speech bubbles: a conversation.
+	consulting: (
+		<svg {...panelIconProps}>
+			<path d="M4 5h11a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" />
+			<path d="M16 9h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-1v3l-4-3h-4a1 1 0 0 1-1-1v-2" opacity="0.5" />
+		</svg>
+	),
+};
 
 export default function HomePage({
 	dict,
@@ -325,6 +359,21 @@ export default function HomePage({
 											: {})}
 									>
 										<h3>{work.title}</h3>
+										<div className="work-shot" aria-hidden="true">
+											{item.shot ? (
+												<Image
+													src={`/work/${item.key}.webp`}
+													alt=""
+													width={960}
+													height={540}
+													sizes="(max-width: 680px) 100vw, (max-width: 1180px) 50vw, 25vw"
+												/>
+											) : (
+												<div className="work-shot-panel">
+													{workPanelIcon[item.key]}
+												</div>
+											)}
+										</div>
 										<p>{work.description}</p>
 									</a>
 								</SpotlightCard>
