@@ -67,6 +67,9 @@ export default function ContentPage({
 							</a>
 						))}
 						<a href={`/${locale}`}>Back to bonuz.tech</a>
+						<a href="#" data-bonuz-orientation-open>
+							bonuz orientation
+						</a>
 					</nav>
 				</div>
 			</main>
