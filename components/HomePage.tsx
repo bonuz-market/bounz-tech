@@ -532,6 +532,10 @@ export default function HomePage({
 						<a href={`/${locale}/post-quantum`}>{dict.footer.postQuantum}</a>
 						<a href={`/${locale}/shipping`}>{dict.footer.shipping}</a>
 						<a href={`/${locale}/press`}>{dict.footer.press}</a>
+						{/* Reopens the bonuz orientation page (loaded from bonuz.life in the layout). */}
+						<a href="#" data-bonuz-orientation-open>
+							bonuz orientation
+						</a>
 					</nav>
 					<nav className="footer-legal" aria-label="Legal">
 						<a href={`/${locale}/legal/privacy`}>{dict.footer.privacy}</a>
