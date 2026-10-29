@@ -631,6 +631,40 @@ footer p {
 	font-weight: 400;
 }
 
+/* The homepage footer: black like the page above it instead of a grey slab,
+   a soft orange-pink glow rising from below, and the same thin moving line on
+   top as the shared bonuz footer (Mende, 30 Oct: "so gray, make it more
+   alive"). */
+.site-footer {
+	position: relative;
+	overflow: hidden;
+	background:
+		radial-gradient(60% 120% at 50% 130%, rgba(206, 9, 255, 0.22), transparent 70%),
+		radial-gradient(40% 90% at 15% 140%, rgba(255, 163, 78, 0.16), transparent 70%),
+		#000;
+	padding: 48px 24px 40px;
+}
+.site-footer::before {
+	content: "";
+	position: absolute;
+	inset: 0 0 auto;
+	height: 1px;
+	background-image: linear-gradient(90deg, #ffa34e 0%, #ce09ff 50%, #ffa34e 100%);
+	background-size: 480px 100%;
+	background-repeat: repeat-x;
+	animation: site-footer-flow 4s linear infinite;
+}
+@keyframes site-footer-flow {
+	from { background-position: 0 0; }
+	to { background-position: 480px 0; }
+}
+.site-footer > .container { position: relative; }
+.site-footer p.text-lg\! { color: #fff; }
+.site-footer a { transition: color 0.2s ease; }
+@media (prefers-reduced-motion: reduce) {
+	.site-footer::before { animation: none; }
+}
+
 /* Language Switcher */
 .lang-switcher {
 	position: fixed;
@@ -1243,6 +1277,13 @@ html[dir="rtl"] .lang-dropdown {
 	z-index: 0;
 	margin-bottom: -100vh;
 	pointer-events: none;
+}
+
+/* The request section is shorter than the screen, so its viewport-tall
+   galaxy would hang below the footer and add empty scroll. Clip it to the
+   section (clip, not hidden: sticky keeps working). */
+#request-intro {
+	overflow: clip;
 }
 
 /* ---------- Ambient sound toggle ---------- */
