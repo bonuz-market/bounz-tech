@@ -203,10 +203,12 @@ export default async function LocaleLayout({
 				{children}
 				{/* The bonuz orientation page: the same card on every bonuz site,
 				    served from bonuz.life (bonuz-monorepoo apps/bonuz-life/orientation).
-				    Home pages only, never after a QR scan, once per season. */}
+				    Loaded on every page so the footer link can open it. */}
 				<script
 					src="https://bonuz.life/orientation/v1/orient.js"
-					data-hubs={["/", ...locales.map((l) => `/${l}`)].join(",")}
+					// "-" matches no page: the card never opens by itself on bonuz.tech
+					// (Mende, 29 Oct). The footer "bonuz orientation" link still opens it.
+					data-hubs="-"
 					data-site="tech"
 					async
 				/>
