@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
@@ -6,8 +7,13 @@ import ContentPage from "@/components/ContentPage";
 export const metadata: Metadata = {
 	title: "What we ship",
 	description:
-		"Release activity across the bonuz ecosystem, with links to each product's own live changelog. Selected milestones, every one verifiable on a third-party record.",
+		"Release activity across the bonuz ecosystem, with links to each product's live changelog. Selected milestones, each verifiable on a third-party record.",
 	alternates: { canonical: "https://bonuz.tech/en/shipping" },
+	...shareMeta(
+		"What we ship",
+		"Release activity across the bonuz ecosystem, with links to each product's live changelog. Selected milestones, each verifiable on a third-party record.",
+		"https://bonuz.tech/en/shipping",
+	),
 };
 
 export function generateStaticParams() {

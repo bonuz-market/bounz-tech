@@ -2,9 +2,9 @@ import type { Dictionary } from "../i18n";
 
 const de: Dictionary = {
 	meta: {
-		title: "Bonuz Technology DMCC | Blockchain-, AR- & Post-Quanten-Entwicklung Dubai",
+		title: "Bonuz Technology | Blockchain, AR & Post-Quanten, Dubai",
 		description:
-			"Softwareentwicklung aus Dubai: selbstverwaltete Wallets, Onchain-Identität, Augmented Reality und Post-Quanten-Infrastruktur. Registrierter Entwickler in den Entwicklerprogrammen von Apple, Google Play, Microsoft, Meta und Mentra.",
+			"Software aus Dubai: selbstverwaltete Wallets, Onchain-Identität, AR und Post-Quanten-Technik. Registriert bei Apple, Google, Microsoft, Meta und Mentra.",
 		keywords: [
 			"selbstverwaltete Wallet",
 			"Blockchain-Entwicklung Dubai",

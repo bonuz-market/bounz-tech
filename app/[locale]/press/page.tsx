@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
 	description:
 		"Logos, boilerplate, company facts and a naming guide for anyone writing about Bonuz Technology DMCC.",
 	alternates: { canonical: "https://bonuz.tech/en/press" },
+	...shareMeta(
+		"Press kit",
+		"Logos, boilerplate, company facts and a naming guide for anyone writing about Bonuz Technology DMCC.",
+		"https://bonuz.tech/en/press",
+	),
 };
 
 export function generateStaticParams() {

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
@@ -6,7 +7,7 @@ import ContentPage from "@/components/ContentPage";
 export const metadata: Metadata = {
 	title: "White-label wallet platform",
 	description:
-		"bonuz featuring your brand. Launch a branded app on the bonuz platform: onchain identity, self-custodial wallet, quests, loyalty and membership, without building any of it from scratch.",
+		"bonuz featuring your brand: launch a branded app with onchain identity, a self-custodial wallet, quests, loyalty and membership, without building it.",
 	keywords: [
 		"white-label wallet",
 		"white-label crypto wallet",
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
 		"bonuz ID login",
 	],
 	alternates: { canonical: "https://bonuz.tech/en/white-label" },
+	...shareMeta(
+		"White-label wallet platform",
+		"bonuz featuring your brand: launch a branded app with onchain identity, a self-custodial wallet, quests, loyalty and membership, without building it.",
+		"https://bonuz.tech/en/white-label",
+	),
 };
 
 export function generateStaticParams() {

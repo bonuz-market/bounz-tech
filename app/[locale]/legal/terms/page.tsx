@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import LegalPage from "@/components/LegalPage";
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
 	description:
 		"Terms governing the use of bonuz.tech, the corporate website of Bonuz Technology DMCC, Dubai.",
 	alternates: { canonical: "https://bonuz.tech/en/legal/terms" },
+	...shareMeta(
+		"Terms of Use",
+		"Terms governing the use of bonuz.tech, the corporate website of Bonuz Technology DMCC, Dubai.",
+		"https://bonuz.tech/en/legal/terms",
+	),
 };
 
 export function generateStaticParams() {
