@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import ContentPage from "@/components/ContentPage";
@@ -6,7 +7,7 @@ import ContentPage from "@/components/ContentPage";
 export const metadata: Metadata = {
 	title: "Post-quantum work",
 	description:
-		"What we build around post-quantum cryptography: PQ Wallet for BTX, the BTXScan explorer, and postquantum.wiki. ML-DSA and SLH-DSA, the signature schemes standardised by NIST.",
+		"What we build with post-quantum cryptography: PQ Wallet for BTX, the BTXScan explorer and postquantum.wiki, on NIST's ML-DSA and SLH-DSA signatures.",
 	keywords: [
 		"post-quantum cryptography",
 		"post-quantum wallet",
@@ -17,6 +18,11 @@ export const metadata: Metadata = {
 		"harvest now decrypt later",
 	],
 	alternates: { canonical: "https://bonuz.tech/en/post-quantum" },
+	...shareMeta(
+		"Post-quantum work",
+		"What we build with post-quantum cryptography: PQ Wallet for BTX, the BTXScan explorer and postquantum.wiki, on NIST's ML-DSA and SLH-DSA signatures.",
+		"https://bonuz.tech/en/post-quantum",
+	),
 };
 
 export function generateStaticParams() {

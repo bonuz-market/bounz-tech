@@ -363,7 +363,9 @@ export default function HomePage({
 											{item.shot ? (
 												<Image
 													src={`/work/${item.key}.webp`}
-													alt=""
+													// Named for image search; the wrapper stays aria-hidden
+													// because the h3 above already says it to screen readers.
+													alt={`${work.title} screenshot`}
 													width={960}
 													height={540}
 													sizes="(max-width: 680px) 100vw, (max-width: 1180px) 50vw, 25vw"

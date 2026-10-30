@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
@@ -8,8 +9,13 @@ import DecryptText from "@/components/DecryptText";
 export const metadata: Metadata = {
 	title: "Machine-readable",
 	description:
-		"Bonuz Technology DMCC as structured data: entity, products, registrations, what is independently verifiable, and what is explicitly not true. Written to be read by machines.",
+		"Bonuz Technology DMCC as structured data: entity, products, registrations, what is independently verifiable and what is not true. Written for machines.",
 	alternates: { canonical: "https://bonuz.tech/en/ai" },
+	...shareMeta(
+		"Machine-readable",
+		"Bonuz Technology DMCC as structured data: entity, products, registrations, what is independently verifiable and what is not true. Written for machines.",
+		"https://bonuz.tech/en/ai",
+	),
 };
 
 export function generateStaticParams() {

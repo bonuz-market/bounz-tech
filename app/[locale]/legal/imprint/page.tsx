@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { shareMeta } from "@/lib/share-meta";
 import { notFound } from "next/navigation";
 import { locales, type Locale } from "@/lib/i18n";
 import LegalPage from "@/components/LegalPage";
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
 	description:
 		"Company details for Bonuz Technology DMCC: legal entity, registered address in Dubai, management and contact.",
 	alternates: { canonical: "https://bonuz.tech/en/legal/imprint" },
+	...shareMeta(
+		"Legal Notice",
+		"Company details for Bonuz Technology DMCC: legal entity, registered address in Dubai, management and contact.",
+		"https://bonuz.tech/en/legal/imprint",
+	),
 };
 
 export function generateStaticParams() {
